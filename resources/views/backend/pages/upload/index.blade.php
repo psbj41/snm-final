@@ -87,7 +87,17 @@ Users Table
                         <h5>Departmental Head and Co-ordinators Contact</h5>
                         <h6> Excel File Upload </h6>
                         <p>Upload Excel File if you have latest info about "Administration Contact"</p>
-                        <a class="btn btn-success" href="" style="width:100%">Go Upload Page</a>
+                        <a class="btn btn-success" href="{{route('department.index')}}" style="width:100%">Go Upload Page</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Special Day Notification and Files</h5>
+                        <h6> Excel File Upload </h6>
+                        <p>Upload Excel File if you have latest info about "Administration Contact"</p>
+                        <a class="btn btn-success" href="{{route('special.index')}}" style="width:100%">Go Upload Page</a>
                     </div>
                 </div>
             </div>

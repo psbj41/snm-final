@@ -3,7 +3,9 @@
 use App\Http\Controllers\Backend\Admin\PermissionController;
 use App\Http\Controllers\Backend\Admin\RoleController;
 use App\Http\Controllers\Backend\Admin\UserController;
+use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\PageController;
+use App\Http\Controllers\Backend\SpecialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,5 +50,10 @@ Route::middleware(['auth'])->group(function () {
         Route::post('uploads-page/admin', 'uploadAdminStore')->name('admin.upload.store');
     });
 
+    //Special
+    Route::resource('special', SpecialController::class);
+
+    //Department
+    Route::resource('department', DepartmentController::class);
 
 });
