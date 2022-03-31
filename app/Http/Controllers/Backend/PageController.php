@@ -7,6 +7,8 @@ use App\Imports\BhawanImport;
 use App\Imports\ThoughtImport;
 use App\Imports\UserImport;
 use App\Models\Bhawan;
+use App\Models\Thought;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Concerns\ToArray;
@@ -15,15 +17,17 @@ use Maatwebsite\Excel\HeadingRowImport;
 
 class PageController extends Controller
 {
+    // index upload page
     public function uploadPage()
     {
         return view('backend.pages.upload.index');
     }
+    // End index upload page
 
-
+    // Thought upload page
     public function uploadThoughtPage()
     {
-        return view('backend.pages.upload.thought');
+        return view('backend.pages.upload.thought.thought');
     }
 
     public function uploadThoughtStore(Request $request)
@@ -32,9 +36,18 @@ class PageController extends Controller
         return redirect()->route('thought.upload.page')->with('success', 'All good!');
     }
 
+    public function thoughtDataPage()
+    {
+        $alldata = Thought::all();
+        return view('backend.pages.upload.thought.index',compact('alldata'));
+    }
+    // End Thought upload page
+
+
+    // Bhawan upload page
     public function uploadBhawanPage()
     {
-        return view('backend.pages.upload.bhawan');
+        return view('backend.pages.upload.bhawan.bhawan');
     }
 
     public function uploadBhawanStore(Request $request)
@@ -45,9 +58,17 @@ class PageController extends Controller
         return redirect()->route('bhawan.upload.page')->with('success', 'All good!');
     }
 
+    public function bhawanDataPage()
+    {
+        $alldata = Bhawan::all();
+        return view('backend.pages.upload.bhawan.index',compact('alldata'));
+    }
+    // End Bhawan upload page
+
+    // Admin upload page
     public function uploadAdminPage()
     {
-        return view('backend.pages.upload.admin');
+        return view('backend.pages.upload.admin.admin');
     }
 
     public function uploadAdminStore(Request $request)
@@ -55,4 +76,12 @@ class PageController extends Controller
         Excel::import(new UserImport, $request->file('file'));
         return redirect()->route('admin.upload.page')->with('success', 'All good!');
     }
+
+    public function adminDataPage()
+    {
+        $alldata = User::all();
+        return view('backend.pages.upload.admin.index',compact('alldata'));
+    }
+    // End Admin upload page
+
 }

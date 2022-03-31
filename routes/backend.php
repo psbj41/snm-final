@@ -35,19 +35,22 @@ Route::middleware(['auth'])->group(function () {
     //Pages
     Route::controller(PageController::class)->group(function () {
         Route::get('uploads-page', 'uploadPage')->name('upload.page');
-        Route::get('uploads-page/admin', 'uploadAdminPage')->name('admin.upload.page');
-
+        
         //thoughts
         Route::get('uploads-page/thought', 'uploadThoughtPage')->name('thought.upload.page');
         Route::post('uploads-page/thought', 'uploadThoughtStore')->name('thought.upload.store');
+        Route::get('uploads-page/thought/data', 'thoughtDataPage')->name('thought.data.page');
 
         //Bhawans
         Route::get('uploads-page/bhawan', 'uploadBhawanPage')->name('bhawan.upload.page');
         Route::post('uploads-page/bhawan', 'uploadBhawanStore')->name('bhawan.upload.store');
+        Route::get('uploads-page/bhawan/data', 'bhawanDataPage')->name('bhawan.data.page');
 
         //Admin
         Route::get('uploads-page/admin', 'uploadAdminPage')->name('admin.upload.page');
         Route::post('uploads-page/admin', 'uploadAdminStore')->name('admin.upload.store');
+        Route::get('uploads-page/admin/data', 'adminDataPage')->name('admin.data.page');
+
     });
 
     //Special
