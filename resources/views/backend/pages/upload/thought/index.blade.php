@@ -47,14 +47,13 @@ Thought Table
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                             <tr>
-                                <th>Thought</th>
                                 <th>Action</th>
+                                <th>Thought</th>
                             </tr>
                             </thead>
                             <tbody>
                                 @foreach ($alldata as $item)
                                 <tr>
-                                    <td>{{$item->thought}}</td>
                                     <td id="tooltip-container0" class="d-flex">
                                         {{-- <a href="{{ route('user.edit',[$item->id]) }}" class="me-3 text-primary"
                                             data-bs-container="#tooltip-container0" data-bs-toggle="tooltip"
@@ -69,6 +68,7 @@ Thought Table
                                                     class="mdi mdi-trash-can font-size-18"></i></button>
                                         </form> --}}
                                     </td>
+                                    <td>{{$item->thought}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

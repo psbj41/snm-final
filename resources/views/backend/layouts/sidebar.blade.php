@@ -32,19 +32,74 @@
                 </li>
 
                 <li class="menu-title">Admin</li>
+
+                <li>
+                    <a href="{{route('dashboard')}}" class="waves-effect">
+                        <i class="ri-home-4-fill"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-layout-6-fill"></i>
+                        <span>View Satsang</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-layout-6-fill"></i>
+                        <span>Duty List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-layout-6-fill"></i>
+                        <span>Administration Contact</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-layout-6-fill"></i>
+                        <span>Satsang Bhawan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-layout-6-fill"></i>
+                        <span>Guidelines</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-dashboard-line"></i>
+                        <span>Latest Update</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-dashboard-line"></i>
+                        <span>Share App</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-dashboard-line"></i>
+                        <span>Contact Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-dashboard-line"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
                 <li>
                     <a href="{{route('upload.page')}}" class="waves-effect">
                         <i class="ri-dashboard-line"></i>
                         <span>Upload Page</span>
                     </a>
                 </li>
-                
-                <li>
-                    <a href="{{route('dashboard')}}" class="waves-effect">
-                        <i class="ri-dashboard-line"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
+
 
             </ul>
         </div>

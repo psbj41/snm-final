@@ -67,22 +67,10 @@ Users Table
             <div class="col-xl-4 col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5>Duty List</h5>
+                        <h5>Special Day Notification and Files</h5>
                         <h6> Excel File Upload </h6>
                         <p>Upload Excel File if you have latest info about "Administration Contact"</p>
-                        <a class="btn btn-success" href="" style="width:100%">Go Upload Page</a>
-                        <a class="btn btn-info" href="{{route('admin.upload.page')}}" style="width:100%; margin-top:10px">View Data Page</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5>Sanyojak Mukhi & Sanyojak Contact</h5>
-                        <h6> Excel File Upload </h6>
-                        <p>Upload Excel File if you have latest info about "Administration Contact"</p>
-                        <a class="btn btn-success" href="" style="width:100%">Go Upload Page</a>
-                        <a class="btn btn-info" href="{{route('admin.upload.page')}}" style="width:100%; margin-top:10px">View Data Page</a>
+                        <a class="btn btn-success" href="{{route('special.index')}}" style="width:100%">Go Upload Page</a>
                     </div>
                 </div>
             </div>
@@ -99,10 +87,22 @@ Users Table
             <div class="col-xl-4 col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5>Special Day Notification and Files</h5>
+                        <h5>Duty List</h5>
                         <h6> Excel File Upload </h6>
                         <p>Upload Excel File if you have latest info about "Administration Contact"</p>
-                        <a class="btn btn-success" href="{{route('special.index')}}" style="width:100%">Go Upload Page</a>
+                        <a class="btn btn-success" href="{{route('duty.upload.page')}}" style="width:100%">Go Upload Page</a>
+                        <a class="btn btn-info" href="{{route('duty.data.page')}}" style="width:100%; margin-top:10px">View Data Page</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Sanyojak Mukhi & Sanyojak Contact</h5>
+                        <h6> Excel File Upload </h6>
+                        <p>Upload Excel File if you have latest info about "Administration Contact"</p>
+                        <a class="btn btn-success" href="" style="width:100%">Go Upload Page</a>
+                        <a class="btn btn-info" href="{{route('admin.upload.page')}}" style="width:100%; margin-top:10px">View Data Page</a>
                     </div>
                 </div>
             </div>

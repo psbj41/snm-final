@@ -35,7 +35,7 @@ Route::middleware(['auth'])->group(function () {
     //Pages
     Route::controller(PageController::class)->group(function () {
         Route::get('uploads-page', 'uploadPage')->name('upload.page');
-        
+
         //thoughts
         Route::get('uploads-page/thought', 'uploadThoughtPage')->name('thought.upload.page');
         Route::post('uploads-page/thought', 'uploadThoughtStore')->name('thought.upload.store');
@@ -50,6 +50,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('uploads-page/admin', 'uploadAdminPage')->name('admin.upload.page');
         Route::post('uploads-page/admin', 'uploadAdminStore')->name('admin.upload.store');
         Route::get('uploads-page/admin/data', 'adminDataPage')->name('admin.data.page');
+
+        //Duty
+        Route::get('uploads-page/duty', 'uploadDutyPage')->name('duty.upload.page');
+        Route::post('uploads-page/duty', 'uploadDutyStore')->name('duty.upload.store');
+        Route::get('uploads-page/duty/data', 'dutyDataPage')->name('duty.data.page');
 
     });
 

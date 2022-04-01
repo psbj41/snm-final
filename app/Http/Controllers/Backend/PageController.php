@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Imports\BhawanImport;
+use App\Imports\DutyImport;
 use App\Imports\ThoughtImport;
 use App\Imports\UserImport;
 use App\Models\Bhawan;
+use App\Models\Duty;
 use App\Models\Thought;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -81,6 +83,26 @@ class PageController extends Controller
     {
         $alldata = User::all();
         return view('backend.pages.upload.admin.index',compact('alldata'));
+    }
+    // End Admin upload page
+
+
+    // Admin upload page
+    public function uploadDutyPage()
+    {
+        return view('backend.pages.upload.dutylist.dutylist');
+    }
+
+    public function uploadDutyStore(Request $request)
+    {
+        Excel::import(new DutyImport, $request->file('file'));
+        return redirect()->route('duty.upload.page')->with('success', 'All good!');
+    }
+
+    public function dutyDataPage()
+    {
+        $alldata = Duty::all();
+        return view('backend.pages.upload.dutylist.index',compact('alldata'));
     }
     // End Admin upload page
 

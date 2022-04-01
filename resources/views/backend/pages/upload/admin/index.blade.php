@@ -47,22 +47,17 @@ Admin Table
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                             <tr>
+                                <th>Action</th>
                                 <th>Name</th>
                                 <th>Contact</th>
                                 <th>Email</th>
                                 <th>Gender</th>
                                 <th>Address</th>
-                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                                 @foreach ($alldata as $item)
                                 <tr>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->phone}}</td>
-                                    <td>{{$item->email_address}}</td>
-                                    <td>{{$item->gender}}</td>
-                                    <td>{{$item->address}}</td>
                                     <td id="tooltip-container0" class="d-flex">
                                         {{-- <a href="{{ route('user.edit',[$item->id]) }}" class="me-3 text-primary"
                                             data-bs-container="#tooltip-container0" data-bs-toggle="tooltip"
@@ -77,6 +72,11 @@ Admin Table
                                                     class="mdi mdi-trash-can font-size-18"></i></button>
                                         </form> --}}
                                     </td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->phone}}</td>
+                                    <td>{{$item->email_address}}</td>
+                                    <td>{{$item->gender}}</td>
+                                    <td>{{$item->address}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
