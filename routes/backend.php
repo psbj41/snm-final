@@ -56,6 +56,15 @@ Route::middleware(['auth'])->group(function () {
         Route::post('uploads-page/duty', 'uploadDutyStore')->name('duty.upload.store');
         Route::get('uploads-page/duty/data', 'dutyDataPage')->name('duty.data.page');
 
+        //Administration
+        Route::get('administration', 'administrationPage')->name('administration.page');
+        Route::get('administration/pracharak', 'administrationpracharakPage')->name('administration.pracharak.page');
+        Route::get('administration/pracharika', 'administrationpracharikaPage')->name('administration.pracharika.page');
+        Route::get('administration/sanyojak', 'administrationsanyojakPage')->name('administration.sanyojak.page');
+        Route::get('administration/gyan-pracharak', 'administrationgyanPage')->name('administration.gyan.page');
+        Route::get('administration/department', 'administrationdepartmentPage')->name('administration.department.page');
+
+
     });
 
     //Special

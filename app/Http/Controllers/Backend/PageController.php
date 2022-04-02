@@ -75,6 +75,8 @@ class PageController extends Controller
 
     public function uploadAdminStore(Request $request)
     {
+        $oldData = User::where('id',"!=","1")->get();
+        $oldData->each->delete();
         Excel::import(new UserImport, $request->file('file'));
         return redirect()->route('admin.upload.page')->with('success', 'All good!');
     }
@@ -106,4 +108,39 @@ class PageController extends Controller
     }
     // End Admin upload page
 
+    //Administration
+    public function administrationPage()
+    {
+        return view('backend.pages.administration.index');
+    }
+
+    public function administrationpracharakPage()
+    {
+        $alldata = User::where('gender',"=","M")->where('designation', "=","Pracharak")->get();
+        return view('backend.pages.administration.pracharak',compact('alldata'));
+    }
+
+    public function administrationpracharikaPage()
+    {
+        $alldata = User::where('gender',"=","F")->where('designation', "=","Pracharika")->get();
+        return view('backend.pages.administration.pracharika',compact('alldata'));
+    }
+
+    public function administrationsanyojakPage()
+    {
+        $alldata = Duty::all();
+        return view('backend.pages.administration.sanyojak',compact('alldata'));
+    }
+
+    public function administrationgyanPage()
+    {
+        $alldata = Duty::all();
+        return view('backend.pages.administration.gyan',compact('alldata'));
+    }
+
+    public function administrationdepartmentPage()
+    {
+        $alldata = Duty::all();
+        return view('backend.pages.administration.department',compact('alldata'));
+    }
 }

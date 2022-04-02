@@ -55,7 +55,9 @@ Department Table
                                     <tr>
                                         <th scope="row">1</th>
                                         <td>{{strToUpper($item->name)}}</td>
-                                        <td>{{$item->departmentpdf}}</td>
+                                        <td>
+                                            <a href="{{$item->departmentpdf}}" class="btn btn-primary">View Pdf</a>
+                                        </td>
                                         <td id="tooltip-container0" class="d-flex">
                                             <a href="{{ route('department.edit',[$item->id]) }}" class="me-3 text-primary"
                                                 data-bs-container="#tooltip-container0" data-bs-toggle="tooltip"

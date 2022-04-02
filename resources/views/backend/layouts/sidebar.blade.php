@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect">
+                    <a href="{{route('administration.page')}}" class="waves-effect">
                         <i class="ri-layout-6-fill"></i>
                         <span>Administration Contact</span>
                     </a>
