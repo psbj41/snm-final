@@ -12,6 +12,7 @@ use App\Models\Duty;
 use App\Models\Thought;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Concerns\ToArray;
 use Maatwebsite\Excel\Facades\Excel;
@@ -106,6 +107,18 @@ class PageController extends Controller
         $alldata = Duty::all();
         return view('backend.pages.upload.dutylist.index',compact('alldata'));
     }
+
+    public function dutyDataPage2()
+    {
+        $alldata = Duty::all();
+        return view('backend.pages.upload.dutylist.index2',compact('alldata'));
+    }
+
+    public function dutyDataPageMy()
+    {
+        $alldata = Duty::where('pracharak_contact',"=",Auth::user()->phone)->get();
+        return view('backend.pages.upload.dutylist.index2',compact('alldata'));
+    }
     // End Admin upload page
 
     //Administration
@@ -143,4 +156,7 @@ class PageController extends Controller
         $alldata = Duty::all();
         return view('backend.pages.administration.department',compact('alldata'));
     }
+
+    //End Administrator
+
 }

@@ -96,14 +96,22 @@ class UserController extends Controller
             $user->update([
                 'name' => $request->name,
                 'phone' => $request->phone,
-                'alternate_phone' => $request->alternate_phone
+                'alternate_phone' => $request->alternate_phone,
+                'email_address' => $request->email_address,
+                'gender' => $request->gender,
+                'address' => $request->address,
+                'area' => $request->area,
             ]);
         }else{
             $user->update([
                 'name' => $request->name,
                 'phone' => $request->phone,
                 'password' => Hash::make($request->password),
-                'alternate_phone' => $request->alternate_phone
+                'alternate_phone' => $request->alternate_phone,
+                'email_address' => $request->email_address,
+                'gender' => $request->gender,
+                'address' => $request->address,
+                'area' => $request->area,
             ]);
         }
         $user->syncRoles([$request->role_id]);
@@ -120,5 +128,23 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect()->route('user.index')->with('success'," Successfully Deleted");
+    }
+
+    public function pageReset(){
+        return view('auth.passwordchange');
+    }
+
+
+    public function pageResetStore(Request $request){
+        $user = User::where('phone',$request->phone)->update([
+            'password' => Hash::make($request->password),
+            'remember_token' => '1',
+        ]);
+        return redirect()->route('login');
+    }
+
+    public function profile()
+    {
+        return view('backend.pages.admin.user.profile');
     }
 }

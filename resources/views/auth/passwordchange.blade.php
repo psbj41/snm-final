@@ -19,7 +19,7 @@
         }
         .main{
             width: 300px;
-            height: 300px;
+            height: 350px;
             background-color: rgb(255, 255, 255);
             position: absolute;
             top:0;
@@ -53,14 +53,13 @@
             font-size: 15px;
             font-weight: 600;
             color: white;
-            margin-bottom: 15px;
         }
         .main form{
             margin-top: 25%;
         }
         </style>
         <div class="main">
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('password.change.store') }}">
                 @csrf
                 <div class="input">
                     <input type="text" name="phone" placeholder="Mobile Number">
@@ -68,11 +67,13 @@
                 <div class="input">
                     <input type="password" name="password" placeholder="Password">
                 </div>
+                <div class="input">
+                    <input type="text" placeholder="Confirm Password">
+                </div>
                 <div>
-                    <button class="btn" type="submit">Log In</button>
+                    <button class="btn" type="submit">Reset Password</button>
                 </div>
             </form>
-            <a href="{{route('password.change')}}" class="for_pass">Forgot Password</a>
         </div>
 </body>
 </html>

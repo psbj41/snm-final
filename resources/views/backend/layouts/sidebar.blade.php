@@ -9,8 +9,8 @@
             </div> --}}
             <div class="mt-3">
                 <h4 class="font-size-16 mb-1">{{Auth::user()->name}}</h4>
-                <span class="text-muted"><i
-                        class="ri-record-circle-line align-middle font-size-14 text-success"></i> Online</span>
+                <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i>
+                    Online</span>
             </div>
         </div>
 
@@ -31,6 +31,13 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="{{route('upload.page')}}" class="waves-effect">
+                        <i class="ri-upload-cloud-line"></i>
+                        <span>Upload Page</span>
+                    </a>
+                </li>
+
                 <li class="menu-title">Admin</li>
 
                 <li>
@@ -41,66 +48,67 @@
                 </li>
                 <li>
                     <a href="#" class="waves-effect">
-                        <i class="ri-layout-6-fill"></i>
+                        <i class="ri-bubble-chart-line"></i>
                         <span>View Satsang</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect">
-                        <i class="ri-layout-6-fill"></i>
+                    <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
                         <span>Duty List</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('administration.page')}}" class="waves-effect">
-                        <i class="ri-layout-6-fill"></i>
+                        <i class="ri-shield-user-line"></i>
                         <span>Administration Contact</span>
                     </a>
                 </li>
                 <li>
                     <a href="#" class="waves-effect">
-                        <i class="ri-layout-6-fill"></i>
+                        <i class="ri-layout-masonry-line"></i>
                         <span>Satsang Bhawan</span>
                     </a>
                 </li>
                 <li>
                     <a href="#" class="waves-effect">
-                        <i class="ri-layout-6-fill"></i>
+                        <i class="ri-list-check-2"></i>
                         <span>Guidelines</span>
                     </a>
                 </li>
                 <li>
                     <a href="#" class="waves-effect">
-                        <i class="ri-dashboard-line"></i>
+                        <i class="ri-map-pin-time-line"></i>
                         <span>Latest Update</span>
                     </a>
                 </li>
                 <li>
                     <a href="#" class="waves-effect">
-                        <i class="ri-dashboard-line"></i>
+                        <i class="ri-share-line"></i>
                         <span>Share App</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect">
-                        <i class="ri-dashboard-line"></i>
+                    <a href="{{route('contact')}}" class="waves-effect">
+                        <i class="ri-phone-line"></i>
                         <span>Contact Us</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect">
-                        <i class="ri-dashboard-line"></i>
+                    <a href="{{route('user.profile')}}" class="waves-effect">
+                        <i class="ri-user-line"></i>
                         <span>Profile</span>
                     </a>
                 </li>
+
                 <li>
-                    <a href="{{route('upload.page')}}" class="waves-effect">
-                        <i class="ri-dashboard-line"></i>
-                        <span>Upload Page</span>
-                    </a>
+                    <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"><i
+                            class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
-
-
             </ul>
         </div>
         <!-- Sidebar -->

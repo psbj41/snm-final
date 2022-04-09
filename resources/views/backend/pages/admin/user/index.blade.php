@@ -64,10 +64,10 @@ Users Table
                                         <td style="border-bottom-width: 0px;">Alternate Phone No:</td>
                                         <td colspan="2" style="border-bottom-width: 0px;">{{$item->alternate_phone}}</td>
                                       </tr>
-                                      <tr>
+                                      {{-- <tr>
                                         <td style="border-bottom-width: 0px;">Role:</td>
                                         <td colspan="2" style="border-bottom-width: 0px;">{{strToUpper($item->roles[0]->name)}}</td>
-                                      </tr>
+                                      </tr> --}}
                                     </tbody>
                                 </table>
                                       <div class="d-flex" style="justify-content: space-evenly">

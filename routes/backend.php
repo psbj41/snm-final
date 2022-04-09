@@ -19,10 +19,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('password/change',[UserController::class,'pageReset'])->name('password.change');
+Route::post('password/change',[UserController::class,'pageResetStore'])->name('password.change.store');
+
 Route::middleware(['auth'])->group(function () {
 
     //user
     Route::resource('user', UserController::class);
+    Route::get('profile',[UserController::class,'profile'])->name('user.profile');
 
     //role
     Route::resource('role', RoleController::class);
@@ -34,35 +38,37 @@ Route::middleware(['auth'])->group(function () {
 
     //Pages
     Route::controller(PageController::class)->group(function () {
-        Route::get('uploads-page', 'uploadPage')->name('upload.page');
+    Route::get('uploads-page', 'uploadPage')->name('upload.page');
 
-        //thoughts
-        Route::get('uploads-page/thought', 'uploadThoughtPage')->name('thought.upload.page');
-        Route::post('uploads-page/thought', 'uploadThoughtStore')->name('thought.upload.store');
-        Route::get('uploads-page/thought/data', 'thoughtDataPage')->name('thought.data.page');
+    //thoughts
+    Route::get('uploads-page/thought', 'uploadThoughtPage')->name('thought.upload.page');
+    Route::post('uploads-page/thought', 'uploadThoughtStore')->name('thought.upload.store');
+    Route::get('uploads-page/thought/data', 'thoughtDataPage')->name('thought.data.page');
 
-        //Bhawans
-        Route::get('uploads-page/bhawan', 'uploadBhawanPage')->name('bhawan.upload.page');
-        Route::post('uploads-page/bhawan', 'uploadBhawanStore')->name('bhawan.upload.store');
-        Route::get('uploads-page/bhawan/data', 'bhawanDataPage')->name('bhawan.data.page');
+    //Bhawans
+    Route::get('uploads-page/bhawan', 'uploadBhawanPage')->name('bhawan.upload.page');
+    Route::post('uploads-page/bhawan', 'uploadBhawanStore')->name('bhawan.upload.store');
+    Route::get('uploads-page/bhawan/data', 'bhawanDataPage')->name('bhawan.data.page');
 
-        //Admin
-        Route::get('uploads-page/admin', 'uploadAdminPage')->name('admin.upload.page');
-        Route::post('uploads-page/admin', 'uploadAdminStore')->name('admin.upload.store');
-        Route::get('uploads-page/admin/data', 'adminDataPage')->name('admin.data.page');
+    //Admin
+    Route::get('uploads-page/admin', 'uploadAdminPage')->name('admin.upload.page');
+    Route::post('uploads-page/admin', 'uploadAdminStore')->name('admin.upload.store');
+    Route::get('uploads-page/admin/data', 'adminDataPage')->name('admin.data.page');
 
-        //Duty
-        Route::get('uploads-page/duty', 'uploadDutyPage')->name('duty.upload.page');
-        Route::post('uploads-page/duty', 'uploadDutyStore')->name('duty.upload.store');
-        Route::get('uploads-page/duty/data', 'dutyDataPage')->name('duty.data.page');
+    //Duty
+    Route::get('uploads-page/duty', 'uploadDutyPage')->name('duty.upload.page');
+    Route::post('uploads-page/duty', 'uploadDutyStore')->name('duty.upload.store');
+    Route::get('uploads-page/duty/data', 'dutyDataPage')->name('duty.data.page');
+    Route::get('uploads-page/duty/data2', 'dutyDataPage2')->name('duty.data.page2');
+    Route::get('uploads-page/duty/my/data2', 'dutyDataPageMy')->name('duty.data.my.page');
 
-        //Administration
-        Route::get('administration', 'administrationPage')->name('administration.page');
-        Route::get('administration/pracharak', 'administrationpracharakPage')->name('administration.pracharak.page');
-        Route::get('administration/pracharika', 'administrationpracharikaPage')->name('administration.pracharika.page');
-        Route::get('administration/sanyojak', 'administrationsanyojakPage')->name('administration.sanyojak.page');
-        Route::get('administration/gyan-pracharak', 'administrationgyanPage')->name('administration.gyan.page');
-        Route::get('administration/department', 'administrationdepartmentPage')->name('administration.department.page');
+    //Administration
+    Route::get('administration', 'administrationPage')->name('administration.page');
+    Route::get('administration/pracharak', 'administrationpracharakPage')->name('administration.pracharak.page');
+    Route::get('administration/pracharika', 'administrationpracharikaPage')->name('administration.pracharika.page');
+    Route::get('administration/sanyojak', 'administrationsanyojakPage')->name('administration.sanyojak.page');
+    Route::get('administration/gyan-pracharak', 'administrationgyanPage')->name('administration.gyan.page');
+    Route::get('administration/department', 'administrationdepartmentPage')->name('administration.department.page');
 
 
     });
@@ -72,5 +78,11 @@ Route::middleware(['auth'])->group(function () {
 
     //Department
     Route::resource('department', DepartmentController::class);
+
+    //Contact Us
+    Route::get('/', function () {
+        return view('backend.pages.contact_us');
+    })->name('contact');
+
 
 });

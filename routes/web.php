@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Thought;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return view('backend.pages.index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/home', function () {
+    $thought = Thought::inRandomOrder()->first();
+    $thought = $thought->thought;
+    return view('dashboard',compact('thought'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
