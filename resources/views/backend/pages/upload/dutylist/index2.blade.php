@@ -28,7 +28,11 @@ Duty List Table
             </div>
             <div>
                 <form action="">
-                    <input type="search" style="width:100%; border:1px solid rgb(206, 206, 206); outline:none; padding:10px; border-radius:5px; margin-bottom:10px" placeholder="Search">
+                    <input type="search" value="{{$search}}" style="width:100%; border:1px solid rgb(206, 206, 206); outline:none; padding:8px; border-radius:5px; margin-bottom:10px" placeholder="Search" name="search">
+                    <div style="display: flex; justify-content:space-between; margin-bottom:10px">
+                        <button style="width:49%;" class="btn btn-success">Search</button>
+                        <a href="{{route('duty.data.page2')}}" style="width:49%;" class="btn btn-danger">Reset</a>
+                    </div>
                 </form>
                 <div class="row">
                     <div class="col-sm-12">

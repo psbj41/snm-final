@@ -108,16 +108,32 @@ class PageController extends Controller
         return view('backend.pages.upload.dutylist.index',compact('alldata'));
     }
 
-    public function dutyDataPage2()
+    public function dutyDataPage2(Request $request)
     {
-        $alldata = Duty::all();
-        return view('backend.pages.upload.dutylist.index2',compact('alldata'));
+        $search = $request['search'] ?? "";
+        if($search != ""){
+            $alldata = Duty::where('name','LIKE',"%$search%")->orwhere('dutydate','LIKE',"%$search%")
+            ->orwhere('address','LIKE',"%$search%")->orwhere('time','LIKE',"%$search%")
+            ->orwhere('contact','LIKE',"%$search%")->orwhere('pracharak_name','LIKE',"%$search%")
+            ->orwhere('pracharak_contact','LIKE',"%$search%")->get();
+        }else{
+            $alldata = Duty::all();
+        }
+        return view('backend.pages.upload.dutylist.index2',compact(['alldata','search']));
     }
 
-    public function dutyDataPageMy()
+    public function dutyDataPageMy(Request $request)
     {
-        $alldata = Duty::where('pracharak_contact',"=",Auth::user()->phone)->get();
-        return view('backend.pages.upload.dutylist.index2',compact('alldata'));
+        $search = $request['search'] ?? "";
+        if($search != ""){
+            $alldata = Duty::where('name','LIKE',"%$search%")->orwhere('dutydate','LIKE',"%$search%")
+            ->orwhere('address','LIKE',"%$search%")->orwhere('time','LIKE',"%$search%")
+            ->orwhere('contact','LIKE',"%$search%")->orwhere('pracharak_name','LIKE',"%$search%")
+            ->orwhere('pracharak_contact','LIKE',"%$search%")->get();
+        }else{
+            $alldata = Duty::where('pracharak_contact',"=",Auth::user()->phone)->get();
+        }
+        return view('backend.pages.upload.dutylist.index2',compact(['alldata','search']));
     }
     // End Admin upload page
 
