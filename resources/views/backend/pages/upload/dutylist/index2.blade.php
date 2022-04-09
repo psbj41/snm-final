@@ -9,14 +9,16 @@ Duty List Table
 @endsection
 
 @section('content')
-<div class="page-content">
+
+<div class="page-content" id="dutylistscroll">
     <div class="container-fluid">
 
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
-                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
                     <h4 class="mb-sm-0">Duty List</h4>
+                    <a href="{{route('dashboard')}}" class="btn btn-primary" style="width:40%; margin-bottom: 10px">Home Page</a>
                 </div>
             </div>
         </div>
@@ -24,22 +26,25 @@ Duty List Table
 
         <div class="row">
             <div>
-                <a href="{{route('dashboard')}}" class="btn btn-primary" style="width:100%; margin-bottom: 10px">Home Page</a>
-            </div>
-            <div>
                 <form action="">
-                    <input type="search" value="{{$search}}" style="width:100%; border:1px solid rgb(206, 206, 206); outline:none; padding:8px; border-radius:5px; margin-bottom:10px" placeholder="Search" name="search">
+                    <input type="search" value="{{$search}}" style="width:100%; border:1px solid rgb(206, 206, 206); outline:none; padding:8px; border-radius:5px; margin-bottom:10px" placeholder="Search by typing" name="search">
                     <div style="display: flex; justify-content:space-between; margin-bottom:10px">
-                        <button style="width:49%;" class="btn btn-success">Search</button>
+                        <button style="width:49%;" class="btn btn-success">Search by typing</button>
                         <a href="{{route('duty.data.page2')}}" style="width:49%;" class="btn btn-danger">Reset</a>
                     </div>
                 </form>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <input class="form-control" type="month" value="2022-04"
-                            id="example-month-input">
+                <form action="">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input class="form-control" type="month" value="2022-04" name="month"
+                                id="example-month-input">
+                        </div>
                     </div>
-                </div>
+                    <div style="display: flex; justify-content:space-between; margin:10px 0px">
+                        <button style="width:49%;" class="btn btn-success">Search by Month and Year</button>
+                        <a href="{{route('duty.data.page2')}}" style="width:49%;" class="btn btn-danger">Reset</a>
+                    </div>
+                </form>
                 <div class="text-center" style="display: flex; justify-content: center; align-items: center;">
                         <form action="" style="padding: 10px;">
                             <a href="{{route('duty.data.page2')}}" class="btn btn-success">

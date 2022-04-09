@@ -60,7 +60,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('uploads-page/duty', 'uploadDutyStore')->name('duty.upload.store');
     Route::get('uploads-page/duty/data', 'dutyDataPage')->name('duty.data.page');
     Route::get('uploads-page/duty/data2', 'dutyDataPage2')->name('duty.data.page2');
-    Route::get('uploads-page/duty/my/data2', 'dutyDataPageMy')->name('duty.data.my.page');
+    Route::get('uploads-page/duty/own/data2', 'dutyDataPageMy')->name('duty.data.my.page');
 
     //Administration
     Route::get('administration', 'administrationPage')->name('administration.page');

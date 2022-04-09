@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Concerns\ToArray;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\HeadingRowImport;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -111,11 +112,24 @@ class PageController extends Controller
     public function dutyDataPage2(Request $request)
     {
         $search = $request['search'] ?? "";
+        $month = $request['month'] ?? "";
+
+        if($month != ""){
+            $m = date('F', strtotime($request['month']));
+            $m = substr($m, 0, 3);
+            $y = Carbon::parse($request['month'])->year;
+            $month = $m." ".$y;
+        }
+
         if($search != ""){
             $alldata = Duty::where('name','LIKE',"%$search%")->orwhere('dutydate','LIKE',"%$search%")
             ->orwhere('address','LIKE',"%$search%")->orwhere('time','LIKE',"%$search%")
             ->orwhere('contact','LIKE',"%$search%")->orwhere('pracharak_name','LIKE',"%$search%")
             ->orwhere('pracharak_contact','LIKE',"%$search%")->get();
+        }else if($month != ""){
+            $alldata = Duty::where('dutydate','LIKE',"%$month%")->get();
+            Log::info("I am here");
+            Log::info($alldata);
         }else{
             $alldata = Duty::all();
         }
@@ -125,12 +139,24 @@ class PageController extends Controller
     public function dutyDataPageMy(Request $request)
     {
         $search = $request['search'] ?? "";
+        $month = $request['month'] ?? "";
+
+        if($month != ""){
+            $m = date('F', strtotime($request['month']));
+            $m = substr($m, 0, 3);
+            $y = Carbon::parse($request['month'])->year;
+            $month = $m." ".$y;
+        }
+
         if($search != ""){
             $alldata = Duty::where('name','LIKE',"%$search%")->orwhere('dutydate','LIKE',"%$search%")
             ->orwhere('address','LIKE',"%$search%")->orwhere('time','LIKE',"%$search%")
             ->orwhere('contact','LIKE',"%$search%")->orwhere('pracharak_name','LIKE',"%$search%")
             ->orwhere('pracharak_contact','LIKE',"%$search%")->get();
-        }else{
+        }else if($month != ""){
+            $alldata = Duty::where('dutydate',"LIKE","%$month%")->get();
+        }
+        else{
             $alldata = Duty::where('pracharak_contact',"=",Auth::user()->phone)->get();
         }
         return view('backend.pages.upload.dutylist.index2',compact(['alldata','search']));
