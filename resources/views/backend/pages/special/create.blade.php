@@ -15,16 +15,9 @@ Special Days Table
          <!-- start page title -->
          <div class="row">
             <div class="col-12">
-                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Forms Elements</h4>
-
-                    <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                            <li class="breadcrumb-item active">Forms Elements</li>
-                        </ol>
-                    </div>
-
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Special Day Notification & Files</h4>
+                    <a class="btn btn-primary" href="{{route('upload.page')}}" style="width:40%; margin-bottom: 10px">Back Page</a>
                 </div>
             </div>
         </div>
@@ -34,12 +27,7 @@ Special Days Table
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
-                        <div class="butttonadd">
-                            <a class="btn btn-primary" href="{{route('special.index')}}" style="margin-bottom:10px; width:100%">Back to User Index</a>
-                        </div>
-
-                        <h3 class="text-center m-2">Add New User Form</h3>
+                        <h3 class="text-center m-2">Add New Special Day Notification and File</h3>
                         <form action="{{ route('special.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">

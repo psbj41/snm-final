@@ -49,6 +49,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('uploads-page/bhawan', 'uploadBhawanPage')->name('bhawan.upload.page');
     Route::post('uploads-page/bhawan', 'uploadBhawanStore')->name('bhawan.upload.store');
     Route::get('uploads-page/bhawan/data', 'bhawanDataPage')->name('bhawan.data.page');
+    Route::get('uploads-page/bhawan/data2', 'bhawanDataPage2')->name('bhawan.data.page2');
+    Route::get('uploads-page/bhawan/today/data2', 'bhawanDataPageToday')->name('bhawan.data.today.page');
 
     //Admin
     Route::get('uploads-page/admin', 'uploadAdminPage')->name('admin.upload.page');

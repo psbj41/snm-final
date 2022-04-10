@@ -9,8 +9,6 @@
             </div> --}}
             <div class="mt-3">
                 <h4 class="font-size-16 mb-1">{{Auth::user()->name}}</h4>
-                <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i>
-                    Online</span>
             </div>
         </div>
 
@@ -19,7 +17,7 @@
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">SuperAdmin</li>
-                <li>
+                {{-- <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-admin-line"></i>
                         <span>Admin</span>
@@ -29,7 +27,7 @@
                         <li><a href="{{route('role.index')}}">Roles</a></li>
                         <li><a href="{{route('permission.index')}}">Permissions</a></li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="{{route('upload.page')}}" class="waves-effect">
@@ -47,7 +45,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect">
+                    <a href="{{route('bhawan.data.today.page')}}" class="waves-effect">
                         <i class="ri-bubble-chart-line"></i>
                         <span>View Satsang</span>
                     </a>
@@ -65,7 +63,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect">
+                    <a href="{{route('bhawan.data.page2')}}" class="waves-effect">
                         <i class="ri-layout-masonry-line"></i>
                         <span>Satsang Bhawan</span>
                     </a>

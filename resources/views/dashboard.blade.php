@@ -73,12 +73,16 @@
                                 </div>
                             </div> --}}
                             <div class="thought-box">
-                                <h5 class="text-center">Thought of the day</h5>
+                                <h5 class="text-center" style="color: rgb(1, 1, 119); font-weight:600">Thought of the day</h5>
                                 <p>{{$thought}}</p>
                             </div>
                             <div class="thought-box text-center">
-                                <h5>Quick Link</h5>
-                                <p>Today is Monday<br>Click here for Sangat Details</p>
+                                <h4 style="color: rgb(1, 1, 119); font-weight:600">Quick Link</h4>
+                                <h5>Today is {{Carbon\Carbon::now()->format("l")}}<br>
+                                </h5>
+                                <a href="{{route('bhawan.data.today.page')}}" class="btn btn-success">
+                                    Click here for Sangat Details
+                                </a>
                             </div>
                         </div>
                     </div>

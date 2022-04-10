@@ -18,6 +18,7 @@ use Maatwebsite\Excel\Concerns\ToArray;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\HeadingRowImport;
 use Carbon\Carbon;
+use DateTime;
 
 class PageController extends Controller
 {
@@ -67,6 +68,53 @@ class PageController extends Controller
         $alldata = Bhawan::all();
         return view('backend.pages.upload.bhawan.index',compact('alldata'));
     }
+
+    public function bhawanDataPage2(Request $request)
+    {
+        $search = $request['search'] ?? "";
+        $day = $request['day'] ?? "";
+
+        if($search != ""){
+            $alldata = Bhawan::where('area','LIKE',"%$search%")->orwhere('day','LIKE',"%$search%")
+            ->orwhere('time','LIKE',"%$search%")->orwhere('address','LIKE',"%$search%")
+            ->orwhere('sector_sanyojak_name','LIKE',"%$search%")->orwhere('sector_sanyojak_contact','LIKE',"%$search%")
+            ->orwhere('area_mukhi_1_name','LIKE',"%$search%")->orwhere('area_mukhi_1_contact','LIKE',"%$search%")
+            ->orwhere('area_mukhi_2_name','LIKE',"%$search%")->orwhere('area_mukhi_2_contact','LIKE',"%$search%")
+            ->orwhere('contact_person_1_name','LIKE',"%$search%")->orwhere('contact_person_1_contact','LIKE',"%$search%")
+            ->orwhere('contact_person_2_name','LIKE',"%$search%")->orwhere('contact_person_2_contact','LIKE',"%$search%")
+            ->orwhere('type_of_satsang','LIKE',"%$search%")->simplePaginate(1000);
+        }else if($day != ""){
+            $alldata = Bhawan::where('day','LIKE',"%$day%")->simplePaginate(1000);
+        }else{
+            $alldata = Bhawan::simplePaginate(12);
+        }
+        return view('backend.pages.upload.bhawan.index2',compact(['alldata','search','day']));
+    }
+
+    public function bhawanDataPageToday(Request $request)
+    {
+        $search = $request['search'] ?? "";
+        $day = $request['day'] ?? "";
+        $current_day = Carbon::now()->format("l");
+
+        if($search != ""){
+            $alldata = Bhawan::where('area','LIKE',"%$search%")->orwhere('day','LIKE',"%$search%")
+            ->orwhere('time','LIKE',"%$search%")->orwhere('address','LIKE',"%$search%")
+            ->orwhere('sector_sanyojak_name','LIKE',"%$search%")->orwhere('sector_sanyojak_contact','LIKE',"%$search%")
+            ->orwhere('area_mukhi_1_name','LIKE',"%$search%")->orwhere('area_mukhi_1_contact','LIKE',"%$search%")
+            ->orwhere('area_mukhi_2_name','LIKE',"%$search%")->orwhere('area_mukhi_2_contact','LIKE',"%$search%")
+            ->orwhere('contact_person_1_name','LIKE',"%$search%")->orwhere('contact_person_1_contact','LIKE',"%$search%")
+            ->orwhere('contact_person_2_name','LIKE',"%$search%")->orwhere('contact_person_2_contact','LIKE',"%$search%")
+            ->orwhere('type_of_satsang','LIKE',"%$search%")->simplePaginate(1000);
+        }else if($day != ""){
+            $alldata = Bhawan::where('day','LIKE',"%$day%")->simplePaginate(1000);
+        }
+        else{
+            $alldata = Bhawan::where('day','LIKE', "%$current_day%")->simplePaginate(12);
+        }
+        return view('backend.pages.upload.bhawan.index2',compact(['alldata','search','day','current_day']));
+    }
+
     // End Bhawan upload page
 
     // Admin upload page
@@ -113,6 +161,7 @@ class PageController extends Controller
     {
         $search = $request['search'] ?? "";
         $month = $request['month'] ?? "";
+        $month1 = $request['month'] ?? "";
 
         if($month != ""){
             $m = date('F', strtotime($request['month']));
@@ -125,15 +174,13 @@ class PageController extends Controller
             $alldata = Duty::where('name','LIKE',"%$search%")->orwhere('dutydate','LIKE',"%$search%")
             ->orwhere('address','LIKE',"%$search%")->orwhere('time','LIKE',"%$search%")
             ->orwhere('contact','LIKE',"%$search%")->orwhere('pracharak_name','LIKE',"%$search%")
-            ->orwhere('pracharak_contact','LIKE',"%$search%")->get();
+            ->orwhere('pracharak_contact','LIKE',"%$search%")->simplePaginate(1000);
         }else if($month != ""){
-            $alldata = Duty::where('dutydate','LIKE',"%$month%")->get();
-            Log::info("I am here");
-            Log::info($alldata);
+            $alldata = Duty::where('dutydate','LIKE',"%$month%")->simplePaginate(1000);
         }else{
-            $alldata = Duty::all();
+            $alldata = Duty::simplePaginate(12);
         }
-        return view('backend.pages.upload.dutylist.index2',compact(['alldata','search']));
+        return view('backend.pages.upload.dutylist.index2',compact(['alldata','search','month1']));
     }
 
     public function dutyDataPageMy(Request $request)
@@ -152,12 +199,12 @@ class PageController extends Controller
             $alldata = Duty::where('name','LIKE',"%$search%")->orwhere('dutydate','LIKE',"%$search%")
             ->orwhere('address','LIKE',"%$search%")->orwhere('time','LIKE',"%$search%")
             ->orwhere('contact','LIKE',"%$search%")->orwhere('pracharak_name','LIKE',"%$search%")
-            ->orwhere('pracharak_contact','LIKE',"%$search%")->get();
+            ->orwhere('pracharak_contact','LIKE',"%$search%")->simplePaginate(1000);
         }else if($month != ""){
-            $alldata = Duty::where('dutydate',"LIKE","%$month%")->get();
+            $alldata = Duty::where('dutydate',"LIKE","%$month%")->simplePaginate(1000);
         }
         else{
-            $alldata = Duty::where('pracharak_contact',"=",Auth::user()->phone)->get();
+            $alldata = Duty::where('pracharak_contact',"=",Auth::user()->phone)->simplePaginate(12);
         }
         return view('backend.pages.upload.dutylist.index2',compact(['alldata','search']));
     }

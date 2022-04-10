@@ -15,16 +15,9 @@ Special Days Table
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
-                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Directory</h4>
-
-                    <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Utility</a></li>
-                            <li class="breadcrumb-item active">Directory</li>
-                        </ol>
-                    </div>
-
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Special Day Notification & Files</h4>
+                    <a class="btn btn-primary" href="{{route('upload.page')}}" style="width:40%; margin-bottom: 10px">Back Page</a>
                 </div>
             </div>
         </div>
@@ -56,7 +49,7 @@ Special Days Table
                                         <th scope="row">1</th>
                                         <td>{{strToUpper($item->name)}}</td>
                                         <td>
-                                            <a href="{{$item->specialpdf}}" class="btn btn-primary">{{strToUpper($item->name)}}</a>
+                                            <a href="{{$item->specialpdf}}" class="btn btn-link">{{strToUpper($item->name)}}</a>
                                         </td>
                                         <td id="tooltip-container0" class="d-flex">
                                             <a href="{{ route('special.edit',[$item->id]) }}" class="me-3 text-primary"
