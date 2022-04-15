@@ -29,7 +29,7 @@ Special Days Table
                     <div class="card-body">
                         <div class="butttonadd">
                             <a class="btn btn-primary" href="{{route('special.create')}}"
-                                style="margin-bottom:10px; width:100%">Add New Special</a>
+                                style="margin-bottom:10px; width:100%">Add New Special Day Notification & Files</a>
                         </div>
 
                         <div class="table-responsive">

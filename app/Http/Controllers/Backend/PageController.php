@@ -187,6 +187,8 @@ class PageController extends Controller
     {
         $search = $request['search'] ?? "";
         $month = $request['month'] ?? "";
+        $month1 = $request['month'] ?? "";
+
 
         if($month != ""){
             $m = date('F', strtotime($request['month']));
@@ -206,7 +208,7 @@ class PageController extends Controller
         else{
             $alldata = Duty::where('pracharak_contact',"=",Auth::user()->phone)->simplePaginate(12);
         }
-        return view('backend.pages.upload.dutylist.index2',compact(['alldata','search']));
+        return view('backend.pages.upload.dutylist.index2',compact(['alldata','search','month1']));
     }
     // End Admin upload page
 

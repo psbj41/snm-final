@@ -26,11 +26,18 @@ Duty List Table
 
         <div class="row">
             <div>
-                <form action="">
-                    <input type="search" value="{{$search}}" style="width:100%; border:1px solid rgb(206, 206, 206); outline:none; padding:8px; border-radius:5px; margin-bottom:10px" placeholder="Search by typing" name="search">
+                <form action="" class="d-flex">
+                    <div style="width:70%; border:1px solid rgb(206, 206, 206); background-color:white;outline:none; padding:8px; border-radius:5px; margin-bottom:10px; display:flex">
+                        <i class="ri-search-eye-line"></i>
+                        <input type="search" value="{{$search}}"  placeholder="Search" name="search" style="border: none; outline:none">
+                    </div>
                     <div style="display: flex; justify-content:space-between; margin-bottom:10px">
-                        <button style="width:49%;" class="btn btn-success">Search by typing</button>
-                        <a href="{{route('duty.data.page2')}}" style="width:49%;" class="btn btn-danger">Reset</a>
+                        <button style="width:15%;" class="btn btn-success">
+                        <i class="ri-arrow-right-s-fill"></i>
+                        </button>
+                        <a href="{{route('duty.data.page2')}}" style="width:49%;" class="btn btn-danger">
+                            <i class="ri-refresh-line"></i>
+                        </a>
                     </div>
                 </form>
                 <form action="">
@@ -41,8 +48,7 @@ Duty List Table
                         </div>
                     </div>
                     <div style="display: flex; justify-content:space-between; margin:10px 0px">
-                        <button style="width:49%;" class="btn btn-success">Search by Month and Year</button>
-                        <a href="{{route('duty.data.page2')}}" style="width:49%;" class="btn btn-danger">Reset</a>
+                        <button style="width:49%;" class="btn btn-success">click</button>
                     </div>
                 </form>
                 <div class="text-center" style="display: flex; justify-content: center; align-items: center;">

@@ -17,8 +17,7 @@ Duty List Table
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Duty List</h4>
-                    <a href="{{route('dashboard')}}" class="btn btn-primary" style="width:40%; margin-bottom: 10px">Home Page</a>
+                    <h6 class="mb-sm-0">Satsang Bhawan</h6>
                 </div>
             </div>
         </div>
@@ -26,46 +25,26 @@ Duty List Table
 
         <div class="row">
             <div>
-                <form action="">
-                    <input type="search" value="{{$search}}" style="width:100%; border:1px solid rgb(206, 206, 206); outline:none; padding:8px; border-radius:5px; margin-bottom:10px" placeholder="Search by typing" name="search">
-                    <div style="display: flex; justify-content:space-between; margin-bottom:10px">
-                        <button style="width:49%;" class="btn btn-success">Search by typing</button>
-                        <a href="{{route('bhawan.data.page2')}}" style="width:49%;" class="btn btn-danger">Reset</a>
-                    </div>
+                <form action="" class="d-flex" style="margin-bottom:10px">
+                    <input type="search" value="{{$search}}" style="width:75%; border:1px solid rgb(206, 206, 206); outline:none; padding:8px; border-radius:5px;" placeholder="Search" name="search">
+                    <button style="width:25%;" class="btn btn-success">Search</button>
                 </form>
-                <form action="">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <select class="form-control" type="month" name="day"
-                                id="example-month-input">
-                                <option value="Select">Select Day</option>
-                                <option value="Monday" @if($day == 'Monday') selected @endif>Monday</option>
-                                <option value="Tuesday" @if($day == 'Tuesday')selected @endif>Tuesday</option>
-                                <option value="Wednesday" @if($day == 'Wednesday')selected @endif>Wednesday</option>
-                                <option value="Thursday" @if($day == 'Thursday')selected @endif>Thursday</option>
-                                <option value="Friday" @if($day == 'Friday')selected @endif>Friday</option>
-                                <option value="Saturday" @if($day == 'Saturday')selected @endif>Saturday</option>
-                                <option value="Sunday" @if($day == 'Sunday')selected @endif>Sunday</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div style="display: flex; justify-content:space-between; margin:10px 0px">
-                        <button style="width:49%;" class="btn btn-success">Search by Month and Year</button>
-                        <a href="{{route('bhawan.data.page2')}}" style="width:49%;" class="btn btn-danger">Reset</a>
-                    </div>
+                <form action="" class="d-flex">
+                    <select style="width: 75%;" class="form-control" type="month" name="day"
+                        id="example-month-input">
+                        <option value="Select">Select Option</option>
+                        <option value="Monday" @if($day == 'Monday') selected @endif>Monday</option>
+                        <option value="Tuesday" @if($day == 'Tuesday')selected @endif>Tuesday</option>
+                        <option value="Wednesday" @if($day == 'Wednesday')selected @endif>Wednesday</option>
+                        <option value="Thursday" @if($day == 'Thursday')selected @endif>Thursday</option>
+                        <option value="Friday" @if($day == 'Friday')selected @endif>Friday</option>
+                        <option value="Saturday" @if($day == 'Saturday')selected @endif>Saturday</option>
+                        <option value="Sunday" @if($day == 'Sunday')selected @endif>Sunday</option>
+                        <option value="All" @if($day == 'Sunday')selected @endif>All</option>
+                        <option value="Today" @if($day == 'Sunday')selected @endif>Today</option>
+                    </select>
+                    <button style="width:25%;" class="btn btn-success">Click</button>
                 </form>
-                <div class="text-center" style="display: flex; justify-content: center; align-items: center;">
-                        <form action="" style="padding: 10px;">
-                            <a href="{{route('bhawan.data.page2')}}" class="btn btn-success">
-                                All Sangat
-                            </a>
-                        </form>
-                        <form action="">
-                            <a href="{{route('bhawan.data.today.page')}}" class="btn btn-info">
-                                Todays Sangat
-                            </a>
-                        </form>
-                </div>
                 @if (!empty($current_day))
                 <div class="day">
                     <h3 class="text-center">{{$current_day}}</h3>

@@ -82,7 +82,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('department', DepartmentController::class);
 
     //Contact Us
-    Route::get('/', function () {
+    Route::get('/contact-us', function () {
         return view('backend.pages.contact_us');
     })->name('contact');
 
