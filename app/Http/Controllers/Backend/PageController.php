@@ -147,6 +147,9 @@ class PageController extends Controller
 
     public function uploadDutyStore(Request $request)
     {
+        // $headings = (new HeadingRowImport)->toArray($request->file('file'));
+        // Log::info($headings);
+        // return;
         Excel::import(new DutyImport, $request->file('file'));
         return redirect()->route('duty.upload.page')->with('success', 'All good!');
     }

@@ -20,9 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    $thought = Thought::inRandomOrder()->first();
-    $thought = $thought->thought;
-    return view('dashboard',compact('thought'));
+    return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

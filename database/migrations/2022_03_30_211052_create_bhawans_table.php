@@ -15,21 +15,17 @@ return new class extends Migration
     {
         Schema::create('bhawans', function (Blueprint $table) {
             $table->id();
-            $table->longText('area')->nullable();
-            $table->longText('day')->nullable();
-            $table->longText('time')->nullable();
-            $table->longText('address')->nullable();
-            $table->longText('sector_sanyojak_name')->nullable();
-            $table->longText('sector_sanyojak_contact')->nullable();
-            $table->longText('area_mukhi_1_name')->nullable();
-            $table->longText('area_mukhi_1_contact')->nullable();
-            $table->longText('area_mukhi_2_name')->nullable();
-            $table->longText('area_mukhi_2_contact')->nullable();
-            $table->longText('contact_person_1_name')->nullable();
-            $table->longText('contact_person_1_contact')->nullable();
-            $table->longText('contact_person_2_name')->nullable();
-            $table->longText('contact_person_2_contact')->nullable();
-            $table->longText('type_of_satsang')->nullable();
+            $table->longText('SatsangID')->nullable();
+            $table->longText('SatsangName')->nullable();
+            $table->longText('SatsangAddress')->nullable();
+            $table->longText('SatsangContact')->nullable();
+            $table->longText('Day')->nullable();
+            $table->longText('Time')->nullable();
+            $table->longText('Area')->nullable();
+            $table->longText('BranchID')->nullable();
+            $table->longText('IsActive')->nullable();
+            $table->longText('Satsang_Time_Type')->nullable();
+            $table->longText('SequenceID')->nullable();
             $table->timestamps();
         });
     }

@@ -47,36 +47,33 @@ Bhawan Table
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                             <tr>
-                                <th>Action</th>
-                                <th>Area</th>
+                                <th>SatsangID</th>
+                                <th>SatsangName</th>
+                                <th>SatsangAddress</th>
+                                <th>SatsangContact</th>
                                 <th>Day</th>
                                 <th>Time</th>
-                                <th>Address</th>
-                                <th>sector Sanyojak Name</th>
+                                <th>Area</th>
+                                <th>BranchID</th>
+                                <th>IsActive</th>
+                                <th>Satsang_Time_Type</th>
+                                <th>SequenceID</th>
                             </tr>
                             </thead>
                             <tbody>
                                 @foreach ($alldata as $item)
                                 <tr>
-                                    <td id="tooltip-container0" class="d-flex">
-                                        {{-- <a href="{{ route('user.edit',[$item->id]) }}" class="me-3 text-primary"
-                                            data-bs-container="#tooltip-container0" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Edit"><i
-                                                class="mdi mdi-pencil font-size-18"></i></a>
-                                        <form action="{{ route('user.destroy',[$item->id]) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button style="padding: 0; border:none; background:none; " type="submit"
-                                                class="text-danger" data-bs-container="#tooltip-container0"
-                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i
-                                                    class="mdi mdi-trash-can font-size-18"></i></button>
-                                        </form> --}}
-                                    </td>
-                                    <td>{{$item->area}}</td>
-                                    <td>{{$item->day}}</td>
-                                    <td>{{$item->time}}</td>
-                                    <td>{{$item->address}}</td>
-                                    <td>{{$item->sector_sanyojak_name}}</td>
+                                    <td>{{$item->SatsangID}}</td>
+                                    <td>{{$item->SatsangName}}</td>
+                                    <td>{{$item->SatsangAddress}}</td>
+                                    <td>{{$item->SatsangContact}}</td>
+                                    <td>{{$item->Day}}</td>
+                                    <td>{{$item->Time}}</td>
+                                    <td>{{$item->Area}}</td>
+                                    <td>{{$item->BranchID}}</td>
+                                    <td>{{$item->IsActive}}</td>
+                                    <td>{{$item->Satsang_Time_Type}}</td>
+                                    <td>{{$item->SequenceID}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
