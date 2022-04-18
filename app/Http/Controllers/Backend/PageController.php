@@ -127,7 +127,11 @@ class PageController extends Controller
     {
         $oldData = User::where('id',"!=","1")->get();
         $oldData->each->delete();
+        Log::info('I am here');
+        Log::info($request->file('file'));
         Excel::import(new UserImport, $request->file('file'));
+        Log::info('I am here');
+
         return redirect()->route('admin.upload.page')->with('success', 'All good!');
     }
 
@@ -147,9 +151,17 @@ class PageController extends Controller
 
     public function uploadDutyStore(Request $request)
     {
-        // $headings = (new HeadingRowImport)->toArray($request->file('file'));
-        // Log::info($headings);
-        // return;
+        $this_month = Carbon::now()->format('F');
+        $this_month = substr($this_month,0,3);
+        $last_month = Carbon::now()->subMonth()->format('F');
+        $last_month = substr($last_month,0,3);
+        $last_to_month = Carbon::now()->subMonth(2)->format('F');
+        $last_to_month = substr($last_to_month,0,3);
+
+        $data = Duty::where('Dutydate','NOT LIKE',"%$this_month%")->orwhere('Dutydate','NOT LIKE',"%$last_month%")->orwhere('Dutydate','NOT LIKE',"%$last_to_month%")->get();
+
+        $data->each->delete();
+
         Excel::import(new DutyImport, $request->file('file'));
         return redirect()->route('duty.upload.page')->with('success', 'All good!');
     }
@@ -174,12 +186,14 @@ class PageController extends Controller
         }
 
         if($search != ""){
-            $alldata = Duty::where('name','LIKE',"%$search%")->orwhere('dutydate','LIKE',"%$search%")
-            ->orwhere('address','LIKE',"%$search%")->orwhere('time','LIKE',"%$search%")
-            ->orwhere('contact','LIKE',"%$search%")->orwhere('pracharak_name','LIKE',"%$search%")
-            ->orwhere('pracharak_contact','LIKE',"%$search%")->simplePaginate(1000);
+            $alldata = Duty::where('Dutydate','LIKE',"%$search%")->orwhere('satsangname','LIKE',"%$search%")
+            ->orwhere('SatsangAddress','LIKE',"%$search%")->orwhere('SatsangTime','LIKE',"%$search%")
+            ->orwhere('satsangcontact','LIKE',"%$search%")->orwhere('PracharakName','LIKE',"%$search%")
+            ->orwhere('PracharakContact','LIKE',"%$search%")->orwhere('SectorID','LIKE',"%$search%")
+            ->orwhere('BranchID','LIKE',"%$search%")->orwhere('Day','LIKE',"%$search%")
+            ->orwhere('Sangat_Day','LIKE',"%$search%")->simplePaginate(1000);
         }else if($month != ""){
-            $alldata = Duty::where('dutydate','LIKE',"%$month%")->simplePaginate(1000);
+            $alldata = Duty::where('Dutydate','LIKE',"%$month%")->simplePaginate(1000);
         }else{
             $alldata = Duty::simplePaginate(12);
         }
@@ -201,15 +215,77 @@ class PageController extends Controller
         }
 
         if($search != ""){
-            $alldata = Duty::where('name','LIKE',"%$search%")->orwhere('dutydate','LIKE',"%$search%")
-            ->orwhere('address','LIKE',"%$search%")->orwhere('time','LIKE',"%$search%")
-            ->orwhere('contact','LIKE',"%$search%")->orwhere('pracharak_name','LIKE',"%$search%")
-            ->orwhere('pracharak_contact','LIKE',"%$search%")->simplePaginate(1000);
+            $alldata = Duty::where('Dutydate','LIKE',"%$search%")->orwhere('satsangname','LIKE',"%$search%")
+            ->orwhere('SatsangAddress','LIKE',"%$search%")->orwhere('SatsangTime','LIKE',"%$search%")
+            ->orwhere('satsangcontact','LIKE',"%$search%")->orwhere('PracharakName','LIKE',"%$search%")
+            ->orwhere('PracharakContact','LIKE',"%$search%")->orwhere('SectorID','LIKE',"%$search%")
+            ->orwhere('BranchID','LIKE',"%$search%")->orwhere('Day','LIKE',"%$search%")
+            ->orwhere('Sangat_Day','LIKE',"%$search%")->simplePaginate(1000);
         }else if($month != ""){
-            $alldata = Duty::where('dutydate',"LIKE","%$month%")->simplePaginate(1000);
+            $alldata = Duty::where('Dutydate',"LIKE","%$month%")->simplePaginate(1000);
         }
         else{
-            $alldata = Duty::where('pracharak_contact',"=",Auth::user()->phone)->simplePaginate(12);
+            $alldata = Duty::where('PracharakContact',"=",Auth::user()->phone)->simplePaginate(12);
+        }
+        return view('backend.pages.upload.dutylist.index2',compact(['alldata','search','month1']));
+    }
+
+    public function dutyDataPageGs(Request $request)
+    {
+        $search = $request['search'] ?? "";
+        $month = $request['month'] ?? "";
+        $month1 = $request['month'] ?? "";
+
+
+        if($month != ""){
+            $m = date('F', strtotime($request['month']));
+            $m = substr($m, 0, 3);
+            $y = Carbon::parse($request['month'])->year;
+            $month = $m." ".$y;
+        }
+
+        if($search != ""){
+            $alldata = Duty::where('Dutydate','LIKE',"%$search%")->orwhere('satsangname','LIKE',"%$search%")
+            ->orwhere('SatsangAddress','LIKE',"%$search%")->orwhere('SatsangTime','LIKE',"%$search%")
+            ->orwhere('satsangcontact','LIKE',"%$search%")->orwhere('PracharakName','LIKE',"%$search%")
+            ->orwhere('PracharakContact','LIKE',"%$search%")->orwhere('SectorID','LIKE',"%$search%")
+            ->orwhere('BranchID','LIKE',"%$search%")->orwhere('Day','LIKE',"%$search%")
+            ->orwhere('Sangat_Day','LIKE',"%$search%")->simplePaginate(1000);
+        }else if($month != ""){
+            $alldata = Duty::where('Dutydate',"LIKE","%$month%")->simplePaginate(1000);
+        }
+        else{
+            $alldata = Duty::where('PracharakContact',"=",Auth::user()->phone)->simplePaginate(12);
+        }
+        return view('backend.pages.upload.dutylist.index2',compact(['alldata','search','month1']));
+    }
+
+    public function dutyDataPageNs(Request $request)
+    {
+        $search = $request['search'] ?? "";
+        $month = $request['month'] ?? "";
+        $month1 = $request['month'] ?? "";
+
+
+        if($month != ""){
+            $m = date('F', strtotime($request['month']));
+            $m = substr($m, 0, 3);
+            $y = Carbon::parse($request['month'])->year;
+            $month = $m." ".$y;
+        }
+
+        if($search != ""){
+            $alldata = Duty::where('Dutydate','LIKE',"%$search%")->orwhere('satsangname','LIKE',"%$search%")
+            ->orwhere('SatsangAddress','LIKE',"%$search%")->orwhere('SatsangTime','LIKE',"%$search%")
+            ->orwhere('satsangcontact','LIKE',"%$search%")->orwhere('PracharakName','LIKE',"%$search%")
+            ->orwhere('PracharakContact','LIKE',"%$search%")->orwhere('SectorID','LIKE',"%$search%")
+            ->orwhere('BranchID','LIKE',"%$search%")->orwhere('Day','LIKE',"%$search%")
+            ->orwhere('Sangat_Day','LIKE',"%$search%")->simplePaginate(1000);
+        }else if($month != ""){
+            $alldata = Duty::where('Dutydate',"LIKE","%$month%")->simplePaginate(1000);
+        }
+        else{
+            $alldata = Duty::where('PracharakContact',"=",Auth::user()->phone)->simplePaginate(12);
         }
         return view('backend.pages.upload.dutylist.index2',compact(['alldata','search','month1']));
     }

@@ -48,19 +48,22 @@ Duty List Table
                             <thead>
                             <tr>
                                 <th>Action</th>
-                                <th>dutydate</th>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>time</th>
-                                <th>contact</th>
-                                <th>pracharak_name</th>
-                                <th>pracharak_contact</th>
+                                <th>Dutydate</th>
+                                <th>satsangname</th>
+                                <th>SatsangAddress</th>
+                                <th>SatsangTime</th>
+                                <th>PracharakName</th>
+                                <th>PracharakContact</th>
+                                <th>SectorID</th>
+                                <th>BranchID</th>
+                                <th>Day</th>
+                                <th>Sangat_Day</th>
                             </tr>
                             </thead>
                             <tbody>
                                 @foreach ($alldata as $item)
                                 <tr>
-                                    <td id="tooltip-container0" class="d-flex">
+                                    {{-- <td id="tooltip-container0" class="d-flex">
                                         <a href="{{ route('user.edit',[$item->id]) }}" class="me-3 text-primary"
                                             data-bs-container="#tooltip-container0" data-bs-toggle="tooltip"
                                             data-bs-placement="top" title="Edit"><i
@@ -73,14 +76,18 @@ Duty List Table
                                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i
                                                     class="mdi mdi-trash-can font-size-18"></i></button>
                                         </form>
-                                    </td>
-                                    <td>{{$item->dutydate}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->address}}</td>
-                                    <td>{{$item->time}}</td>
-                                    <td>{{$item->contact}}</td>
-                                    <td>{{$item->pracharak_name}}</td>
-                                    <td>{{$item->pracharak_contact}}</td>
+                                    </td> --}}
+                                    <td>{{$item->Dutydate}}</td>
+                                    <td>{{$item->satsangname}}</td>
+                                    <td>{{$item->SatsangAddress}}</td>
+                                    <td>{{$item->SatsangTime}}</td>
+                                    <td>{{$item->satsangcontact}}</td>
+                                    <td>{{$item->PracharakName}}</td>
+                                    <td>{{$item->PracharakContact}}</td>
+                                    <td>{{$item->SectorID}}</td>
+                                    <td>{{$item->BranchID}}</td>
+                                    <td>{{$item->Day}}</td>
+                                    <td>{{$item->Sangat_Day}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

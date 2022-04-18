@@ -15,17 +15,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('PracharakID')->nullable();
+            $table->string('name')->nullable();
+            $table->longText('Gyan_Pracharak')->nullable();
             $table->string('phone')->unique();
-            $table->longText('email_address')->nullable();
-            $table->string('gender')->nullable();
-            $table->longText('address')->nullable();
-            $table->longText('area')->nullable();
-            $table->longText('gyan_pracharak')->nullable();
-            $table->longText('administration')->nullable();
-            $table->longText('designation')->nullable();
-            $table->longText('responsibilities')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->longText('Email_ID')->nullable();
+            $table->longText('Gender')->nullable();
+            $table->longText('Area')->nullable();
+            $table->longText('BranchID')->nullable();
+            $table->longText('General_Satsang')->nullable();
+            $table->longText('Nari_Satsang')->nullable();
+            $table->longText('Sector_Sanyojak')->nullable();
+            $table->longText('Area_Mukhi_Branch_Incharge')->nullable();
+            $table->longText('Sewadal_Sanchalak')->nullable();
+            $table->longText('K_Sanchalak')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

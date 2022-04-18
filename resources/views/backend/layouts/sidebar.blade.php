@@ -59,6 +59,12 @@
                 <li>
                     <a href="{{route('duty.data.page2')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
+                        <span>Nar Duty List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
                         <span>Sangat Duty List</span>
                     </a>
                 </li>
