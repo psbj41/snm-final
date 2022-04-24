@@ -31,6 +31,12 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        $request->validate([
+            'phone' => 'required',
+            'password' => 'required',
+            'captcha' => 'required|captcha'
+        ]);
+
         $user = User::where('phone',$request->phone)->get();
         foreach ($user as $key => $value) {
             $token = $value->remember_token;

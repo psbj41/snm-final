@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('password/change',[UserController::class,'pageReset'])->name('password.change');
 Route::post('password/change',[UserController::class,'pageResetStore'])->name('password.change.store');
+Route::get('/reload-captcha', [UserController::class, 'reloadCaptcha']);
 
 Route::middleware(['auth'])->group(function () {
 
@@ -51,6 +52,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('uploads-page/bhawan/data', 'bhawanDataPage')->name('bhawan.data.page');
     Route::get('uploads-page/bhawan/data2', 'bhawanDataPage2')->name('bhawan.data.page2');
     Route::get('uploads-page/bhawan/today/data2', 'bhawanDataPageToday')->name('bhawan.data.today.page');
+    Route::get('satsang-details','getSatsangDetails')->name('all.satsang.details');
+
 
     //Admin
     Route::get('uploads-page/admin', 'uploadAdminPage')->name('admin.upload.page');

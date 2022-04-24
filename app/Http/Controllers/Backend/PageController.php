@@ -115,6 +115,12 @@ class PageController extends Controller
         return view('backend.pages.upload.bhawan.index2',compact(['alldata','search','day','current_day']));
     }
 
+    public function getSatsangDetails(){
+        $search = '';
+        $allbhwans = Bhawan::simplePaginate(12);
+        return view('backend.pages.upload.bhawan.allsatsang',compact(['allbhwans','search']));
+    }
+
     // End Bhawan upload page
 
     // Admin upload page

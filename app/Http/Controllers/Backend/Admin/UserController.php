@@ -147,4 +147,9 @@ class UserController extends Controller
     {
         return view('backend.pages.admin.user.profile');
     }
+
+    public function reloadCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
+    }
 }

@@ -22,6 +22,12 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
 
+        DB::table('users')->insert([
+            'name' => "UPLOAD USER",
+            'phone' => "9920636908",
+            'password' => Hash::make('password'),
+        ]);
+
         DB::table('roles')->insert(
             ['name' => 'superadmin', 'guard_name' => 'web',]
         );
