@@ -43,54 +43,51 @@
             </li>
 
             <li class="menu-title">Duty List</li>
-
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Pracharak Duty List</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Pracharika Duty List</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('all.duty')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Sangat Duty List</span>
                 </a>
             </li>
-
-
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('nari.duty')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Nari Duty List</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('pracharak.duty')}}" class="waves-effect">
+                    <i class="ri-file-list-3-line"></i>
+                    <span>Pracharak Duty List</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('pracharika.duty')}}" class="waves-effect">
+                    <i class="ri-file-list-3-line"></i>
+                    <span>Pracharika Duty List</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('mukhi.general.duty')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Mukhi’s General Satsang Duty list</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('mukhi.nari.duty')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Mukhi’s Nari Satsang Duty list</span>
                 </a>
             </li>
 
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('sanyojak.general.duty')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Sector Sanyojak’s General Satsang Duty list</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('sanyojak.nari.duty')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Sector Sanyojak’s Nari Satsang Duty list</span>
                 </a>
