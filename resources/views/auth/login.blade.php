@@ -22,8 +22,8 @@
             margin: 0px;
         }
         .main{
-            width: 300px;
-            height: 400px;
+            width: 400px;
+            height: 450px;
             background-color: rgb(255, 255, 255);
             position: absolute;
             top:0;
@@ -59,6 +59,9 @@
             color: white;
             margin-bottom: 15px;
         }
+        .btn:hover{
+            color: white;
+        }
         .main form{
             margin-top: 10%;
         }
@@ -90,7 +93,10 @@
                     <button class="btn" type="submit">Log In</button>
                 </div>
             </form>
-            <a href="{{route('password.change')}}" class="for_pass">Forgot Password</a>
+            <div class="d-flex">
+                <a class="btn" style="width:50%; margin: 10px; background-color: green" href="{{route('password.change')}}" class="for_pass">Forgot Password</a>
+                <a class="btn" style="width:50%; margin: 10px; background-color: #1F2937" href="{{route('register.index')}}" class="for_pass">Register</a>
+            </div>
         </div>
 </body>
 <script type="text/javascript">

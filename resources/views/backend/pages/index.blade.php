@@ -58,7 +58,7 @@
                 <a href="{{route('login')}}" class="login">Login</a>
             </button>
             <button>
-                <a href="{{route('login')}}" class="register">Register</a>
+                <a href="{{route('register.index')}}" class="register">Register</a>
             </button>
         </div>
     </section>
