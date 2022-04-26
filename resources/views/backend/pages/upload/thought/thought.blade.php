@@ -16,16 +16,9 @@ Users Table
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
-                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Sparkline Charts</h4>
-
-                    <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Charts</a></li>
-                            <li class="breadcrumb-item active">Sparkline Charts</li>
-                        </ol>
-                    </div>
-
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Thought of the Day</h4>
+                    <a class="btn btn-primary" href="{{route('upload.page')}}" style="width:40%; margin-bottom: 10px">Back Page</a>
                 </div>
             </div>
         </div>
@@ -35,21 +28,22 @@ Users Table
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
-                        <a class="btn btn-success" href="{{route('upload.page')}}" style="width:100%; margin-bottom:10px">Back Page</a>
                         <div class="text-center">
-                            <h5>Thought of the Day</h5>
-                            <h6> Excel File Upload </h6>
-                            <p>Upload Excel File if you have latest info about "Administration Contact"</p>
+                            <h6 style="color: rgb(4, 4, 109);font-weight:900">Thought of the Day</h6>
+                            <p style="border: 1px dashed black; padding:5px">
+                                <i class="ri-file-excel-2-line"></i>
+                                Excel File Upload
+                            </p>
+                            <p style="font-size: 12px">Add "Thought of the Day" that will be displayed on the Website and Android app</p>
                         </div>
                         <div>
                             <form action="{{route('thought.upload.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div>
+                                <div class="text-center">
                                     <input name="file" type="file">
                                 </div>
                                 <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-primary waves-effect waves-light">Upload File</button>
+                                    <button type="submit" class="btn btn-success waves-effect waves-light">Upload File</button>
                                 </div>
                             </form>
                         </div>

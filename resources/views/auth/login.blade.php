@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Styles -->
 </head>
 <body class="body-login">
     <style>
@@ -19,7 +23,7 @@
         }
         .main{
             width: 300px;
-            height: 300px;
+            height: 400px;
             background-color: rgb(255, 255, 255);
             position: absolute;
             top:0;
@@ -53,9 +57,15 @@
             font-size: 15px;
             font-weight: 600;
             color: white;
+            margin-bottom: 15px;
         }
         .main form{
-            margin-top: 25%;
+            margin-top: 10%;
+        }
+        #capta{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         </style>
         <div class="main">
@@ -67,10 +77,31 @@
                 <div class="input">
                     <input type="password" name="password" placeholder="Password">
                 </div>
+                <div class="input" id="capta">
+                    <span class="captcha">{!! captcha_img() !!}</span>
+                    <button type="button" class="reload" id="reload" style="margin-left: 10px; padding:5px; font-size:18px; background-color:forestgreen; color:white; border:none; border-radius:5px; cursor: pointer; outline:none">
+                        &#x21bb;
+                    </button>
+                </div>
+                <div class="input">
+                    <input id="captcha" type="text" placeholder="Enter Captcha" name="captcha">
+                </div>
                 <div>
                     <button class="btn" type="submit">Log In</button>
                 </div>
             </form>
+            <a href="{{route('password.change')}}" class="for_pass">Forgot Password</a>
         </div>
 </body>
+<script type="text/javascript">
+    $('#reload').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'reload-captcha',
+            success: function (data) {
+                $(".captcha").html(data.captcha);
+            }
+        });
+    });
+</script>
 </html>

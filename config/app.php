@@ -169,6 +169,7 @@ return [
          */
         Spatie\Permission\PermissionServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
 
 
         /*
@@ -194,6 +195,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
     ])->toArray(),
 
 ];

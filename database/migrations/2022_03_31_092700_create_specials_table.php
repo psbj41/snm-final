@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('specials', function (Blueprint $table) {
             $table->id();
             $table->longText('name')->nullable();
+            $table->longText('permission')->nullable();
             $table->timestamps();
         });
     }
