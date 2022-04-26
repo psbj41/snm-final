@@ -90,7 +90,7 @@ Duty List Table
                                         <i class="ri-calendar-event-fill" style="font-size:25px; margin-right:10px"></i>
                                         <div>
                                             <h6 class="header-p" style="color:rgb(2, 2, 83);font-weight:700">Duty Day and Date</h6>
-                                            <p class="content-p">{{$item->Dutydate}}</p>
+                                            <p class="content-p">{{$item->Dutydatedata}}</p>
                                         </div>
                                     </div>
                                     <div style="display:flex;align-items:center">

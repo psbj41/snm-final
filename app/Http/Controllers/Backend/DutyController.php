@@ -199,7 +199,7 @@ class DutyController extends Controller
         }else if($month != ""){
             $alldata = Duty::where('Dutydate','LIKE',"%$month%")->simplePaginate(1000);
         }else{
-            $alldata = Duty::simplePaginate(12);
+            $alldata = Duty::where('satsangcontact','LIKE',Auth::user()->phone)->simplePaginate(12);
         }
         return view('backend.pages.upload.dutylist.mukhig',compact(['alldata','search','month1']));
     }
