@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('duties', function (Blueprint $table) {
             $table->id();
-            $table->longText('Dutydate1')->nullable();
+            $table->longText('Dutydatedata')->nullable();
             $table->longText('SatsangID')->nullable();
             $table->longText('satsangname')->nullable();
             $table->longText('SatsangAddress')->nullable();
