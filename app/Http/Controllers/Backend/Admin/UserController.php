@@ -55,9 +55,7 @@ class UserController extends Controller
             'name' => $request->name,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
-            'alternate_phone' => $request->alternate_phone
         ]);
-        $user->assignRole($request->role_id);
         return redirect()->route('user.index')->with('success', $user->name." Successfully Registered");
     }
 
