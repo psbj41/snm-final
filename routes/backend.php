@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\Admin\RoleController;
 use App\Http\Controllers\Backend\Admin\UserController;
 use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\DutyController;
+use App\Http\Controllers\Backend\NotificationController;
 use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\SpecialController;
 use Illuminate\Support\Facades\Route;
@@ -82,6 +83,7 @@ Route::middleware(['auth'])->group(function () {
 
 
     });
+
     Route::controller(DutyController::class)->group(function () {
         Route::get('duty/all','all')->name('all.duty');
         Route::get('duty/nari','nari')->name('nari.duty');
@@ -91,6 +93,16 @@ Route::middleware(['auth'])->group(function () {
         Route::get('duty/mukhi/nari','mukhiNari')->name('mukhi.nari.duty');
         Route::get('duty/sanyojak/general','sanyojakGeneral')->name('sanyojak.general.duty');
         Route::get('duty/sanyojak/nari','sanyojakNari')->name('sanyojak.nari.duty');
+    });
+
+    Route::controller(NotificationController::class)->group(function () {
+        Route::get('notification/sangat','sangat')->name('sangat.notification');
+        Route::get('notification/pracharak','pracharak')->name('pracharak.notification');
+        Route::get('notification/gyanpracharak','gyanPracharak')->name('gyanpracharak.notification');
+        Route::get('notification/mukhi','mukhi')->name('mukhi.notification');
+        Route::get('notification/sanyojak','sanyojak')->name('sanyojak.notification');
+        Route::get('notification/sewadal-sanchalak','sewadal')->name('sewadal.notification');
+        Route::get('notification/kshetriya-sanchalak','kshetriya')->name('kshetriya.notification');
     });
 
     //Special

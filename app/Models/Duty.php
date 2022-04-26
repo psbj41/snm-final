@@ -9,16 +9,20 @@ class Duty extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'Dutydate',
+        'Dutydate1',
+        'SatsangID',
         'satsangname',
         'SatsangAddress',
         'SatsangTime',
         'satsangcontact',
+        'PracharakID',
         'PracharakName',
         'PracharakContact',
         'SectorID',
         'BranchID',
         'Day',
         'Sangat_Day',
+        'Dutydate',
+        'Satsang_Type',
     ];
 }

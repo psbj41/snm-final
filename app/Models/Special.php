@@ -12,7 +12,7 @@ class Special extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
-        'name'
+        'name', 'permission'
     ];
 
     protected $appends = ['specialpdf'];

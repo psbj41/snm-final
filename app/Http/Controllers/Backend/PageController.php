@@ -157,17 +157,21 @@ class PageController extends Controller
 
     public function uploadDutyStore(Request $request)
     {
-        $this_month = Carbon::now()->format('F');
-        $this_month = substr($this_month,0,3);
-        $last_month = Carbon::now()->subMonth()->format('F');
-        $last_month = substr($last_month,0,3);
-        $last_to_month = Carbon::now()->subMonth(2)->format('F');
-        $last_to_month = substr($last_to_month,0,3);
+        // $this_month = Carbon::now()->format('F');
+        // $this_month = substr($this_month,0,3);
+        // $last_month = Carbon::now()->subMonth()->format('F');
+        // $last_month = substr($last_month,0,3);
+        // $last_to_month = Carbon::now()->subMonth(2)->format('F');
+        // $last_to_month = substr($last_to_month,0,3);
 
-        $data = Duty::where('Dutydate','NOT LIKE',"%$this_month%")->orwhere('Dutydate','NOT LIKE',"%$last_month%")->orwhere('Dutydate','NOT LIKE',"%$last_to_month%")->get();
+        // $data = Duty::where('Dutydate','NOT LIKE',"%$this_month%")->orwhere('Dutydate','NOT LIKE',"%$last_month%")->orwhere('Dutydate','NOT LIKE',"%$last_to_month%")->get();
 
+        // $headings = (new HeadingRowImport)->toArray($request->file('file'));
+        // Log::info($headings);
+        // return;
+
+        $data = Duty::all();
         $data->each->delete();
-
         Excel::import(new DutyImport, $request->file('file'));
         return redirect()->route('duty.upload.page')->with('success', 'All good!');
     }

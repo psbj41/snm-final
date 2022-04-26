@@ -15,17 +15,21 @@ return new class extends Migration
     {
         Schema::create('duties', function (Blueprint $table) {
             $table->id();
-            $table->longText('Dutydate')->nullable();
+            $table->longText('Dutydate1')->nullable();
+            $table->longText('SatsangID')->nullable();
             $table->longText('satsangname')->nullable();
             $table->longText('SatsangAddress')->nullable();
             $table->longText('SatsangTime')->nullable();
             $table->longText('satsangcontact')->nullable();
+            $table->longText('PracharakID')->nullable();
             $table->longText('PracharakName')->nullable();
             $table->longText('PracharakContact')->nullable();
             $table->longText('SectorID')->nullable();
             $table->longText('BranchID')->nullable();
             $table->longText('Day')->nullable();
             $table->longText('Sangat_Day')->nullable();
+            $table->longText('Dutydate')->nullable();
+            $table->longText('Satsang_Type')->nullable();
             $table->timestamps();
         });
     }

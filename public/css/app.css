@@ -606,6 +606,9 @@ select {
   white-space: nowrap;
   border-width: 0;
 }
+.static {
+  position: static;
+}
 .fixed {
   position: fixed;
 }
@@ -929,14 +932,14 @@ select {
 .fill-current {
   fill: currentColor;
 }
+.p-0 {
+  padding: 0px;
+}
 .p-6 {
   padding: 1.5rem;
 }
 .p-2 {
   padding: 0.5rem;
-}
-.p-0 {
-  padding: 0px;
 }
 .p-3 {
   padding: 0.75rem;

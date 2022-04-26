@@ -16,17 +16,21 @@ class DutyImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Duty([
-        'Dutydate' => $row['dutydate'],
-        'satsangname' => $row['satsangname'],
-        'SatsangAddress' => $row['satsangaddress'],
-        'SatsangTime' => $row['satsangtime'],
-        'satsangcontact' => $row['satsangcontact'],
-        'PracharakName' => $row['pracharakname'],
-        'PracharakContact' => $row['pracharakcontact'],
-        'SectorID' => $row['sectorid'],
-        'BranchID' => $row['branchid'],
-        'Day' => $row['day'],
-        'Sangat_Day' => $row['sangat_day'],
+            'Dutydate1' => $row['dutydate1'],
+            'SatsangID' => $row['satsangid'],
+            'satsangname' => $row['satsangname'],
+            'SatsangAddress' => $row['satsangaddress'],
+            'SatsangTime' => $row['satsangtime'],
+            'satsangcontact' => $row['satsangcontact'],
+            'PracharakID' => $row['pracharakid'],
+            'PracharakName' => $row['pracharakname'],
+            'PracharakContact' => $row['pracharakcontact'],
+            'SectorID' => $row['sectorid'],
+            'BranchID' => $row['branchid'],
+            'Day' => $row['day'],
+            'Sangat_Day' => $row['sangat_day'],
+            'Dutydate' => $row['dutydate'],
+            'Satsang_Type' => $row['satsang_type'],
         ]);
     }
 }
