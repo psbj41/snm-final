@@ -131,13 +131,9 @@ class PageController extends Controller
 
     public function uploadAdminStore(Request $request)
     {
-        $oldData = User::where('id',"!=","1")->get();
+        $oldData = User::where('id',"!=","1")->orwhere('id',"!=","2")->get();
         $oldData->each->delete();
-        Log::info('I am here');
-        Log::info($request->file('file'));
         Excel::import(new UserImport, $request->file('file'));
-        Log::info('I am here');
-
         return redirect()->route('admin.upload.page')->with('success', 'All good!');
     }
 

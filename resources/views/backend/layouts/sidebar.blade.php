@@ -46,7 +46,7 @@
             <li>
                 <a href="{{route('all.duty')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
-                    <span>Sangat Duty List</span>
+                    <span>General Sangat Duty List</span>
                 </a>
             </li>
             <li>
@@ -58,13 +58,7 @@
             <li>
                 <a href="{{route('pracharak.duty')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
-                    <span>Pracharak Duty List</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('pracharika.duty')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Pracharika Duty List</span>
+                    <span>My Duty List</span>
                 </a>
             </li>
             <li>

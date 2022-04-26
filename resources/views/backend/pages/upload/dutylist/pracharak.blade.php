@@ -17,56 +17,23 @@ Duty List Table
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between" style="padding-bottom:5px;">
-                    <h5 class="mb-sm-0">Duty List</h5>
-                    <div class="text-center" style="display: flex; justify-content: center; align-items: center;margin-bottom: 10px" >
-                        <form action="" >
-                            <a href="{{route('duty.data.page2')}}" class="btn btn-success" style="font-size: 12px">
-                                All Duty
-                            </a>
-                        </form>
-                        <form action="">
-                            <a href="{{route('duty.data.my.page')}}" class="btn btn-info" style="font-size: 12px">
-                                My Duty
-                            </a>
-                        </form>
-                    </div>
+                    <h5 class="mb-sm-0">{{Auth::user()->name}} Duty List</h5>
                 </div>
             </div>
         </div>
         <!-- end page title -->
 
         <div class="row">
-            <div>
-                <form action="" class="d-flex" style="margin-bottom: 5px">
-                    <div style="width:70%; border:1px solid rgb(206, 206, 206); background-color:rgb(255, 255, 255);outline:none; padding:8px; border-radius:5px; display:flex">
-                        <i class="ri-search-eye-line"></i>
-                        <input type="search" value="{{$search}}"  placeholder="Search" name="search" style="border: none; outline:none; width:90%">
-                    </div>
-                    <div style="display: flex; justify-content:space-between; margin:0px 5px">
-                        <button class="btn btn-success" type="submit">
-                        <i class="ri-arrow-right-s-fill"></i>
-                        </button>
-                        <a href="{{route('duty.data.page2')}}" class="btn btn-danger">
-                            <i class="ri-refresh-line"></i>
-                        </a>
-                    </div>
-                </form>
-                <form action="" class="d-flex">
-                    <div style="width: 66%">
-                            <input class="form-control" type="month" value="{{$month1}}" name="month"
-                                id="example-month-input">
-                    </div>
-                    <div style="display: flex; justify-content:space-between; margin:0px 5px">
-                        <button class="btn btn-success" type="submit">
-                        <i class="ri-arrow-right-s-fill"></i>
-                        </button>
-                        <a href="{{route('duty.data.page2')}}" class="btn btn-danger">
-                            <i class="ri-refresh-line"></i>
-                        </a>
-                    </div>
-                </form>
-            </div>
-            <span style="margin-bottom: 10px"></span>
+            <style>
+                p{
+                    margin: 0px;
+                    padding: 0px;
+                }
+                h6{
+                    margin: 0px;
+                    padding: 0px;
+                }
+            </style>
             @foreach ($alldata as $item)
             <div class="col-lg-4">
                 <div class="card m-b-30">
@@ -76,21 +43,12 @@ Duty List Table
 
                             <div class="flex-grow-1">
                                 <table class="table">
-                                    <style>
-                                        p{
-                                            margin: 0px;
-                                            padding: 0px;
-                                        }
-                                        h6{
-                                            margin: 0px;
-                                            padding: 0px;
-                                        }
-                                    </style>
+
                                     <div style="display:flex;align-items:center">
                                         <i class="ri-calendar-event-fill" style="font-size:25px; margin-right:10px"></i>
                                         <div>
                                             <h6 class="header-p" style="color:rgb(2, 2, 83);font-weight:700">Duty Day and Date</h6>
-                                            <p class="content-p">{{$item->Dutydate}}</p>
+                                            <p class="content-p">{{$item->Dutydatedata}}</p>
                                         </div>
                                     </div>
                                     <div style="display:flex;align-items:center">

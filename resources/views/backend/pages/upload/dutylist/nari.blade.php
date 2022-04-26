@@ -17,7 +17,7 @@ Duty List Table
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between" style="padding-bottom:5px;">
-                    <h5 class="mb-sm-0">Duty List</h5>
+                    <h5 class="mb-sm-0">Nari Duty List</h5>
                     <div class="text-center" style="display: flex; justify-content: center; align-items: center;margin-bottom: 10px" >
                         <form action="" >
                             <a href="{{route('duty.data.page2')}}" class="btn btn-success" style="font-size: 12px">
@@ -67,7 +67,17 @@ Duty List Table
                 </form>
             </div>
             <span style="margin-bottom: 10px"></span>
-            @foreach ($alldata as $item)
+            <style>
+                p{
+                    margin: 0px;
+                    padding: 0px;
+                }
+                h6{
+                    margin: 0px;
+                    padding: 0px;
+                }
+            </style>
+            @foreach ($alldata as $key =>$item)
             <div class="col-lg-4">
                 <div class="card m-b-30">
                     <div class="card-body">
@@ -76,21 +86,12 @@ Duty List Table
 
                             <div class="flex-grow-1">
                                 <table class="table">
-                                    <style>
-                                        p{
-                                            margin: 0px;
-                                            padding: 0px;
-                                        }
-                                        h6{
-                                            margin: 0px;
-                                            padding: 0px;
-                                        }
-                                    </style>
+                                    <p>{{$item->Satsang_Type}}</p>
                                     <div style="display:flex;align-items:center">
                                         <i class="ri-calendar-event-fill" style="font-size:25px; margin-right:10px"></i>
                                         <div>
                                             <h6 class="header-p" style="color:rgb(2, 2, 83);font-weight:700">Duty Day and Date</h6>
-                                            <p class="content-p">{{$item->Dutydate}}</p>
+                                            <p class="content-p">{{$item->Dutydatedata}}</p>
                                         </div>
                                     </div>
                                     <div style="display:flex;align-items:center">
