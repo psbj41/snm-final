@@ -90,43 +90,43 @@
 
             <li class="menu-title">Notifications</li>
             <li>
-                <a href="{{route('bhawan.data.today.page')}}" class="waves-effect">
+                <a href="{{route('sangat.notification')}}" class="waves-effect">
                     <i class="ri-bubble-chart-line"></i>
                     <span>Special Satsang Notification</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('pracharak.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Pracharak/Pracharika</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('gyanpracharak.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Gyan Pracharak</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('mukhi.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Mukhi</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('sanyojak.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Sector Sanyojak</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('sewadal.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Sewadal Sanchalak</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('duty.data.page2')}}" class="waves-effect">
+                <a href="{{route('kshetriya.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Kshetriya Sanchalak</span>
                 </a>

@@ -43,42 +43,49 @@ Special Days Table
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-3 col-form-label">Special Satsang Notification</label>
                                 <div class="col-sm-9">
-                                    <input type="checkbox" id="switch3" switch="bool" name="ssn" checked />
+                                    <input type="checkbox" id="switch3" switch="bool" name="ssn"  />
                                     <label for="switch3" data-on-label="Yes" data-off-label="No"></label>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-3 col-form-label">Special Notification for Pracharak/Pracharika</label>
                                 <div class="col-sm-9">
-                                    <input type="checkbox" id="switch31" switch="bool" name="snp" checked />
+                                    <input type="checkbox" id="switch31" switch="bool" name="snp"  />
                                     <label for="switch31" data-on-label="Yes" data-off-label="No"></label>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-3 col-form-label">Special Notification for Gyan Pracharak/Pracharika</label>
+                                <div class="col-sm-9">
+                                    <input type="checkbox" id="switch14" switch="bool" name="sngp"  />
+                                    <label for="switch14" data-on-label="Yes" data-off-label="No"></label>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-3 col-form-label">Special Notification for Mukhi</label>
                                 <div class="col-sm-9">
-                                    <input type="checkbox" id="switch32" switch="bool" name="snm" checked />
+                                    <input type="checkbox" id="switch32" switch="bool" name="snm"  />
                                     <label for="switch32" data-on-label="Yes" data-off-label="No"></label>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-3 col-form-label">Special Notification for Sector Sanyojak</label>
                                 <div class="col-sm-9">
-                                    <input type="checkbox" id="switch33" switch="bool" name="snss" checked />
+                                    <input type="checkbox" id="switch33" switch="bool" name="snss"  />
                                     <label for="switch33" data-on-label="Yes" data-off-label="No"></label>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-3 col-form-label">Special Notification for Sewadal Sanchalak</label>
                                 <div class="col-sm-9">
-                                    <input type="checkbox" id="switch34" switch="bool" name="snsd" checked />
+                                    <input type="checkbox" id="switch34" switch="bool" name="snsd"  />
                                     <label for="switch34" data-on-label="Yes" data-off-label="No"></label>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-3 col-form-label">Special Notification for Kshetriya Sanchalak</label>
                                 <div class="col-sm-9">
-                                    <input type="checkbox" id="switch35" switch="bool" name="snks" checked />
+                                    <input type="checkbox" id="switch35" switch="bool" name="snks"  />
                                     <label for="switch35" data-on-label="Yes" data-off-label="No"></label>
                                 </div>
                             </div>

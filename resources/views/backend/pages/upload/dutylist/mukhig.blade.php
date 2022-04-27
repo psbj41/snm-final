@@ -67,6 +67,16 @@ Duty List Table
                 </form>
             </div>
             <span style="margin-bottom: 10px"></span>
+            <style>
+                p{
+                    margin: 0px;
+                    padding: 0px;
+                }
+                h6{
+                    margin: 0px;
+                    padding: 0px;
+                }
+            </style>
             @foreach ($alldata as $item)
             <div class="col-lg-4">
                 <div class="card m-b-30">
@@ -76,16 +86,7 @@ Duty List Table
 
                             <div class="flex-grow-1">
                                 <table class="table">
-                                    <style>
-                                        p{
-                                            margin: 0px;
-                                            padding: 0px;
-                                        }
-                                        h6{
-                                            margin: 0px;
-                                            padding: 0px;
-                                        }
-                                    </style>
+
                                     <div style="display:flex;align-items:center">
                                         <i class="ri-calendar-event-fill" style="font-size:25px; margin-right:10px"></i>
                                         <div>

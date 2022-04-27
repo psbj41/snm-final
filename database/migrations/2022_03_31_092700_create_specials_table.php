@@ -16,7 +16,13 @@ return new class extends Migration
         Schema::create('specials', function (Blueprint $table) {
             $table->id();
             $table->longText('name')->nullable();
-            $table->longText('permission')->nullable();
+            $table->string('ssn')->nullable();
+            $table->string('snp')->nullable();
+            $table->string('snm')->nullable();
+            $table->string('snss')->nullable();
+            $table->string('snsd')->nullable();
+            $table->string('snks')->nullable();
+            $table->string('sngp')->nullable();
             $table->timestamps();
         });
     }

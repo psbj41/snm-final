@@ -40,7 +40,12 @@ Special Days Table
                                     <tr>
                                         <th>#</th>
                                         <th>Special Name</th>
-                                        <th>Permission</th>
+                                        <td>ssn</td>
+                                        <td>snp</td>
+                                        <td>snm</td>
+                                        <td>snss</td>
+                                        <td>snsd</td>
+                                        <td>snks</td>
                                         <th>Special PDF View</th>
                                         <th>Actions</th>
                                     </tr>
@@ -50,9 +55,12 @@ Special Days Table
                                     <tr>
                                         <th scope="row">1</th>
                                         <td>{{strToUpper($item->name)}}</td>
-                                        <td>
-                                            {{$item->permission}}
-                                        </td>
+                                        <td>{{$item->ssn}}</td>
+                                        <td>{{$item->snp}}</td>
+                                        <td>{{$item->snm}}</td>
+                                        <td>{{$item->snss}}</td>
+                                        <td>{{$item->snsd}}</td>
+                                        <td>{{$item->snks}}</td>
                                         <td>
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" data-video="{{$item->specialpdf}}" download="">{{strToUpper($item->name)}}</button>
 

@@ -17,11 +17,6 @@ class SpecialController extends Controller
     public function index()
     {
         $special = Special::all();
-        foreach ($special as $key => $value) {
-            $permission = $value->permission;
-            $permission = json_decode($permission,true);
-            $special->permission = $permission;
-        }
         return view('backend.pages.special.index',compact('special'));
     }
 
@@ -43,60 +38,11 @@ class SpecialController extends Controller
      */
     public function store(Request $request)
     {
-        $permission = array();
-        if(!empty($request->ssn)){
-            $permission['ssn'] = $request->ssn;
-            Log::info($permission['ssn']);
-        }else{
-            $permission['ssn'] = "off";
-            Log::info($permission['ssn']);
-        }
-        if(!empty($request->snp)){
-            $permission['snp'] = $request->snp;
-            Log::info($permission['snp']);
-        }else{
-            $permission['snp'] = "off";
-            Log::info($permission['snp']);
-        }
-        if(!empty($request->snm)){
-            $permission['snm'] = $request->snm;
-            Log::info($permission['snm']);
-        }else{
-            $permission['snm'] = "off";
-            Log::info($permission['snm']);
-        }
-        if(!empty($request->snss)){
-            $permission['snss'] = $request->snss;
-            Log::info($permission['snss']);
-        }else{
-            $permission['snss'] = "off";
-            Log::info($permission['snss']);
-        }
-        if(!empty($request->snsd)){
-            $permission['snsd'] = $request->snsd;
-            Log::info($permission['snsd']);
-        }else{
-            $permission['snsd'] = "off";
-            Log::info($permission['snsd']);
-        }
-        if(!empty($request->snks)){
-            $permission['snks'] = $request->snks;
-            Log::info($permission['snks']);
-        }else{
-            $permission['snks'] = "off";
-            Log::info($permission['snks']);
-        }
-        $permission = json_encode($permission);
 
-        $special = new Special();
-        $special->name = $request->name;
-        $special->permission = $permission;
-        $special->save();
-
+        $special = Special::create($request->all());
         if ($request->hasFile('specialpdf')) {
             $special->addMedia($request->specialpdf)->toMediaCollection("specialpdf");
         }
-
         return redirect()->route('special.index')->with('success', "Special Created Successfully");
     }
 
