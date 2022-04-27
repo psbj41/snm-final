@@ -26,7 +26,7 @@ class BhawanImport implements ToModel, WithHeadingRow
             'BranchID' => $row['branchid'],
             'IsActive' => $row['isactive'],
             'Satsang_Time_Type' => $row['satsang_time_type'],
-            'SequenceID' => $row['sequenceid'],
+            'Satsang_Type' => $row['satsang_type'],
         ]);
     }
 }

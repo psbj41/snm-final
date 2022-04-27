@@ -112,7 +112,6 @@ class UserController extends Controller
                 'area' => $request->area,
             ]);
         }
-        $user->syncRoles([$request->role_id]);
         return redirect()->route('user.index')->with('success', $user->name." Successfully Edited");
     }
 

@@ -20,6 +20,6 @@ class Bhawan extends Model
         'BranchID',
         'IsActive',
         'Satsang_Time_Type',
-        'SequenceID',
+        'Satsang_Type',
     ];
 }

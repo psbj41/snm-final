@@ -85,7 +85,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::controller(DutyController::class)->group(function () {
-        Route::get('duty/all','all')->name('all.duty');
+        Route::get('duty/general','all')->name('all.duty');
         Route::get('duty/nari','nari')->name('nari.duty');
         Route::get('duty/pracharak','pracharakDuty')->name('pracharak.duty');
         Route::get('duty/pracharika','pracharikaDuty')->name('pracharika.duty');

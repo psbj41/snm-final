@@ -54,11 +54,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    protected $appends = ['role_id'];
-
-    public function getRoleIdAttribute()
-    {
-        return $this->roles[0]->id;
-    }
 }

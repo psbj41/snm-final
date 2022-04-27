@@ -25,7 +25,7 @@ return new class extends Migration
             $table->longText('BranchID')->nullable();
             $table->longText('IsActive')->nullable();
             $table->longText('Satsang_Time_Type')->nullable();
-            $table->longText('SequenceID')->nullable();
+            $table->longText('Satsang_Type')->nullable();
             $table->timestamps();
         });
     }
