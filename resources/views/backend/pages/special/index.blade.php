@@ -62,8 +62,9 @@ Special Days Table
                                         <td>{{$item->snsd}}</td>
                                         <td>{{$item->snks}}</td>
                                         <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" data-video="{{$item->specialpdf}}" download="">{{strToUpper($item->name)}}</button>
-
+                                            <button type="button" class="btn btn-primary waves-effect waves-light" id="openmodal"
+                                                data-bs-toggle="modal" data-video="{{$item->specialpdf}}" onclick="modalopen()"
+                                                data-bs-target=".bs-example-modal-lg">{{strToUpper($item->name)}}</button>
                                         </td>
                                         <td id="tooltip-container0" class="d-flex">
                                             <a href="{{ route('special.edit',[$item->id]) }}" class="me-3 text-primary"
@@ -84,20 +85,6 @@ Special Days Table
                                 </tbody>
                             </table>
                         </div>
-                        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" style="display: none;" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-dark border-dark">
-                                        <button type="button" class="close text-white" data-dismiss="modal">×</button>
-                                    </div>
-                                    <div class="modal-body p-0">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                          <iframe class="embed-responsive-item" allowfullscreen=""></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -105,25 +92,36 @@ Special Days Table
     </div> <!-- container-fluid -->
 </div>
 <!-- End Page-content -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel">
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closemodal()"></button>
+            </div>
+            <div class="modal-body text-center">
+                <iframe style="width:95%; height:600px;" frameborder="0" id="fetchpdf"></iframe>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 @endsection
 
 @section('scripts')
 <script>
-    $(document).ready(function() {
-        // Set iframe attributes when the show instance method is called
-        $("#staticBackdrop").on("show.bs.modal", function(event) {
-            let button = $(event.relatedTarget); // Button that triggered the modal
-            let url = button.data("video");      // Extract url from data-video attribute
-            $(this).find("iframe").attr({
-                src : url,
-                allow : "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            });
-        });
+    function modalopen() {
+       let url = document.querySelector('#openmodal').dataset.video; // Extract url from data-video attribute
+       document.querySelector('#fetchpdf').src=url;
+       // Remove iframe attributes when the modal has finished being hidden from the user
+    }
 
-        // Remove iframe attributes when the modal has finished being hidden from the user
-        $("#staticBackdrop").on("hidden.bs.modal", function() {
-            $("#staticBackdrop iframe").removeAttr("src allow");
-        });
-    });
-    </script>
+    function closemodal(){
+        let abc = document.querySelector('#fetchpdf');
+        abc.removeAttr("src");
+    }
+
+
+</script>
 @endsection

@@ -4,9 +4,6 @@
 
         <!-- User details -->
         <div class="user-profile text-center mt-3">
-            {{-- <div class="">
-                <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-md rounded-circle">
-            </div> --}}
             <div class="mt-3">
                 <h4 class="font-size-16 mb-1">{{Auth::user()->name}}</h4>
             </div>
@@ -41,52 +38,59 @@
                     <span>Admin Upload</span>
                 </a>
             </li>
-
-            <li class="menu-title">Duty List</li>
-            <li>
-                <a href="{{route('all.duty')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>General Sangat Duty List</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('nari.duty')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Nari Duty List</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('pracharak.duty')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>My Duty List</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('mukhi.general.duty')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Mukhi’s General Satsang Duty list</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('mukhi.nari.duty')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Mukhi’s Nari Satsang Duty list</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="{{route('sanyojak.general.duty')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Sector Sanyojak’s General Satsang Duty list</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('sanyojak.nari.duty')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Sector Sanyojak’s Nari Satsang Duty list</span>
-                </a>
-            </li>
-
+            @if (!empty(Auth::user()->PracharakID))
+                <li class="menu-title">Duty List</li>
+                <li>
+                    <a href="{{route('all.duty')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>General Sangat Duty List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('nari.duty')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Nari Duty List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('pracharak.duty')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>My Duty List</span>
+                    </a>
+                </li>
+                @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y')
+                <li>
+                    <a href="{{route('mukhi.general.duty')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Mukhi’s General Satsang Duty list</span>
+                    </a>
+                </li>
+                @endif
+                @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y')
+                <li>
+                    <a href="{{route('mukhi.nari.duty')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Mukhi’s Nari Satsang Duty list</span>
+                    </a>
+                </li>
+                @endif
+                @if (Auth::user()->Sector_Sanyojak == 'Y')
+                <li>
+                    <a href="{{route('sanyojak.general.duty')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Sector Sanyojak’s General Satsang Duty list</span>
+                    </a>
+                </li>
+                @endif
+                @if (Auth::user()->Sector_Sanyojak == 'Y')
+                <li>
+                    <a href="{{route('sanyojak.nari.duty')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Sector Sanyojak’s Nari Satsang Duty list</span>
+                    </a>
+                </li>
+                @endif
+            @endif
 
             <li class="menu-title">Notifications</li>
             <li>
@@ -95,46 +99,56 @@
                     <span>Special Satsang Notification</span>
                 </a>
             </li>
+
+            @if (!empty(Auth::user()->PracharakID))
             <li>
                 <a href="{{route('pracharak.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Pracharak/Pracharika</span>
                 </a>
             </li>
+            @endif
+            @if (Auth::user()->Gyan_Pracharak == 'GP')
             <li>
                 <a href="{{route('gyanpracharak.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Gyan Pracharak</span>
                 </a>
             </li>
+            @endif
+            @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y')
             <li>
                 <a href="{{route('mukhi.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Mukhi</span>
                 </a>
             </li>
+            @endif
+            @if (Auth::user()->Sector_Sanyojak == 'Y')
             <li>
                 <a href="{{route('sanyojak.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Sector Sanyojak</span>
                 </a>
             </li>
+            @endif
+            @if (Auth::user()->Sewadal_Sanchalak == 'Y')
             <li>
                 <a href="{{route('sewadal.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Sewadal Sanchalak</span>
                 </a>
             </li>
+            @endif
+            @if (Auth::user()->K_Sanchalak == 'Y')
             <li>
                 <a href="{{route('kshetriya.notification')}}" class="waves-effect">
                     <i class="ri-file-list-3-line"></i>
                     <span>Special Notification for Kshetriya Sanchalak</span>
                 </a>
             </li>
-
+            @endif
             <li class="menu-title">Others</li>
-
-
             <li>
                 <a href="{{route('all.satsang.details')}}" class="waves-effect">
                     <i class="ri-bubble-chart-line"></i>
@@ -147,8 +161,6 @@
                     <span>Today’s Satsang Details</span>
                 </a>
             </li>
-
-
             <li>
                 <a href="{{route('administration.page')}}" class="waves-effect">
                     <i class="ri-shield-user-line"></i>
