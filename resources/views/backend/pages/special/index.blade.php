@@ -23,6 +23,24 @@ Special Days Table
             </div>
         </div>
         <!-- end page title -->
+        <style>
+            .mymodalcode{
+                background-color: rgb(0, 119, 255);
+                position: absolute;
+                width: 90%;
+                height: 80%;
+                float: left;
+                left: 50%;
+                top: 50%;
+                border-radius: 5px;
+                padding: 5px;
+                transform: translate(-50%, -50%);
+                z-index: 5;
+                margin-top: 20px;
+                color: rgba(255, 255, 255, 0.952);
+                display: none;
+            }
+        </style>
 
         <div class="row">
             <div class="col-lg-12">
@@ -62,9 +80,10 @@ Special Days Table
                                         <td>{{$item->snsd}}</td>
                                         <td>{{$item->snks}}</td>
                                         <td>
-                                            <button type="button" class="btn btn-primary waves-effect waves-light" id="openmodal"
-                                                data-bs-toggle="modal" data-video="{{$item->specialpdf}}" onclick="modalopen()"
-                                                data-bs-target=".bs-example-modal-lg">{{strToUpper($item->name)}}</button>
+                                            {{-- <button type="button" class="btn btn-primary waves-effect waves-light" value="{{$item->id}}"
+                                                id="openmodal" data-video="{{$item->specialpdf}}"
+                                                onclick="modalopen(this)">{{strToUpper($item->name)}}</button> --}}
+                                                <a href="{{$item->specialpdf}}">Open PDF</a>
                                         </td>
                                         <td id="tooltip-container0" class="d-flex">
                                             <a href="{{ route('special.edit',[$item->id]) }}" class="me-3 text-primary"
@@ -81,6 +100,15 @@ Special Days Table
                                             </form>
                                         </td>
                                     </tr>
+                                    <div class="mymodalcode" id="mmm_{{$item->id}}">
+                                        <div class="box">
+                                            <div class="d-flex" style="justify-content: space-between;border: 1px solid white; padding:5px">
+                                                <div class="nam" style="font-size: 20px">Name</div>
+                                                <button class="cross" id="crosbtn" style="font-size: 20px" value="{{$item->id}}" onclick="closemodal(this)">X</button>
+                                            </div>
+                                            <iframe style="width:95%; height:600px;" frameborder="0" id="fetchpdf"></iframe>
+                                        </div>
+                                    </div>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -92,36 +120,28 @@ Special Days Table
     </div> <!-- container-fluid -->
 </div>
 <!-- End Page-content -->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="myLargeModalLabel">
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closemodal()"></button>
-            </div>
-            <div class="modal-body text-center">
-                <iframe style="width:95%; height:600px;" frameborder="0" id="fetchpdf"></iframe>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+
 @endsection
 
 @section('scripts')
-<script>
-    function modalopen() {
-       let url = document.querySelector('#openmodal').dataset.video; // Extract url from data-video attribute
-       document.querySelector('#fetchpdf').src=url;
-       // Remove iframe attributes when the modal has finished being hidden from the user
+{{-- <script>
+    function modalopen(e) {
+        let url = document.querySelector('#openmodal').dataset.video;
+        let value = document.querySelector('#openmodal').value;
+        document.querySelector('#fetchpdf').src = url;
+        let modal = document.querySelector('#mmm_'+e.value);
+        modal.style.display = "block";
+        console.log("i am here");
+        console.log(modal);
     }
 
-    function closemodal(){
-        let abc = document.querySelector('#fetchpdf');
-        abc.removeAttr("src");
+    function closemodal(e) {
+        // let abc = document.querySelector('#fetchpdf');
+        // abc.removeAttr("src");
+        let value = document.querySelector('#crosbtn').value;
+        let modal = document.querySelector('#mmm_'+e.value);
+        modal.style.display = "none";
     }
 
-
-</script>
+</script> --}}
 @endsection

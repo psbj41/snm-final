@@ -122,3 +122,7 @@ Special Days Table
 
 <script src="{{asset('backend/assets/js/pages/form-advanced.init.js')}}"></script>
 @endsection
+
+
+
+
