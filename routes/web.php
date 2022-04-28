@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Models\Thought;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
+
 Route::get('/', function () {
     return view('backend.pages.index');
 });
@@ -24,7 +29,7 @@ Route::get('/register-form', [HomeController::class,'register'])->name('register
 Route::post('/register-form', [HomeController::class,'registerStore'])->name('register.store');
 
 Route::get('/home', function () {
-    
+
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
