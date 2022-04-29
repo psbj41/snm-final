@@ -93,6 +93,7 @@
             @endif
 
             <li class="menu-title">Notifications</li>
+
             <li>
                 <a href="{{route('sangat.notification')}}" class="waves-effect">
                     <i class="ri-bubble-chart-line"></i>

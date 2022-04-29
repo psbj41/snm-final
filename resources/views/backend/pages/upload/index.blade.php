@@ -16,8 +16,7 @@ Users Table
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Data Upload</h4>
-                    <a href="{{route('dashboard')}}" class="btn btn-primary" style="width:40%; margin-bottom: 10px">Home Page</a>
+                    <h4 class="mb-sm-0">Admin Upload Page</h4>
                 </div>
             </div>
         </div>
@@ -57,6 +56,25 @@ Users Table
                                 <i class="ri-upload-2-line"></i> Upload
                             </a>
                             <a class="btn btn-info m-1" href="{{route('bhawan.data.page')}}" style="width:48%;">
+                                <i class="ri-table-2"></i>Table</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 style="color: rgb(4, 4, 109);font-weight:900">Duty List</h6>
+                        <p style="border: 1px dashed black; padding:5px">
+                            <i class="ri-file-excel-2-line"></i>
+                            Excel File Upload
+                        </p>
+                        <p style="font-size: 12px">Upload Excel File if you have latest info about "Duty List"</p>
+                        <div class="d-flex justify-between">
+                            <a class="btn btn-success m-1" href="{{route('duty.upload.page')}}" style="width:48%">
+                                <i class="ri-upload-2-line"></i> Upload
+                            </a>
+                            <a class="btn btn-info m-1" href="{{route('duty.data.page')}}" style="width:48%;">
                                 <i class="ri-table-2"></i>Table</a>
                         </div>
                     </div>
@@ -119,36 +137,7 @@ Users Table
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h6 style="color: rgb(4, 4, 109);font-weight:900">Duty List</h6>
-                        <p style="border: 1px dashed black; padding:5px">
-                            <i class="ri-file-excel-2-line"></i>
-                            Excel File Upload
-                        </p>
-                        <p style="font-size: 12px">Upload Excel File if you have latest info about "Duty List"</p>
-                        <div class="d-flex justify-between">
-                            <a class="btn btn-success m-1" href="{{route('duty.upload.page')}}" style="width:48%">
-                                <i class="ri-upload-2-line"></i> Upload
-                            </a>
-                            <a class="btn btn-info m-1" href="{{route('duty.data.page')}}" style="width:48%;">
-                                <i class="ri-table-2"></i>Table</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5>Sanyojak Mukhi & Sanyojak Contact</h5>
-                        <h6> Excel File Upload </h6>
-                        <p>Upload Excel File if you have latest info about "Administration Contact"</p>
-                        <a class="btn btn-success" href="" style="width:100%">Go Upload Page</a>
-                        <a class="btn btn-info" href="{{route('admin.upload.page')}}" style="width:100%; margin-top:10px">View Data Page</a>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <!-- end row -->
     </div> <!-- container-fluid -->

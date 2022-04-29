@@ -17,7 +17,7 @@ Duty List Table
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h6 class="mb-sm-0">Satsang Bhawan</h6>
+                    <h6 class="mb-sm-0">Day Wise </h6>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@ Duty List Table
                 <form action="" class="d-flex">
                     <select style="width: 75%;" class="form-control" type="month" name="day"
                         id="example-month-input">
-                        <option value="Select">Select Option</option>
+                        <option value="Select">Select Day</option>
                         <option value="Monday" @if($day == 'Monday') selected @endif>Monday</option>
                         <option value="Tuesday" @if($day == 'Tuesday')selected @endif>Tuesday</option>
                         <option value="Wednesday" @if($day == 'Wednesday')selected @endif>Wednesday</option>
@@ -40,7 +40,7 @@ Duty List Table
                         <option value="Friday" @if($day == 'Friday')selected @endif>Friday</option>
                         <option value="Saturday" @if($day == 'Saturday')selected @endif>Saturday</option>
                         <option value="Sunday" @if($day == 'Sunday')selected @endif>Sunday</option>
-                        <option value="All" @if($day == 'Sunday')selected @endif>All</option>
+                        <option value="All" @if($day == 'All')selected @endif>All</option>
                         <option value="Today" @if($day == 'Sunday')selected @endif>Today</option>
                     </select>
                     <button style="width:25%;" class="btn btn-success">Click</button>

@@ -171,7 +171,7 @@
         </div>
 
         <div class="d-flex">
-
+{{--
             <div class="dropdown d-inline-block d-lg-none ms-2">
                 <button type="button" class="btn header-item noti-icon waves-effect"
                     id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -193,7 +193,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- <div class="dropdown d-none d-sm-inline-block">
                 <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
@@ -280,21 +280,21 @@
                 </div>
             </div> --}}
 
-            <div class="dropdown d-none d-lg-inline-block ms-1">
+            {{-- <div class="dropdown d-none d-lg-inline-block ms-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
                     <i class="ri-fullscreen-line"></i>
                 </button>
-            </div>
+            </div> --}}
 
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon waves-effect"
+            {{-- <div class="dropdown d-inline-block"> --}}
+                {{-- <button type="button" class="btn header-item noti-icon waves-effect"
                     id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="ri-notification-3-line"></i>
                     <span class="noti-dot"></span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                    aria-labelledby="page-header-notifications-dropdown">
-                    <div class="p-3">
+                    aria-labelledby="page-header-notifications-dropdown"> --}}
+                    {{-- <div class="p-3">
                         <div class="row align-items-center">
                             <div class="col">
                                 <h6 class="m-0"> Notifications </h6>
@@ -303,7 +303,7 @@
                                 <a href="#!" class="small"> View All</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div data-simplebar style="max-height: 230px;">
                         <a href="" class="text-reset notification-item">
                             <div class="d-flex">
@@ -365,7 +365,7 @@
                             </div>
                         </a>
                     </div> --}}
-                    <div class="p-2 border-top">
+                    {{-- <div class="p-2 border-top">
                         <div class="d-grid">
                             <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
                                 <i class="mdi mdi-arrow-right-circle me-1"></i> View More..
@@ -373,7 +373,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="dropdown d-inline-block user-dropdown">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"

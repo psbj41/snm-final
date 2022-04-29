@@ -120,14 +120,14 @@ Duty List Table
                                         <i class="ri-map-pin-time-line" style="font-size:25px; margin-right:10px"></i>
                                         <div>
                                             <h6 class="header-p" style="color:rgb(2, 2, 83);font-weight:700">Satsang Time</h6>
-                                            <p class="content-p">{{$item->SatsangTime}}</p>
+                                            <p class="content-p">{{$item->Time}}</p>
                                         </div>
                                     </div>
                                     <div style="display:flex;align-items:center">
                                         <i class="ri-phone-line" style="font-size:25px; margin-right:10px"></i>
                                         <div>
                                             <h6 class="header-p" style="color:rgb(2, 2, 83);font-weight:700">Satsang Contact</h6>
-                                            <p class="content-p">{{$item->satsangcontact}}</p>
+                                            <p class="content-p">{{$item->SatsangContact}}</p>
                                         </div>
                                     </div>
                                 </table>
