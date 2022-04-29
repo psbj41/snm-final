@@ -78,7 +78,7 @@
         }
         </style>
     <div class="thought" style="text-align: center">
-        <img width="150px" src="{{asset('backend/assets/images/logo.jpg')}}" alt="" srcset="">
+        <img width="150px" src="{{asset('backend/assets/images/logot.png')}}" alt="" srcset="">
         <p class="para">
             {{$thoughts}}
         </p>
