@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 @endif
-                @if (!empty(Auth::user()->PracharakID))
+                @if (Auth::user()->role != 'normal')
                 <li class="menu-title">Duty List</li>
                 <li>
                     <a href="{{route('all.duty')}}" class="waves-effect">
@@ -49,7 +49,7 @@
                         <span>My Duty List</span>
                     </a>
                 </li>
-                @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y')
+                @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y' || Auth::user()->role == 'superadmin')
                 <li>
                     <a href="{{route('mukhi.general.duty')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 @endif
-                @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y')
+                @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y' || Auth::user()->role == 'superadmin')
                 <li>
                     <a href="{{route('mukhi.nari.duty')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 @endif
-                @if (Auth::user()->Sector_Sanyojak == 'Y')
+                @if (Auth::user()->Sector_Sanyojak == 'Y' || Auth::user()->role == 'superadmin')
                 <li>
                     <a href="{{route('sanyojak.general.duty')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
@@ -73,7 +73,7 @@
                     </a>
                 </li>
                 @endif
-                @if (Auth::user()->Sector_Sanyojak == 'Y')
+                @if (Auth::user()->Sector_Sanyojak == 'Y' || Auth::user()->role == 'superadmin')
                 <li>
                     <a href="{{route('sanyojak.nari.duty')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
@@ -92,7 +92,7 @@
                     </a>
                 </li>
 
-                @if (!empty(Auth::user()->PracharakID))
+                @if (Auth::user()->role != 'normal')
                 <li>
                     <a href="{{route('pracharak.notification')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
@@ -100,7 +100,7 @@
                     </a>
                 </li>
                 @endif
-                @if (Auth::user()->Gyan_Pracharak == 'GP')
+                @if (Auth::user()->Gyan_Pracharak == 'GP' || Auth::user()->role == 'superadmin')
                 <li>
                     <a href="{{route('gyanpracharak.notification')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
@@ -108,7 +108,7 @@
                     </a>
                 </li>
                 @endif
-                @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y')
+                @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y' || Auth::user()->role == 'superadmin')
                 <li>
                     <a href="{{route('mukhi.notification')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
@@ -116,7 +116,7 @@
                     </a>
                 </li>
                 @endif
-                @if (Auth::user()->Sector_Sanyojak == 'Y')
+                @if (Auth::user()->Sector_Sanyojak == 'Y' || Auth::user()->role == 'superadmin')
                 <li>
                     <a href="{{route('sanyojak.notification')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
@@ -124,7 +124,7 @@
                     </a>
                 </li>
                 @endif
-                @if (Auth::user()->Sewadal_Sanchalak == 'Y')
+                @if (Auth::user()->Sewadal_Sanchalak == 'Y' || Auth::user()->role == 'superadmin')
                 <li>
                     <a href="{{route('sewadal.notification')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
@@ -132,7 +132,7 @@
                     </a>
                 </li>
                 @endif
-                @if (Auth::user()->K_Sanchalak == 'Y')
+                @if (Auth::user()->K_Sanchalak == 'Y' || Auth::user()->role == 'superadmin')
                 <li>
                     <a href="{{route('kshetriya.notification')}}" class="waves-effect">
                         <i class="ri-file-list-3-line"></i>
