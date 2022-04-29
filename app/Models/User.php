@@ -34,6 +34,8 @@ class User extends Authenticatable
         'Sewadal_Sanchalak',
         'K_Sanchalak',
         'password',
+        'role',
+        'reset'
     ];
 
     /**

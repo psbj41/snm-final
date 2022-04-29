@@ -37,6 +37,7 @@ class UserImport implements ToModel, WithHeadingRow
             'Sewadal_Sanchalak' => $row['sewadal_sanchalak'],
             'K_Sanchalak' => $row['k_sanchalak'],
             'password' => Hash::make('123456789'),
+            'role' => 'access',
         ]);
     }
 }
