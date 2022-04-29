@@ -16,8 +16,8 @@ Duty List Table
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
-                <div class="page-title-box d-flex align-items-center justify-content-between" style="padding-bottom:5px;">
-                    <h5 class="mb-sm-0">All Satsang Details</h5>
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h3>Today is {{$current_day_name}}</h3>
                 </div>
             </div>
         </div>
@@ -40,31 +40,6 @@ Duty List Table
                     </div>
                 </form>
             </div>
-            <div class="col-lg-12">
-                <form action="" class="d-flex" style="margin-bottom: 5px">
-                    <div style="width:100%; border:1px solid rgb(206, 206, 206); background-color:rgb(255, 255, 255);outline:none; padding:8px; border-radius:5px; display:flex">
-                        <i class="ri-search-eye-line"></i>
-                        <select name="day" value="{{$day}}" style="border: none; outline:none; width:100%">
-                            <option value="All" @if($day=='All') selected @endif>All</option>
-                            <option value="Sunday" @if($day=='Sunday') selected @endif>Sunday</option>
-                            <option value="Monday" @if($day=='Monday') selected @endif>Monday</option>
-                            <option value="Tuesday" @if($day=='Tuesday') selected @endif>Tuesday</option>
-                            <option value="Wednesday" @if($day=='Wednesday') selected @endif>Wednesday</option>
-                            <option value="Thursday" @if($day=='Thursday') selected @endif>Thursday</option>
-                            <option value="Friday" @if($day=='Friday') selected @endif>Friday</option>
-                            <option value="Saturday" @if($day=='Saturday') selected @endif>Saturday</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; justify-content:space-between; margin:0px 5px">
-                        <button class="btn btn-success" type="submit">
-                        <i class="ri-arrow-right-s-fill"></i>
-                        </button>
-                        <a href="{{route('duty.data.page2')}}" class="btn btn-danger">
-                            <i class="ri-refresh-line"></i>
-                        </a>
-                    </div>
-                </form>
-            </div>
             <span style="margin-bottom: 10px"></span>
             <style>
                 p{
@@ -76,7 +51,7 @@ Duty List Table
                     padding: 0px;
                 }
             </style>
-            @foreach ($allbhwans as $item)
+            @foreach ($alldata as $item)
             <div class="col-lg-4">
                 <div class="card m-b-30">
                     <div class="card-body">
@@ -104,25 +79,25 @@ Duty List Table
                                         <i class="ri-map-pin-time-line" style="font-size:25px; margin-right:10px"></i>
                                         <div>
                                             <h6 class="header-p" style="color:rgb(2, 2, 83);font-weight:700">Satsang Day</h6>
-                                            @if ($item->Day == 1)
+                                            @if ($item->Day == 2)
                                             <p class="content-p">Monday</p>
                                             @endif
-                                            @if ($item->Day == 2)
+                                            @if ($item->Day == 3)
                                             <p class="content-p">Tuesday</p>
                                             @endif
-                                            @if ($item->Day == 3)
+                                            @if ($item->Day == 4)
                                             <p class="content-p">Wedensday</p>
                                             @endif
-                                            @if ($item->Day == 4)
+                                            @if ($item->Day == 5)
                                             <p class="content-p">Thursday</p>
                                             @endif
-                                            @if ($item->Day == 5)
+                                            @if ($item->Day == 6)
                                             <p class="content-p">Friday</p>
                                             @endif
-                                            @if ($item->Day == 6)
+                                            @if ($item->Day == 7)
                                             <p class="content-p">Saturday</p>
                                             @endif
-                                            @if ($item->Day == 7)
+                                            @if ($item->Day == 1)
                                             <p class="content-p">Sunday</p>
                                             @endif
                                             @if ($item->Day !=1 && $item->Day != 2 && $item->Day != 3 && $item->Day != 4 && $item->Day != 5 && $item->Day != 6 && $item->Day != 7 )
@@ -154,7 +129,7 @@ Duty List Table
             @endforeach
         </div> <!-- end row -->
         <div class="row">
-            {{$allbhwans->links()}}
+            {{$alldata->links()}}
         </div>
     </div> <!-- container-fluid -->
 </div>

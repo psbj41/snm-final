@@ -96,7 +96,22 @@ class PageController extends Controller
         $search = $request['search'] ?? "";
         $day = $request['day'] ?? "";
         $current_day = Carbon::now()->format("l");
-
+        $current_day_name = Carbon::now()->format("l");
+        if ($current_day == 'Sunday') {
+            $current_day = '1';
+        }else if ($current_day == 'Monday') {
+            $current_day = '2';
+        }else if ($current_day == 'Tuesday') {
+            $current_day = '3';
+        }else if ($current_day == 'Wednesday') {
+            $current_day = '4';
+        }else if ($current_day == 'Thursday') {
+            $current_day = '5';
+        }else if ($current_day == 'Friday') {
+            $current_day = '6';
+        }else {
+            $current_day = '7';
+        }
         if($search != ""){
             $alldata = Bhawan::where('area','LIKE',"%$search%")->orwhere('day','LIKE',"%$search%")
             ->orwhere('time','LIKE',"%$search%")->orwhere('address','LIKE',"%$search%")
@@ -110,15 +125,17 @@ class PageController extends Controller
             $alldata = Bhawan::where('day','LIKE',"%$day%")->simplePaginate(1000);
         }
         else{
-            $alldata = Bhawan::where('day','LIKE', "%$current_day%")->simplePaginate(12);
+            Log::info($current_day);
+            $alldata = Bhawan::where('Day','=', $current_day)->simplePaginate(12);
         }
-        return view('backend.pages.upload.bhawan.index2',compact(['alldata','search','day','current_day']));
+        return view('backend.pages.upload.bhawan.day',compact(['alldata','search','day','current_day','current_day_name']));
     }
 
     public function getSatsangDetails(){
         $search = '';
+        $day = '';
         $allbhwans = Bhawan::simplePaginate(12);
-        return view('backend.pages.upload.bhawan.allsatsang',compact(['allbhwans','search']));
+        return view('backend.pages.upload.bhawan.allsatsang',compact(['allbhwans','search','day']));
     }
 
     // End Bhawan upload page

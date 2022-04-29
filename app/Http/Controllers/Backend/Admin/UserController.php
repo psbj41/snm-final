@@ -144,6 +144,12 @@ class UserController extends Controller
 
 
     public function pageResetStore(Request $request){
+        $request->validate([
+            'phone' => 'required',
+            'password' => 'required',
+            'captcha' => 'required|captcha'
+        ]);
+        
         $user = User::where('phone',$request->phone)->update([
             'password' => Hash::make($request->password),
             'reset' => 'done',

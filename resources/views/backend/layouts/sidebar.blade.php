@@ -153,30 +153,30 @@
                         <span>Today’s Satsang Details</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{route('administration.page')}}" class="waves-effect">
                         <i class="ri-shield-user-line"></i>
                         <span>Administration Contact</span>
                     </a>
-                </li>
-                <li>
+                </li> --}}
+                {{-- <li>
                     <a href="{{route('bhawan.data.page2')}}" class="waves-effect">
                         <i class="ri-layout-masonry-line"></i>
                         <span>Satsang Bhawan</span>
                     </a>
-                </li>
-                <li>
+                </li> --}}
+                {{-- <li>
                     <a href="#" class="waves-effect">
                         <i class="ri-list-check-2"></i>
                         <span>Guidelines</span>
                     </a>
-                </li>
-                <li>
+                </li> --}}
+                {{-- <li>
                     <a href="#" class="waves-effect">
                         <i class="ri-map-pin-time-line"></i>
                         <span>Latest Update</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="#" class="waves-effect">
                         <i class="ri-share-line"></i>

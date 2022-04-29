@@ -1,79 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8" />
-    <title>SNM</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
+    <title>SNM Mumbai App</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/iofrm-style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/iofrm-theme5.css')}}">
+    {{-- <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
 </head>
-<body class="body-login">
-    <style>
-        .body-login{
-            background-color: #f0f2f5;
-            color: rgb(0, 47, 255);
-            padding: 0px;
-            margin: 0px;
-        }
-        .main{
-            width: 300px;
-            height: 350px;
-            background-color: rgb(255, 255, 255);
-            position: absolute;
-            top:0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            text-align: center;
-            border-radius:10px;
-            box-shadow: 0px 5px 17px -7px rgb(0 0 0 / 75%);
-        }
-        .input{
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        .input input{
-            font-family:Arial, Helvetica, sans-serif;
-            width: 70%;
-            padding: 12px;
-            border: 2px solid black;
-            border-radius: 5px;
-            outline: none;
-        }
-        .btn{
-            width: 80%;
-            padding: 10px;
-            background-color: #24a0ed;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 600;
-            color: white;
-        }
-        .main form{
-            margin-top: 25%;
-        }
-        </style>
-        <div class="main">
-            <form method="POST" action="{{ route('password.change.store') }}">
-                @csrf
-                <div class="input">
-                    <input type="text" name="phone" placeholder="Mobile Number">
+
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="{{asset('auth/images/graphic2.svg')}}" alt="">
                 </div>
-                <div class="input">
-                    <input type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Dhan Nirankar Ji</h3>
+                        <p>Welcome To SNM Mumbai App</p>
+                        <h3 style="color: rgb(255, 166, 0)">Reset Password</h3>
+                        <form method="POST" action="{{ route('password.change.store') }}">
+                            @csrf
+                            <input class="form-control" type="text" name="phone" placeholder="Mobile Number"
+                                required>
+                            <input class="form-control" type="password" name="password" placeholder="New Password" required>
+                            <div style="display: flex; justify-content:center; align-items:center">
+                                <span class="captcha" >{!! captcha_img() !!}</span>
+                                <button type="button" class="reload" id="reload" style="margin-left: 10px; padding:5px; font-size:18px; background-color:forestgreen; color:white; border:none; border-radius:5px; cursor: pointer; outline:none">
+                                    &#x21bb;
+                                </button>
+                            </div>
+                            <input id="captcha" class="form-control" style="margin-top: 5px;" type="text" placeholder="Enter Captcha" name="captcha">
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">Change Password</button>
+                            </div>
+                        </form>
+                        {{-- <div class="other-links">
+                            <span>Or login with</span><a href="#">Facebook</a><a href="#">Google</a><a
+                                href="#">Linkedin</a>
+                        </div> --}}
+                    </div>
                 </div>
-                <div class="input">
-                    <input type="text" placeholder="Confirm Password">
-                </div>
-                <div>
-                    <button class="btn" type="submit">Reset Password</button>
-                </div>
-            </form>
+            </div>
         </div>
+    </div>
+    <script src="{{asset('auth/js/jquery.min.js')}}"></script>
+    <script src="{{asset('auth/js/popper.min.js')}}"></script>
+    <script src="{{asset('auth/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('auth/js/main.js')}}"></script>
+    <script type="text/javascript">
+        $('#reload').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'reload-captcha',
+                success: function (data) {
+                    $(".captcha").html(data.captcha);
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

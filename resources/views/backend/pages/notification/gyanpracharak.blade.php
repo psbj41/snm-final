@@ -40,7 +40,6 @@ Special Notification for Gyan Pracharak
                             </a>
                         </div>
                     </form>
-
                 </div>
                 <div class="col-lg-12">
                     <form action="" class="d-flex">
