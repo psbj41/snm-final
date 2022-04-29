@@ -30,6 +30,8 @@ return new class extends Migration
             $table->longText('Sewadal_Sanchalak')->nullable();
             $table->longText('K_Sanchalak')->nullable();
             $table->string('password');
+            $table->string('role')->default('normal');
+            $table->string('reset')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

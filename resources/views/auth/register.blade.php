@@ -31,6 +31,13 @@
                             <input class="form-control" type="text" name="name" placeholder="Full Name" required>
                             <input class="form-control" type="number" name="phone" placeholder="Phone Number" required>
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <div style="display: flex; justify-content:center; align-items:center">
+                                <span class="captcha" >{!! captcha_img() !!}</span>
+                                <button type="button" class="reload" id="reload" style="margin-left: 10px; padding:5px; font-size:18px; background-color:forestgreen; color:white; border:none; border-radius:5px; cursor: pointer; outline:none">
+                                    &#x21bb;
+                                </button>
+                            </div>
+                            <input id="captcha" class="form-control" style="margin-top: 5px;" type="text" placeholder="Enter Captcha" name="captcha">
                             <div class="form-button">
                                 <button id="submit" type="submit" class="ibtn">Register</button>
                             </div>
@@ -44,5 +51,16 @@
 <script src="{{asset('auth/js/popper.min.js')}}"></script>
 <script src="{{asset('auth/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('auth/js/main.js')}}"></script>
+<script type="text/javascript">
+    $('#reload').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'reload-captcha',
+            success: function (data) {
+                $(".captcha").html(data.captcha);
+            }
+        });
+    });
+</script>
 </body>
 </html>

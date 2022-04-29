@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Thought;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -22,11 +23,21 @@ class UserController extends Controller
         $this->roles = Role::all();
     }
 
+    public function home()
+    {
+        $thoughts = Thought::all()->random(1);
+        foreach ($thoughts as $key => $value) {
+            $thoughts = $value->thought;
+        }
+        return view('dashboard',compact('thoughts'));
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $user = User::all();
@@ -135,9 +146,9 @@ class UserController extends Controller
     public function pageResetStore(Request $request){
         $user = User::where('phone',$request->phone)->update([
             'password' => Hash::make($request->password),
-            'remember_token' => '1',
+            'reset' => 'done',
         ]);
-        return redirect()->route('login');
+        return redirect()->route('login')->with('success',"Password Changed Successfully");
     }
 
     public function profile()

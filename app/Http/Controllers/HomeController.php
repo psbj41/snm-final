@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -15,12 +18,23 @@ class HomeController extends Controller
 
     public function registerStore(Request $request)
     {
+        $request->validate([
+            'phone' => 'required',
+            'password' => 'required',
+            'captcha' => 'required|captcha'
+        ]);
+
         $user = User::create([
             'name' => $request->name,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
-            'remember_token' => '1',
+            'reset' => 'done',
         ]);
-        return redirect()->route('login')->with('success', "Register Successfully");
+
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect(RouteServiceProvider::HOME);
     }
 }

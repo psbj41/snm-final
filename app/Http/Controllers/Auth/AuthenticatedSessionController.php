@@ -39,11 +39,9 @@ class AuthenticatedSessionController extends Controller
 
         $user = User::where('phone',$request->phone)->get();
         foreach ($user as $key => $value) {
-            $token = $value->remember_token;
+            $token = $value->reset;
         }
-        if(!empty($token)){
-            //
-        }else{
+        if(empty($token)){
             return view('auth.passwordchange');
         }
 

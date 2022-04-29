@@ -74,8 +74,8 @@
                             </div> --}}
                             <div class="thought-box">
                                 <h5 class="text-center" style="color: rgb(1, 1, 119); font-weight:600">Thought of the day</h5>
-                                @if (!empty($thought))
-                                <p>{{$thought}}</p>
+                                @if (!empty($thoughts))
+                                <p>{{$thoughts}}</p>
                                 @else
                                 <p>No data found</p>
                                 @endif

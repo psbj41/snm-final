@@ -19,26 +19,17 @@
                         <span>Home</span>
                     </a>
                 </li>
-                <li class="menu-title">SuperAdmin</li>
-                {{-- <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-admin-line"></i>
-                        <span>Admin</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('user.index')}}">Users</a></li>
-                <li><a href="{{route('role.index')}}">Roles</a></li>
-                <li><a href="{{route('permission.index')}}">Permissions</a></li>
-            </ul>
-            </li> --}}
 
-            <li>
-                <a href="{{route('upload.page')}}" class="waves-effect">
-                    <i class="ri-upload-cloud-line"></i>
-                    <span>Admin Upload</span>
-                </a>
-            </li>
-            @if (!empty(Auth::user()->PracharakID))
+                @if (Auth::user()->role == 'superadmin')
+                <li class="menu-title">SuperAdmin</li>
+                <li>
+                    <a href="{{route('upload.page')}}" class="waves-effect">
+                        <i class="ri-upload-cloud-line"></i>
+                        <span>Admin Upload</span>
+                    </a>
+                </li>
+                @endif
+                @if (!empty(Auth::user()->PracharakID))
                 <li class="menu-title">Duty List</li>
                 <li>
                     <a href="{{route('all.duty')}}" class="waves-effect">
@@ -90,129 +81,129 @@
                     </a>
                 </li>
                 @endif
-            @endif
+                @endif
 
-            <li class="menu-title">Notifications</li>
+                <li class="menu-title">Notifications</li>
 
-            <li>
-                <a href="{{route('sangat.notification')}}" class="waves-effect">
-                    <i class="ri-bubble-chart-line"></i>
-                    <span>Special Satsang Notification</span>
-                </a>
-            </li>
+                <li>
+                    <a href="{{route('sangat.notification')}}" class="waves-effect">
+                        <i class="ri-bubble-chart-line"></i>
+                        <span>Special Satsang Notification</span>
+                    </a>
+                </li>
 
-            @if (!empty(Auth::user()->PracharakID))
-            <li>
-                <a href="{{route('pracharak.notification')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Special Notification for Pracharak/Pracharika</span>
-                </a>
-            </li>
-            @endif
-            @if (Auth::user()->Gyan_Pracharak == 'GP')
-            <li>
-                <a href="{{route('gyanpracharak.notification')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Special Notification for Gyan Pracharak</span>
-                </a>
-            </li>
-            @endif
-            @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y')
-            <li>
-                <a href="{{route('mukhi.notification')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Special Notification for Mukhi</span>
-                </a>
-            </li>
-            @endif
-            @if (Auth::user()->Sector_Sanyojak == 'Y')
-            <li>
-                <a href="{{route('sanyojak.notification')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Special Notification for Sector Sanyojak</span>
-                </a>
-            </li>
-            @endif
-            @if (Auth::user()->Sewadal_Sanchalak == 'Y')
-            <li>
-                <a href="{{route('sewadal.notification')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Special Notification for Sewadal Sanchalak</span>
-                </a>
-            </li>
-            @endif
-            @if (Auth::user()->K_Sanchalak == 'Y')
-            <li>
-                <a href="{{route('kshetriya.notification')}}" class="waves-effect">
-                    <i class="ri-file-list-3-line"></i>
-                    <span>Special Notification for Kshetriya Sanchalak</span>
-                </a>
-            </li>
-            @endif
-            <li class="menu-title">Others</li>
-            <li>
-                <a href="{{route('all.satsang.details')}}" class="waves-effect">
-                    <i class="ri-bubble-chart-line"></i>
-                    <span>Satsang Details</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('bhawan.data.today.page')}}" class="waves-effect">
-                    <i class="ri-bubble-chart-line"></i>
-                    <span>Today’s Satsang Details</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('administration.page')}}" class="waves-effect">
-                    <i class="ri-shield-user-line"></i>
-                    <span>Administration Contact</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('bhawan.data.page2')}}" class="waves-effect">
-                    <i class="ri-layout-masonry-line"></i>
-                    <span>Satsang Bhawan</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="waves-effect">
-                    <i class="ri-list-check-2"></i>
-                    <span>Guidelines</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="waves-effect">
-                    <i class="ri-map-pin-time-line"></i>
-                    <span>Latest Update</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="waves-effect">
-                    <i class="ri-share-line"></i>
-                    <span>Share App</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('contact')}}" class="waves-effect">
-                    <i class="ri-phone-line"></i>
-                    <span>Contact Us</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('user.profile')}}" class="waves-effect">
-                    <i class="ri-user-line"></i>
-                    <span>Profile</span>
-                </a>
-            </li>
+                @if (!empty(Auth::user()->PracharakID))
+                <li>
+                    <a href="{{route('pracharak.notification')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Special Notification for Pracharak/Pracharika</span>
+                    </a>
+                </li>
+                @endif
+                @if (Auth::user()->Gyan_Pracharak == 'GP')
+                <li>
+                    <a href="{{route('gyanpracharak.notification')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Special Notification for Gyan Pracharak</span>
+                    </a>
+                </li>
+                @endif
+                @if (Auth::user()->Area_Mukhi_Branch_Incharge == 'Y')
+                <li>
+                    <a href="{{route('mukhi.notification')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Special Notification for Mukhi</span>
+                    </a>
+                </li>
+                @endif
+                @if (Auth::user()->Sector_Sanyojak == 'Y')
+                <li>
+                    <a href="{{route('sanyojak.notification')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Special Notification for Sector Sanyojak</span>
+                    </a>
+                </li>
+                @endif
+                @if (Auth::user()->Sewadal_Sanchalak == 'Y')
+                <li>
+                    <a href="{{route('sewadal.notification')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Special Notification for Sewadal Sanchalak</span>
+                    </a>
+                </li>
+                @endif
+                @if (Auth::user()->K_Sanchalak == 'Y')
+                <li>
+                    <a href="{{route('kshetriya.notification')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Special Notification for Kshetriya Sanchalak</span>
+                    </a>
+                </li>
+                @endif
+                <li class="menu-title">Others</li>
+                <li>
+                    <a href="{{route('all.satsang.details')}}" class="waves-effect">
+                        <i class="ri-bubble-chart-line"></i>
+                        <span>Satsang Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('bhawan.data.today.page')}}" class="waves-effect">
+                        <i class="ri-bubble-chart-line"></i>
+                        <span>Today’s Satsang Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('administration.page')}}" class="waves-effect">
+                        <i class="ri-shield-user-line"></i>
+                        <span>Administration Contact</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('bhawan.data.page2')}}" class="waves-effect">
+                        <i class="ri-layout-masonry-line"></i>
+                        <span>Satsang Bhawan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-list-check-2"></i>
+                        <span>Guidelines</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-map-pin-time-line"></i>
+                        <span>Latest Update</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="ri-share-line"></i>
+                        <span>Share App</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('contact')}}" class="waves-effect">
+                        <i class="ri-phone-line"></i>
+                        <span>Contact Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('user.profile')}}" class="waves-effect">
+                        <i class="ri-user-line"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
 
-            <li>
-                <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();"><i
-                        class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </li>
+                <li>
+                    <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"><i
+                            class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

@@ -26,7 +26,7 @@ Route::post('password/change',[UserController::class,'pageResetStore'])->name('p
 Route::get('/reload-captcha', [UserController::class, 'reloadCaptcha']);
 
 Route::middleware(['auth'])->group(function () {
-
+    Route::get('/home',[UserController::class,'home'])->name('dashboard');
     //user
     Route::resource('user', UserController::class);
     Route::get('profile',[UserController::class,'profile'])->name('user.profile');

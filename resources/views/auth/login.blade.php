@@ -31,6 +31,9 @@
                         <div class="page-links">
                             <a href="{{ route('login') }}" class="active">Login</a><a href="{{ route('register.index') }}">Register</a>
                         </div>
+                        @if (session('success'))
+                        <p style="background:rgba(122, 0, 204, 0.781); padding:5px; border-radius:5px">{{session('success')}}</p>
+                        @endif
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <input class="form-control" type="text" name="phone" placeholder="Mobile Number"
