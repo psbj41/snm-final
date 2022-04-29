@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--
+* WAVE - Sliding Coming Soon Template
+* Build Date: June 2016
+* Last Update: June 2016
+* Author: Madeon08
+* Copyright (C) 2016 Madeon08
+* This is a premium product available exclusively here : http://themeforest.net/user/Madeon08/portfolio
+-->
+<html lang="en-us" class="no-js">
+
+	<head>
+		<meta charset="utf-8">
+        <title>WAVE - Sliding Coming Soon Template</title>
+        <meta name="description" content="The description should optimally be between 150-160 characters.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Madeon08">
+
+        <!-- ================= Favicon ================== -->
+        <!-- Standard -->
+        <link rel="shortcut icon" href="img/favicon.png">
+        <!-- Retina iPad Touch Icon-->
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicon-retina-ipad.png">
+        <!-- Retina iPhone Touch Icon-->
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon-retina-iphone.png">
+        <!-- Standard iPad Touch Icon--> 
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicon-standard-ipad.png">
+        <!-- Standard iPhone Touch Icon--> 
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicon-standard-iphone.png">
+
+        <!-- ============== Resources style ============== -->
+        <link rel="stylesheet" href="css/style-minimal-flat.css" />
+
+		<!-- Modernizr runs quickly on page load for detecting features -->
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+
+    <body>
+
+    	<!-- Loading overlay -->
+		<div id="loading" class="dark-back">
+			<div class="loading-bar"></div>
+			<span class="loading-text opacity-0">Please wait...</span>
+		</div>
+
+		<!-- Canvas for particles animation -->
+		<div id="particles-js"></div>
+
+    	<!-- Informations bar on top of the screen -->
+    	<div class="info-bar bar-intro opacity-0">
+
+    		<div class="row">
+
+    			<div class="col-xs-12 col-sm-6 col-lg-6 info-bar-left">
+
+    				<p>Grand Opening in <span id="countdown"></span></p>
+
+    			</div>
+
+    			<div class="col-xs-12 col-sm-6 col-lg-6 info-bar-right">
+
+    				<!-- Text or Icons, as you want :-) / Uncomment the part you need and comment or delete the other one -->
+
+    				<!-- <p class="social-text">
+    					<a href="#" target="_blank">TWITTER</a> / 
+    					<a href="#" target="_blank">FACEBOOK</a> / 
+    					<a href="#" target="_blank">YOUTUBE</a>
+    				</p> -->
+
+    				<p class="social-icon">
+    					<a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+    					<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+    					<a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+    					<a href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
+    					<a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+    				</p>
+
+    			</div>
+    		</div>
+    	</div>
+    	<!-- END - Informations bar on top of the screen -->
+
+        <!-- Slider Wrapper -->
+        <div id="slider" class="sl-slider-wrapper">
+
+			<div class="sl-slider">
+			
+				<!-- SLIDE 1 / Home -->
+				<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+					
+					<div class="sl-slide-inner">
+
+						<div class="content-slide">
+
+							<div class="container">
+
+								<img src="img/logo.png" alt="" class="brand-logo text-intro opacity-0" />
+							
+								<h1 class="text-intro opacity-0">We're so close</h1>
+							
+								<p class="text-intro opacity-0">Enjoy a <strong>Very Limited Opportunity</strong> by subscribing to our newsletter.<br>
+									Check out the time remaining on top left, hurry up!
+								</p>
+
+								<a data-dialog="somedialog" class="action-btn trigger text-intro opacity-0">Notify me at Launch!</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END - SLIDE 1 / Home -->$
+
+			</div>
+			<!-- END - sl-slider -->
+
+			<p class="copyright">© WAVE - Made for Creative People</p>
+
+		</div>
+		<!-- END - Slider Wrapper -->
+
+        <!-- Newsletter Popup -->
+		<div id="somedialog" class="dialog">
+
+			<div class="dialog__overlay"></div>
+					
+			<!-- dialog__content -->
+			<div class="dialog__content">
+
+				<div class="header-picture"></div>
+						
+				<!-- dialog-inner -->
+				<div class="dialog-inner">
+							
+					<h4>You like taking the lead of line?</h4>
+							
+					<p>Being the first to know always feels great... Signing up to our newsletter gives you <strong>exclusive access to our fantastic Grand Opening on August 6th 2017</strong></p>
+
+					<!-- Newsletter Form -->
+					<div id="subscribe">
+
+		                <form action="php/notify-me.php" id="notifyMe" method="POST">
+
+		                    <div class="form-group">
+
+		                        <div class="controls">
+		                            
+		                        	<!-- Field  -->
+		                        	<input type="text" id="mail-sub" name="email" placeholder="Click here to write your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Click here to write your email'" class="form-control email srequiredField" />
+
+		                        	<!-- Spinner top left during the submission -->
+		                        	<i class="fa fa-spinner opacity-0"></i>
+
+		                            <!-- Button -->
+		                            <button class="btn btn-lg submit">Get notified</button>
+
+		                            <div class="clear"></div>
+
+		                        </div>
+
+		                    </div>
+
+		                </form>
+
+						<!-- Answer for the newsletter form is displayed in the next div, do not remove it. -->
+						<div class="block-message">
+
+							<div class="message">
+
+								<p class="notify-valid"></p>
+
+							</div>
+
+						</div>
+						<!-- END - Answer for the newsletter form is displayed in the next div, do not remove it. -->
+
+        			</div>
+        			<!-- END - Newsletter Form -->
+
+        			<p class="spam-news"><i class="fa fa-lock"></i> We hate spam just as much as you do. Your email will stay secret.</p>
+
+				</div>
+				<!-- END - dialog-inner -->
+
+				<!-- Cross for closing the Newsletter Popup -->
+				<button class="close-newsletter" data-dialog-close><i class="icon ion-android-close"></i></button>
+
+			</div>
+			<!-- END - dialog__content -->
+						
+		</div>
+		<!-- END - Newsletter Popup -->
+
+		<!-- //////////////////////\\\\\\\\\\\\\\\\\\\\\\ -->
+	    <!-- ********** List of jQuery Plugins ********** -->
+	    <!-- \\\\\\\\\\\\\\\\\\\\\\////////////////////// -->
+		
+		<!-- * Libraries jQuery, Easing and Bootstrap - Be careful to not remove them * -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.easings.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<!-- SlitSlider plugin -->
+		<script src="js/jquery.ba-cond.min.js"></script>
+		<script src="js/jquery.slitslider.js"></script>
+
+		<!-- Newsletter plugin -->
+		<script src="js/notifyMe.js"></script>
+
+		<!-- Popup Newsletter Form -->
+		<script src="js/classie.js"></script>
+		<script src="js/dialogFx.js"></script>
+
+		<!-- Particles effect plugin on the right -->
+		<script src="js/particles.js"></script>
+
+		<!-- Custom Scrollbar plugin -->
+		<script src="js/jquery.mCustomScrollbar.js"></script>
+
+		<!-- Countdown plugin -->
+		<script src="js/jquery.countdown.js"></script>
+
+		<script>
+		$("#countdown")
+			// Year/Month/Day Hour:Minute:Second
+			.countdown("2018/10/24 15:30:30", function(event) {
+				$(this).html(
+					event.strftime('%D Days %Hh %Mm %Ss')
+				);
+		});
+		</script>
+
+		<!-- Main application scripts -->
+		<script src="js/main-flat.js"></script>
+
+	</body>
+
+</html>

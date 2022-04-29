@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>WAVE - Documentation</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row">
+          
+            <!-- sidebar -->
+            <div class="column col-sm-3" id="sidebar">
+                <a class="logo" href="#">WAVE Documentation</a>
+                <ul class="nav">
+                    <li class="page-scroll">
+                      <a href="#anchor1">Informations</a>
+                    </li>
+                    <li class="page-scroll">
+                      <a href="#anchor2">How to install on your server</a>
+                    </li>
+                    <li class="page-scroll">
+                      <a href="#anchor3">Countdown / Set up your end date</a>
+                    </li>
+                    <li class="page-scroll">
+                      <a href="#anchor4">Add / Remove / Edit Slide</a>
+                    </li>
+                    <li class="page-scroll">
+                      <a href="#anchor5">Bottom navigation</a>
+                    </li>
+                    <li class="page-scroll">
+                      <a href="#anchor6">Photoswipe Gallery</a>
+                    </li>
+                    <li class="page-scroll">
+                      <a href="#anchor7">Newsletter / 3 Methods</a>
+                    </li>
+                    <li class="page-scroll">
+                      <a href="#anchor8">Contact form</a>
+                    </li>
+                    <li class="page-scroll">
+                      <a href="#anchor9">Files structure</a>
+                    </li>  
+                    <br/><hr><br/>
+                    <li>
+                      <a href="http://sass-lang.com/" target="_blank">SASS Doc</a>
+                    </li>
+                    <li>
+                      <a href="http://getbootstrap.com/" target="_blank">Bootstrap Doc</a>
+                    </li>
+                    <li>
+                      <a href="http://bourbon.io/" target="_blank">Bourbon Doc</a>
+                    </li>
+                    <li>
+                      <a href="http://fontawesome.io/" target="_blank">Font Awesome</a>
+                    </li>
+                    <li>
+                      <a href="http://ionicons.com/" target="_blank">Ionicons</a>
+                    </li>
+                </ul>
+                
+            </div>
+            <!-- /sidebar -->
+          
+            <!-- main -->
+            <div class="column col-sm-9" id="main">
+                <div class="padding">
+                    <div class="full col-sm-9">
+                      
+                        <!-- content -->
+                        
+                        <div class="col-sm-12" id="anchor1">   
+                          <div class="page-header text-muted">
+                          Informations
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <h3>Thank you so much for having chosen WAVE!</h3>
+                            <p>2 weeks have been necessary to build this template for having a perfect layout on every screen, an advanced design and the last trends coupled with an accurate coding.<br>
+                            I would be very grateful if you could rate my item at <a href="http://themeforest.net/downloads" target="_blank">this link</a> with 5 stars and leave your feedback, this is very important for me, Thanks! :-)</p>
+                            <p>If you have any questions, feel free to email me via my user page with the contact form <a href="http://themeforest.net/user/Madeon08" target="_blank">Here</a><br/>
+                            I try to answer as soon as possible, 7/7 and almost 24/24!<br/>
+                            Time in my country :
+                            <span><strong>
+                              GMT/UTC + 01:00 hour
+                            </strong></span><br/>
+                            During your customization, I advise you to be connected to Internet for the correct running of jQuery<br/>
+                            <strong>All the lines of style written in this document are the lines of the CSS files. The line numbers for the SASS users are almost the same, thanks for your comprehension.</strong><br><br>
+                            <img src="signature.png" alt="" /></p>
+                          </div>
+                        </div>
+
+                        <!-- /////////////////////////////////////// -->
+                        <!-- /////////////////////////////////////// -->
+
+                        <div class="col-sm-12" id="anchor2">   
+                          <div class="page-header text-muted">
+                          Installation on your server via FTP
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <p>How To Install WAVE Via FTP :<br>
+                                Step 1 - <strong>Log into your hosting space via an FTP software</strong> (Filezilla for example).<br>
+
+                                Step 2 - <strong>Unzip your Download Pack file</strong> and open the extracted WAVE template folder.<br>
+
+                                Step 3 - <strong>Upload the HTML file corresponding to the variant of your choice along with all directories (css,js,php,img) in the structure that they appear in your download package.</strong> Then, the HTML file should reside in the root directory, and all other files should reside inside their associated folder.</p>
+                          </div>
+                        </div>
+
+                        <!-- /////////////////////////////////////// -->
+                        <!-- /////////////////////////////////////// -->
+
+                        <div class="col-sm-12" id="anchor3">   
+                          <div class="page-header text-muted">
+                          Countdown / Set up your end date
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                           
+                           <p>This is an Easy to use animated countdown javascript.<br>
+                            <strong>You just have to set up your end date in the script part of your HTML, see the code below.</strong></p>
+                            
+                            <pre style="background:#042029;color:#839496"><span style="color:#FFD800">$</span><span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>#countdown<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>
+    <span style="color:#586e75">// Year/Month/Day Hour:Minute:Second</span>
+    .countdown<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>2018/10/24 15:30:30<span style="color:#00c8aa">"</span></span>, <span style="color:#268bd2">function</span><span style="color:#93a1a1">(</span><span style="color:#FFD800">event</span><span style="color:#93a1a1">)</span> <span style="color:#268bd2">{</span>
+        <span style="color:#FFD800">$</span><span style="color:#93a1a1">(</span><span style="color:#268bd2">this</span><span style="color:#93a1a1">)</span>.html<span style="color:#93a1a1">(</span>
+            <span style="color:#FFD800">event</span>.strftime<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">'</span>%D Days %Hh %Mm %Ss<span style="color:#00c8aa">'</span></span><span style="color:#93a1a1">)</span>
+        <span style="color:#93a1a1">)</span>;
+<span style="color:#268bd2">}</span><span style="color:#93a1a1">)</span>;
+</pre>
+
+                          </div>
+                        </div>
+
+                        <!-- /////////////////////////////////////// -->
+                        <!-- /////////////////////////////////////// -->
+
+                        <div class="col-sm-12" id="anchor4">   
+                          <div class="page-header text-muted">
+                          Add / Remove / Edit Slide
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <p>Slit Slider is a powerful fullscreen slideshow with a twist: we’ll slice the current slide open in order to reveal the next or previous slide. Using different data-attributes, we’ll define the type, rotation angle and scale of a slide’s parts, giving us the possibility to create unique effects of each slide transition.<br>
+                            Check the awesome official documentation of this plugin <a href="http://tympanus.net/codrops/2012/10/24/slit-slider-revised/" target="_blank">here</a> for all the settings available.<br>
+                            <strong>Specific slide options are set up in the html files, see the code below presenting the golbal structure and where the effects are added.</strong></p>
+                            <pre style="background:#042029;color:#839496"><span style="color:#839496;font-style:italic">&lt;!--</span> SLIDE <span style="color:#00c8aa">1</span> / Home <span style="color:#839496;font-style:italic">--></span>
+<span style="color:#FFD800">&lt;</span>div <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>sl-slide bg-1<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>orientation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>horizontal<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>-25<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>-25<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>2<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>2<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+    
+<span style="color:#FFD800">&lt;</span>/div<span style="color:#FFD800">></span>
+<span style="color:#839496;font-style:italic">&lt;!--</span> END <span style="color:#FFD800">-</span> SLIDE <span style="color:#00c8aa">1</span> / Home <span style="color:#839496;font-style:italic">--></span>
+
+<span style="color:#839496;font-style:italic">&lt;!--</span> SLIDE <span style="color:#00c8aa">2</span> / About <span style="color:#839496;font-style:italic">--></span>
+<span style="color:#FFD800">&lt;</span>div <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>sl-slide bg-2<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>orientation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>vertical<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>10<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>-15<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>1.5<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>1.5<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+
+<span style="color:#FFD800">&lt;</span>/div<span style="color:#FFD800">></span>
+<span style="color:#839496;font-style:italic">&lt;!--</span> END <span style="color:#FFD800">-</span> SLIDE <span style="color:#00c8aa">2</span> / About <span style="color:#839496;font-style:italic">--></span>
+
+<span style="color:#839496;font-style:italic">&lt;!--</span> SLIDE <span style="color:#00c8aa">3</span> / Portfolio <span style="color:#839496;font-style:italic">--></span>
+<span style="color:#FFD800">&lt;</span>div <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>sl-slide bg-3<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>orientation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>horizontal<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>3<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>3<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>2<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>1<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+
+<span style="color:#FFD800">&lt;</span>/div<span style="color:#FFD800">></span>
+<span style="color:#839496;font-style:italic">&lt;!--</span> END <span style="color:#FFD800">-</span> SLIDE <span style="color:#00c8aa">3</span> / Portfolio <span style="color:#839496;font-style:italic">--></span>
+
+<span style="color:#839496;font-style:italic">&lt;!--</span> SLIDE <span style="color:#00c8aa">4</span> / Services <span style="color:#839496;font-style:italic">--></span>
+<span style="color:#FFD800">&lt;</span>div <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>sl-slide bg-4<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>orientation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>vertical<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>-5<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>25<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>2<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>1<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+
+<span style="color:#FFD800">&lt;</span>/div<span style="color:#FFD800">></span>
+<span style="color:#839496;font-style:italic">&lt;!--</span> END <span style="color:#FFD800">-</span> SLIDE <span style="color:#00c8aa">4</span> / Services <span style="color:#839496;font-style:italic">--></span>
+
+<span style="color:#839496;font-style:italic">&lt;!--</span> SLIDE <span style="color:#00c8aa">5</span> / Contact <span style="color:#839496;font-style:italic">--></span>
+<span style="color:#FFD800">&lt;</span>div <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>sl-slide bg-5<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>orientation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>horizontal<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>-5<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>rotation<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>10<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>2<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>scale<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>1<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+
+<span style="color:#FFD800">&lt;</span>/div<span style="color:#FFD800">></span>
+<span style="color:#839496;font-style:italic">&lt;!--</span> END <span style="color:#FFD800">-</span> SLIDE <span style="color:#00c8aa">5</span> / Contact <span style="color:#839496;font-style:italic">--></span>
+</pre>                    
+<p>Every slide have some data-attributes that we will use in order to control the effect for each slide. The data attributes available are the following:
+  <pre style="background:#042029;color:#839496">data<span style="color:#FFD800">-</span>orientation
+data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>rotation
+data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>rotation
+data<span style="color:#FFD800">-</span>slice1<span style="color:#FFD800">-</span>scale 
+data<span style="color:#FFD800">-</span>slice2<span style="color:#FFD800">-</span>scale
+</pre>
+                          <p>The first one, data-orientation should be either “vertical” or “horizontal”. This we need in order to know where to “slice” the slide. It will be either slice horizontally or vertically. The data-slice1-rotation and data-slice2-rotation value will be the rotation degree for each one of the slices and the data-slice1-scale and data-slice2-scale value will be the scale value.</p>
+                          <hr>
+                          <p>The background pictures are added in the main.js file used by the variant of your choice, see the code below :
+<pre style="background:#042029;color:#839496"><span style="color:#FFD800">$</span><span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">'</span>.bg-1 .sl-slide-inner , .bg-1 .sl-content-slice<span style="color:#00c8aa">'</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>url('img/slide-1.jpg') center<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background-size<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>cover<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>;
+<span style="color:#FFD800">$</span><span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">'</span>.bg-2 .sl-slide-inner , .bg-1 .sl-content-slice<span style="color:#00c8aa">'</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>url('img/slide-2.jpg') center<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background-size<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>cover<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>;
+<span style="color:#FFD800">$</span><span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">'</span>.bg-3 .sl-slide-inner , .bg-1 .sl-content-slice<span style="color:#00c8aa">'</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>url('img/slide-3.jpg') center<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background-size<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>cover<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>;
+<span style="color:#FFD800">$</span><span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">'</span>.bg-4 .sl-slide-inner , .bg-1 .sl-content-slice<span style="color:#00c8aa">'</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>url('img/slide-4.jpg') center<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background-size<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>cover<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>;
+<span style="color:#FFD800">$</span><span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">'</span>.bg-5 .sl-slide-inner , .bg-1 .sl-content-slice<span style="color:#00c8aa">'</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>url('img/slide-5.jpg') center<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>.css<span style="color:#93a1a1">(</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>background-size<span style="color:#00c8aa">"</span></span>, <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>cover<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span>;
+</pre>
+
+<hr>
+                          <p>For the colored version, the background colors are set up in the style-color.css, see the code below :
+<pre style="background:#042029;color:#839496">.bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">1</span> .sl<span style="color:#FFD800">-</span>slide<span style="color:#FFD800">-</span>inner, .bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">1</span> .sl<span style="color:#FFD800">-</span>content<span style="color:#FFD800">-</span>slice <span style="color:#268bd2">{</span>
+  background: #786de4;
+<span style="color:#268bd2">}</span>
+
+.bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">2</span> .sl<span style="color:#FFD800">-</span>slide<span style="color:#FFD800">-</span>inner, .bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">2</span> .sl<span style="color:#FFD800">-</span>content<span style="color:#FFD800">-</span>slice <span style="color:#268bd2">{</span>
+  background: #fbb03b;
+<span style="color:#268bd2">}</span>
+
+.bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">3</span> .sl<span style="color:#FFD800">-</span>slide<span style="color:#FFD800">-</span>inner, .bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">3</span> .sl<span style="color:#FFD800">-</span>content<span style="color:#FFD800">-</span>slice <span style="color:#268bd2">{</span>
+  background: #5EC37A;
+<span style="color:#268bd2">}</span>
+
+.bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">4</span> .sl<span style="color:#FFD800">-</span>slide<span style="color:#FFD800">-</span>inner, .bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">4</span> .sl<span style="color:#FFD800">-</span>content<span style="color:#FFD800">-</span>slice <span style="color:#268bd2">{</span>
+  background: #BF2A57;
+<span style="color:#268bd2">}</span>
+
+.bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">5</span> .sl<span style="color:#FFD800">-</span>slide<span style="color:#FFD800">-</span>inner, .bg<span style="color:#FFD800">-</span><span style="color:#00c8aa">5</span> .sl<span style="color:#FFD800">-</span>content<span style="color:#FFD800">-</span>slice <span style="color:#268bd2">{</span>
+  background: #2AA7BF;
+<span style="color:#268bd2">}</span>
+</pre>
+
+<hr>  
+                          <p>The plugin Particles.js is used for the animation in index-minimal-flat, a lightweight JavaScript library for creating particles.<br>
+                              A lot of options are available, I invite you to check the official documentation <a href="https://github.com/VincentGarreau/particles.js/" target="_blank">Here</a><br>
+                            <strong>Specific color options and settings are in the file js/particles.js from the line 1543, see the code below.</strong></p>
+                            <p>Background color is only the color of your body set up in style-minimal-flat.css</p>
+
+
+<pre style="background:#042029;color:#839496"><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>color<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>value<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>#9BA7B6<span style="color:#00c8aa">"</span></span>
+    <span style="color:#268bd2">}</span>,
+    <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>shape<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>type<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>triangle<span style="color:#00c8aa">"</span></span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>stroke<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>width<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">0</span>,
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>color<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>#9BA7B6<span style="color:#00c8aa">"</span></span>
+      <span style="color:#268bd2">}</span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>polygon<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>nb_sides<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">5</span>
+      <span style="color:#268bd2">}</span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>image<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>src<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>img/github.svg<span style="color:#00c8aa">"</span></span>,
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>width<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">100</span>,
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>height<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">100</span>
+      <span style="color:#268bd2">}</span>
+    <span style="color:#268bd2">}</span>,
+    <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>opacity<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>value<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">0.40</span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>random<span style="color:#00c8aa">"</span></span>: <span style="color:#b58900">false</span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>anim<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>enable<span style="color:#00c8aa">"</span></span>: <span style="color:#b58900">false</span>,
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>speed<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">1</span>,
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>opacity_min<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">0.1</span>,
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>sync<span style="color:#00c8aa">"</span></span>: <span style="color:#b58900">false</span>
+      <span style="color:#268bd2">}</span>
+    <span style="color:#268bd2">}</span>,
+    <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>size<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>value<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">11.83721462448409</span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>random<span style="color:#00c8aa">"</span></span>: <span style="color:#b58900">true</span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>anim<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>enable<span style="color:#00c8aa">"</span></span>: <span style="color:#b58900">false</span>,
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>speed<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">40</span>,
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>size_min<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">0.1</span>,
+        <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>sync<span style="color:#00c8aa">"</span></span>: <span style="color:#b58900">false</span>
+      <span style="color:#268bd2">}</span>
+    <span style="color:#268bd2">}</span>,
+    <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>line_linked<span style="color:#00c8aa">"</span></span>: <span style="color:#268bd2">{</span>
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>enable<span style="color:#00c8aa">"</span></span>: <span style="color:#b58900">true</span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>distance<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">150</span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>color<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>#9BA7B6<span style="color:#00c8aa">"</span></span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>opacity<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">0.8</span>,
+      <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>width<span style="color:#00c8aa">"</span></span>: <span style="color:#00c8aa">1</span>
+    <span style="color:#268bd2">}</span>,
+</pre>
+
+                          </div>
+                        </div>
+
+                        <!-- /////////////////////////////////////// -->
+                        <!-- /////////////////////////////////////// -->
+
+                        <div class="col-sm-12" id="anchor5">   
+                          <div class="page-header text-muted">
+                          Bottom navigation
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <p>Precisely integrated, this navigation is giving the capacity to navigate between the slides very easily.<br>
+                            <strong>You can find this one in your HTML, see the code below :</strong></p>
+                            <pre style="background:#042029;color:#839496"><span style="color:#FFD800">&lt;</span>span <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>nav-square-current nav-square<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+    <span style="color:#FFD800">&lt;</span>span<span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>i <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>fa fa-home<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>/i<span style="color:#FFD800">></span>Home<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+
+<span style="color:#FFD800">&lt;</span>span <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>nav-square<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+    <span style="color:#FFD800">&lt;</span>span<span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>i <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>fa fa-user-secret<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>/i<span style="color:#FFD800">></span>About<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+
+<span style="color:#FFD800">&lt;</span>span <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>nav-square<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+    <span style="color:#FFD800">&lt;</span>span<span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>i <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>fa fa-briefcase<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>/i<span style="color:#FFD800">></span>Portfolio<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+
+<span style="color:#FFD800">&lt;</span>span <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>nav-square<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+    <span style="color:#FFD800">&lt;</span>span<span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>i <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>fa fa-list-ol<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>/i<span style="color:#FFD800">></span>Services<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+
+<span style="color:#FFD800">&lt;</span>span <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>nav-square<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+    <span style="color:#FFD800">&lt;</span>span<span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>i <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>fa fa-commenting-o<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>/i<span style="color:#FFD800">></span>Contact<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+<span style="color:#FFD800">&lt;</span>/span<span style="color:#FFD800">></span>
+</pre>
+
+<p>Icons are coming from the giant library Font Awesome. <a href="http://fontawesome.io/" target="_blank">See the collection</a></p>
+
+<br/><hr><br/>
+                              <p>Regarding the width of each element of navigation, we need to set this one in the CSS file used by the variant of your choice.<br>
+                                Open it and edit the width property of the following rule (around the line 860) :</p>
+                              <pre style="background:#042029;color:#839496">.nav<span style="color:#FFD800">-</span>multi<span style="color:#FFD800">-</span>square .nav<span style="color:#FFD800">-</span>square <span style="color:#268bd2">{</span>
+  font<span style="color:#FFD800">-</span>family: Montserrat, <span style="color:#839496"><span style="color:#839496">"</span>Helvetica Neue<span style="color:#839496">"</span></span>, <span style="color:#839496"><span style="color:#839496">"</span>Lucida Grande<span style="color:#839496">"</span></span>, Arial, Verdana, sans<span style="color:#FFD800">-</span>serif;
+  display: block;
+  background: #272e38;
+  <span style="color:#839496">float</span>: left;
+  position: relative;
+  <span style="color:#FFD800">width: calc<span style="color:#FFD800">(</span><span style="color:#FFD800">100</span><span style="color:#FFD800">%</span> / <span style="color:#FFD800">5</span><span style="color:#FFD800">)</span></span>;
+  height: <span style="color:#839496">100</span><span style="color:#839496">%</span>;
+  border<span style="color:#FFD800">-</span>radius: <span style="color:#00c8aa">0</span>;
+  margin: <span style="color:#00c8aa">0</span>;
+  cursor: pointer;
+  overflow: hidden;
+  <span style="color:#FFD800">-</span>webkit<span style="color:#FFD800">-</span>transition: all <span style="color:#00c8aa">0</span>.3s ease<span style="color:#FFD800">-</span><span style="color:#839496">in</span><span style="color:#FFD800">-</span>out;
+  <span style="color:#FFD800">-</span>moz<span style="color:#FFD800">-</span>transition: all <span style="color:#00c8aa">0</span>.3s ease<span style="color:#FFD800">-</span><span style="color:#839496">in</span><span style="color:#FFD800">-</span>out;
+  <span style="color:#FFD800">-</span>ms<span style="color:#FFD800">-</span>transition: all <span style="color:#00c8aa">0</span>.3s ease<span style="color:#FFD800">-</span><span style="color:#839496">in</span><span style="color:#FFD800">-</span>out;
+  <span style="color:#FFD800">-</span>o<span style="color:#FFD800">-</span>transition: all <span style="color:#00c8aa">0</span>.3s ease<span style="color:#FFD800">-</span><span style="color:#839496">in</span><span style="color:#FFD800">-</span>out;
+  transition: all <span style="color:#00c8aa">0</span>.3s ease<span style="color:#FFD800">-</span><span style="color:#839496">in</span><span style="color:#FFD800">-</span>out;
+<span style="color:#268bd2">}</span>
+</pre>
+
+<br/><hr><br/>
+                              <p><strong>Examples</strong><br>
+                                5 slides : <span style="color:#2B2D35">width: calc<span style="color:#2B2D35">(</span><span style="color:#2B2D35">100</span><span style="color:#2B2D35">%</span> / <span style="color:#00c8aa;font-weight:bold">5</span><span style="color:#2B2D35">)</span></span><br>
+                                4 slides : <span style="color:#2B2D35">width: calc<span style="color:#2B2D35">(</span><span style="color:#2B2D35">100</span><span style="color:#2B2D35">%</span> / <span style="color:#00c8aa;font-weight:bold">4</span><span style="color:#2B2D35">)</span></span><br>
+                                3 slides : <span style="color:#2B2D35">width: calc<span style="color:#2B2D35">(</span><span style="color:#2B2D35">100</span><span style="color:#2B2D35">%</span> / <span style="color:#00c8aa;font-weight:bold">3</span><span style="color:#2B2D35">)</span></span><br>
+                                2 slides : <span style="color:#2B2D35">width: calc<span style="color:#2B2D35">(</span><span style="color:#2B2D35">100</span><span style="color:#2B2D35">%</span> / <span style="color:#00c8aa;font-weight:bold">2</span><span style="color:#2B2D35">)</span></span><br>
+                                1 slide : <span style="color:#2B2D35">width: 100%</span><br>
+
+                                <strong>I advise you to get a limit of 5 slides, in the goal to keep a great responsive layout on every screen</strong>
+                              </p>
+                          </div>
+                        </div>
+
+                        <!-- /////////////////////////////////////// -->
+                        <!-- /////////////////////////////////////// -->
+
+                        <div class="col-sm-12" id="anchor6">   
+                          <div class="page-header text-muted">
+                           Photoswipe Gallery
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            
+                            <p>Photoswipe is a JavaScript image gallery for mobile and desktop.<br>
+                              Check out the official documentation <a href="http://photoswipe.com/documentation/getting-started.html" target="_blank">here</a>.<br>
+                              <strong>Here is the example for one item, just duplicate it to add new pictures, see the code below.</strong></p>
+                              <pre style="background:#042029;color:#839496"><span style="color:#FFD800">&lt;</span>figure <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>col-xs-12 col-sm-6 col-lg-6 annex-img split-section<span style="color:#00c8aa">"</span></span> itemprop<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>associatedMedia<span style="color:#00c8aa">"</span></span> itemscope itemtype<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>http://schema.org/ImageObject<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+
+    <span style="color:#FFD800">&lt;</span>a href<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>img/gallery-1.jpg<span style="color:#00c8aa">"</span></span> <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>gallery-link small<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>image<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>img/gallery-1.jpg<span style="color:#00c8aa">"</span></span> itemprop<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>contentUrl<span style="color:#00c8aa">"</span></span> data<span style="color:#FFD800">-</span>size<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>1920x1280<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+
+        <span style="color:#FFD800">&lt;</span>img src<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>img/gallery-1.jpg<span style="color:#00c8aa">"</span></span> itemprop<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>thumbnail<span style="color:#00c8aa">"</span></span> alt<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>This is my work<span style="color:#00c8aa">"</span></span> <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>img-responsive gallery-img small-square<span style="color:#00c8aa">"</span></span> /<span style="color:#FFD800">></span>
+
+    <span style="color:#FFD800">&lt;</span>/a<span style="color:#FFD800">></span>
+
+    <span style="color:#FFD800">&lt;</span>figcaption itemprop<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>caption description<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+
+        <span style="color:#FFD800">&lt;</span>div <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>photo-details<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+        
+            <span style="color:#FFD800">&lt;</span>h4<span style="color:#FFD800">></span>Get <span style="color:#FFD800">in</span> the Game now <span style="color:#FFD800">&lt;</span>small<span style="color:#FFD800">></span>Amazing story <span style="color:#FFD800">in</span> <span style="color:#00c8aa">1929</span><span style="color:#FFD800">&lt;</span>/small<span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>/h4<span style="color:#FFD800">></span>
+            <span style="color:#FFD800">&lt;</span>i <span style="color:#268bd2">class</span><span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>icon ion-plus-circled<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span><span style="color:#FFD800">&lt;</span>/i<span style="color:#FFD800">></span>
+
+            <span style="color:#FFD800">&lt;</span>p<span style="color:#FFD800">></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed <span style="color:#FFD800">do</span> eiusmod tempor incididunt ut labore et dolore magna aliqua.<span style="color:#FFD800">&lt;</span>/p<span style="color:#FFD800">></span>
+
+        <span style="color:#FFD800">&lt;</span>/div<span style="color:#FFD800">></span>
+
+    <span style="color:#FFD800">&lt;</span>/figcaption<span style="color:#FFD800">></span>
+
+<span style="color:#FFD800">&lt;</span>/figure<span style="color:#FFD800">></span>
+</pre>
+
+                          </div>
+                        </div>
+
+                        <!-- /////////////////////////////////////// -->
+                        <!-- /////////////////////////////////////// -->
+
+                        <div class="col-sm-12" id="anchor7">   
+                          <div class="page-header text-muted">
+                          Newsletter - Mailchimp / File / Email
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <h3>1st solution : Mailchimp</h3>
+                            <h4><small>Newsletter service</small></h4>
+                            <p>More than 6 million people use MailChimp to create, send, and track email newsletters. Whether you're self-employed, you manage projects for clients, or you work for a Fortune 500 company, MailChimp has features and integrations that will suit your email marketing needs. <a href="http://mailchimp.com/about/">More informations</a></p>
+                            <h5>For the configuration with Mailchimp, you must just to know your API Key and the ID of your list.</h5>
+                            <p style="margin-top:0">Be sure that the form created in your mailchimp dashboard is asking only the email address and not the name, surname or something else.</p><br/><hr>
+
+                            <p>
+                              <strong>Get your API Key :</strong><br>
+                                Step 1 - Click your profile name to open the Account Panel and choose <strong style="color:#88B7B3">Account</strong>.<br>
+
+                                Step 2 - Click the <strong style="color:#88B7B3">Extras</strong> drop-down menu and choose <strong style="color:#88B7B3">API keys</strong>.<br>
+
+                                Step 3 - Copy an existing API key or click the <strong style="color:#88B7B3">Create A Key</strong> button.<p>
+
+                                <p><img src="screen-1.jpg" alt="" /></p>
+
+                                <p>Step 4 - Be careful that your list asks just the email address, Lists > Signup forms > General forms > Build it. See the screenshot below.</p>
+
+                                  <p><img src="screen-2.jpg" alt="" /></p>
+                              
+
+                                <br><hr><br>
+
+                                <p>
+                              <strong>Get your List ID :</strong><br>
+                                Step 1 - Navigate to the <strong style="color:#88B7B3">Lists</strong> page on the top left of your dashboard.<br>
+
+                                Step 2 - Click the list's drop down menu and select <strong style="color:#88B7B3">Settings.</strong><br>
+
+                                Step 3 - Click on <strong style="color:#88B7B3">List name & defaults</strong> to find the unique <em>List ID</em> for the list, see the screenshot below.<p>
+
+                                <p><img src="screen-3.jpg" alt="" /></p>
+
+                            
+                            <br/><hr><br/>
+                        
+                        <h4>Final step</h4>
+                            
+                            <p>Open the file "notify-me.php" findable in the folder php/<strong style="color:#88B7B3">notify-me.php</strong> and fill up the API_KEY and LIST_ID fields.</p>
+                              
+                            <pre style="background:#042029;color:#839496"><span style="color:#586e75">// Set to "mailchimp" or "file"</span>
+<span style="color:#FFD800">$</span>STORE_MODE <span style="color:#FFD800">=</span> <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>mailchimp<span style="color:#00c8aa">"</span></span>;
+
+<span style="color:#586e75">// MailChimp API Key findable in your Mailchimp's dashboard</span>
+<span style="color:#FFD800">$</span>API_KEY <span style="color:#FFD800">=</span>  <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XX0<span style="color:#00c8aa">"</span></span>;
+             
+<span style="color:#586e75">// MailChimp List ID  findable in your Mailchimp's dashboard</span>
+<span style="color:#FFD800">$</span>LIST_ID <span style="color:#FFD800">=</span>  <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>XXXXXXXXXX<span style="color:#00c8aa">"</span></span>;
+</pre>
+
+                            <br/><hr><br/>
+
+                            <!-- ///////////////////////////////////////////////// -->
+                            <!-- ///////////////////////////////////////////////// -->
+                            <!-- ///////////////////////////////////////////////// -->
+                            <!-- ///////////////////////////////////////////////// -->
+                            <!-- ///////////////////////////////////////////////// -->
+
+                            <h3>2nd solution : File</h3>
+                            <h4><small>Save the emails in a .txt file</small></h4>
+                            <h5>Second solution, the save of the subscribers's emails in a txt file at the root of your server</h5>
+
+                            <p>
+                              <strong>Set up the file storage :</strong><br>
+                                Step 1 - Create a .txt file empty or use the file <strong style="color:#88B7B3">subscription-list.txt</strong> provided in your download pack.<br>
+
+                                Step 2 - Upload the file <strong>at the root of your server</strong><br>
+
+                                Step 3 - Open the file "notify-me.php" findable in php/<strong style="color:#88B7B3">notify-me.php</strong><br>
+
+                                Step 4 - You have to fill up the fields and comment the Mailchimp settings as on the code below:</p>
+
+                                <pre style="background:#042029;color:#839496"><span style="color:#586e75">// Set to "mailchimp" or "file"</span>
+<span style="color:#FFD800">$</span>STORE_MODE <span style="color:#FFD800">=</span> <span style="color:#00c8aa"><span style="color:#00c8aa">"</span>file<span style="color:#00c8aa">"</span></span>;
+
+<span style="color:#586e75">// MailChimp API Key findable in your Mailchimp's dashboard</span>
+<span style="color:#586e75">// $API_KEY =  "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XX0";</span>
+             
+<span style="color:#586e75">// MailChimp List ID  findable in your Mailchimp's dashboard</span>
+<span style="color:#586e75">// $LIST_ID =  "XXXXXXXXXX";</span>
+             
+<span style="color:#586e75">// After $_SERVER["DOCUMENT_ROOT"]." , write the path to your .txt to save the emails of the subscribers</span>
+<span style="color:#FFD800">$</span>STORE_FILE <span style="color:#FFD800">=</span> <span style="color:#FFD800">$</span>_SERVER<span style="color:#268bd2">[</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>DOCUMENT_ROOT<span style="color:#00c8aa">"</span></span><span style="color:#268bd2">]</span>.<span style="color:#00c8aa"><span style="color:#00c8aa">"</span>/subscription-list.txt<span style="color:#00c8aa">"</span></span>;
+</pre>
+
+                            <br/><hr><br/>
+
+                            <h3>3rd solution : Email</h3>
+                            <h4><small>Receive in your mail box</small></h4>
+                            <h5>Third solution, you can receive directly in your mail box, the subscribers's emails</h5>
+
+                            <p>
+                              <strong>Set up the email sending :</strong><br>
+                                Step 1 - Open <strong style="color:#0C9">notify-me-2.php</strong> findable in php/<strong style="color:#0C9">notify-me-2.php</strong><br>
+
+                                Step 2 - Rewrite your email and don't forget to change the path in your html, see the code examples below</p>
+
+                                <pre style="background:#042029;color:#839496"><span style="color:#FFD800">$</span>email_to <span style="color:#FFD800">=</span> <span style="color:#00c8aa"><span style="color:#00c8aa">'</span>myemail@email.com<span style="color:#00c8aa">'</span></span>; <span style="color:#586e75">// Replace by your email address</span>
+</pre>
+
+                                <hr>
+
+                                <pre style="background:#042029;color:#839496"><span style="color:#FFD800">&lt;</span>form action<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>php/notify-me-2.php<span style="color:#00c8aa">"</span></span> id<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>notifyMe<span style="color:#00c8aa">"</span></span> method<span style="color:#FFD800">=</span><span style="color:#00c8aa"><span style="color:#00c8aa">"</span>POST<span style="color:#00c8aa">"</span></span><span style="color:#FFD800">></span>
+</pre>
+
+                            <hr>
+
+                            <p>Newsletter's backgrounds are set up the main css file used by the variant of your choice, see the code below:</p>
+                            <pre style="background:#042029;color:#839496">.dialog__content .header<span style="color:#859900">-</span>picture <span style="color:#268bd2">{</span>
+  width: 100%;
+  height: 18rem;
+  background: url<span style="color:#93a1a1">(</span><span style="color:#FFD800"><span style="color:#00c8aa">"</span>../img/background-newsletter.jpg<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span> center;
+  background<span style="color:#859900">-</span>size: cover;
+<span style="color:#268bd2">}</span>
+.dialog__content .dialog<span style="color:#859900">-</span>inner <span style="color:#268bd2">{</span>
+  padding: 5rem 5rem 0 5rem;
+  overflow: hidden;
+  background: url<span style="color:#93a1a1">(</span><span style="color:#FFD800"><span style="color:#00c8aa">"</span>../img/background-newsletter-inner.jpg<span style="color:#00c8aa">"</span></span><span style="color:#93a1a1">)</span> center;
+  background<span style="color:#859900">-</span>size: cover;
+<span style="color:#268bd2">}</span>
+</pre>
+
+                            <!-- ///////////////////////////////////////////////// -->
+                            <!-- ///////////////////////////////////////////////// -->
+                            <!-- ///////////////////////////////////////////////// -->
+                            <!-- ///////////////////////////////////////////////// -->
+                            <!-- ///////////////////////////////////////////////// -->
+
+                          </div>
+                        </div>
+
+                        <!-- /////////////////////////////////////// -->
+                        <!-- /////////////////////////////////////// -->
+
+                        <div class="col-sm-12" id="anchor8">   
+                          <div class="page-header text-muted">
+                          Contact form
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <p>Set your email in the contact-me.php file.</p>
+                            <pre style="background:#042029;color:#839496"><span style="color:#FFD800">$</span>to_Email <span style="color:#FFD800">=</span> <span style="color:#00c8aa"><span style="color:#00c8aa">'</span>myemail@email.com<span style="color:#00c8aa">'</span></span>; <span style="color:#586e75">// Write your email here</span>
+</pre>
+
+                            <br><hr><br>
+
+                            <p>Edit several properties and text alerts for the contact form in the same file, contact-me.php, see the screenshot below.</p>
+                            <p><img src="screen-4.jpg" alt="" /></p><br>
+                          </div>
+                        </div>
+
+                        <!-- /////////////////////////////////////// -->
+                        <!-- /////////////////////////////////////// -->
+
+                        <div class="col-sm-12" id="anchor9">   
+                          <div class="page-header text-muted">
+                          Files structure
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <p><img src="structure.jpg" alt="" /></p>
+                          </div>
+                        </div>
+
+                        <!-- /////////////////////////////////////// -->
+                        <!-- /////////////////////////////////////// -->
+
+                        <div class="col-sm-12" id="extra">   
+                          <div class="page-header text-muted">
+                          Extra
+                          </div> 
+                        </div>
+
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <h3>Documentation</h3>
+                            <p>Just below the nav on your left, you will find 5 useful links to learn or improve your knowledges in SASS, Bootstrap, Bourbon & IonIcons</p>
+                            </h4>
+                          </div>
+                        </div>
+
+                      <br/><br/>
+                        
+                      
+                    </div><!-- /col-9 -->
+                </div><!-- /padding -->
+            </div>
+            <!-- /main -->
+          
+        </div>
+    </div>
+</div>
+	<!-- script references -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <script src="js/jquery.smoothscroll.min.js"></script>
+
+    <script>
+    $(function() {
+      $('html').smoothScroll(500);
+    });
+    </script>
+	</body>
+</html>

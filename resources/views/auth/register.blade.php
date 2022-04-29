@@ -1,57 +1,48 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-
-        </x-slot>
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('register.store') }}">
-            @csrf
-
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iofrm</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/iofrm-style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/iofrm-theme5.css')}}">
+</head>
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="{{asset('auth/images/graphic2.svg')}}" alt="">
+                </div>
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Phone Number')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required />
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Dhan Nirankar Ji</h3>
+                        <p>Welcome To SNM Mumbai App</p>
+                        <div class="page-links">
+                            <a href="{{ route('login') }}">Login</a><a href="{{ route('register.index') }}" class="active">Register</a>
+                        </div>
+                        <form method="POST" action="{{ route('register.store') }}">
+                            @csrf
+                            <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                            <input class="form-control" type="number" name="phone" placeholder="Phone Number" required>
+                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        </div>
+    </div>
+<script src="{{asset('auth/js/jquery.min.js')}}"></script>
+<script src="{{asset('auth/js/popper.min.js')}}"></script>
+<script src="{{asset('auth/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('auth/js/main.js')}}"></script>
+</body>
+</html>

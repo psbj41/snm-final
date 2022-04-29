@@ -18,14 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('backend.pages.index');
+    return view('welcome');
 });
 
-Route::get('/register-form', [HomeController::class,'register'])->name('register.index');
-Route::post('/register-form', [HomeController::class,'registerStore'])->name('register.store');
-
 Route::get('/home', function () {
-
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
