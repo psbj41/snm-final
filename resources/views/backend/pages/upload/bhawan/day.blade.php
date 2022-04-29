@@ -129,7 +129,7 @@ Duty List Table
             @endforeach
         </div> <!-- end row -->
         <div class="row">
-            {{$alldata->links()}}
+            {{-- {{$alldata->links()}} --}}
         </div>
     </div> <!-- container-fluid -->
 </div>

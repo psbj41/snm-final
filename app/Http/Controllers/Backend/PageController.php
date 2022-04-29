@@ -113,18 +113,20 @@ class PageController extends Controller
             $current_day = '7';
         }
         if($search != ""){
-            $alldata = Bhawan::where('SatsangID','LIKE',"%$search%")
-            ->orwhere('SatsangName','LIKE',"%$search%")
-            ->orwhere('SatsangAddress','LIKE',"%$search%")
-            ->orwhere('SatsangContact','LIKE',"%$search%")
-            ->orwhere('SatsangName','LIKE',"%$search%")
-            ->orwhere('Day','LIKE',"%$search%")
-            ->orwhere('Time','LIKE',"%$search%")
-            ->orwhere('Area','LIKE',"%$search%")
-            ->orwhere('BranchID','LIKE',"%$search%")
-            ->orwhere('IsActive','LIKE',"%$search%")
-            ->orwhere('Satsang_Time_Type','LIKE',"%$search%")
-            ->orwhere('Satsang_Type','LIKE',"%$search%")->simplePaginate(1000);
+            // Log::info($current_day);
+            $alldata = Bhawan::where(function ($query) use ($search){
+                $query->orwhere('SatsangName','LIKE',"%$search%")
+                ->orwhere('SatsangAddress','LIKE',"%$search%")
+                ->orwhere('SatsangContact','LIKE',"%$search%")
+                ->orwhere('SatsangName','LIKE',"%$search%")
+                ->orwhere('Time','LIKE',"%$search%")
+                ->orwhere('Area','LIKE',"%$search%")
+                ->orwhere('BranchID','LIKE',"%$search%")
+                ->orwhere('IsActive','LIKE',"%$search%")
+                ->orwhere('Satsang_Time_Type','LIKE',"%$search%")
+                ->orwhere('Satsang_Type','LIKE',"%$search%");
+            })
+            ->where('Day','=', $current_day)->simplePaginate(1000);
         }else if($day != ""){
             $alldata = Bhawan::where('Day','LIKE',"%$day%")->simplePaginate(1000);
         }
