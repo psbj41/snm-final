@@ -77,9 +77,16 @@ class SpecialController extends Controller
      */
     public function update(Request $request, Special $special)
     {
-        $special->name = $request->name;
-        $special->save();
-
+        $special->update([
+            'name' => $request->name,
+            'ssn' => $request->ssn,
+            'snp' => $request->snp,
+            'snm' => $request->snm,
+            'snss' => $request->snss,
+            'snsd' => $request->snsd,
+            'snks' => $request->snks,
+            'sngp' => $request->sngp,
+        ]);
         if ($request->hasFile('specialpdf')) {
             $special->media()->delete();
             $special->addMedia($request->specialpdf)->toMediaCollection("specialpdf");

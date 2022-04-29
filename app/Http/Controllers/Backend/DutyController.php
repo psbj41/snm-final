@@ -25,22 +25,23 @@ class DutyController extends Controller
         }
 
         if($search != ""){
-            $alldata = Duty::where('Dutydatedata','LIKE',"%$search%")
-            ->orwhere('SatsangID','LIKE',"%$search%")
-            ->orwhere('satsangname','LIKE',"%$search%")
-            ->orwhere('SatsangAddress','LIKE',"%$search%")
-            ->orwhere('SatsangTime','LIKE',"%$search%")
-            ->orwhere('satsangcontact','LIKE',"%$search%")
-            ->orwhere('PracharakID','LIKE',"%$search%")
-            ->orwhere('PracharakName','LIKE',"%$search%")
-            ->orwhere('PracharakContact','LIKE',"%$search%")
-            ->orwhere('SectorID','LIKE',"%$search%")
-            ->orwhere('BranchID','LIKE',"%$search%")
-            ->orwhere('Day','LIKE',"%$search%")
-            ->orwhere('Sangat_Day','LIKE',"%$search%")
-            ->orwhere('Dutydate','LIKE',"%$search%")
-            ->orwhere('Satsang_Type','LIKE',"%$search%")
-            ->simplePaginate(1000);
+            $alldata = Duty::where(function ($query) use ($search){
+                $query->orwhere('Dutydatedata','LIKE',"%$search%")
+                ->orwhere('SatsangID','LIKE',"%$search%")
+                ->orwhere('satsangname','LIKE',"%$search%")
+                ->orwhere('SatsangAddress','LIKE',"%$search%")
+                ->orwhere('SatsangTime','LIKE',"%$search%")
+                ->orwhere('satsangcontact','LIKE',"%$search%")
+                ->orwhere('PracharakID','LIKE',"%$search%")
+                ->orwhere('PracharakName','LIKE',"%$search%")
+                ->orwhere('PracharakContact','LIKE',"%$search%")
+                ->orwhere('SectorID','LIKE',"%$search%")
+                ->orwhere('BranchID','LIKE',"%$search%")
+                ->orwhere('Day','LIKE',"%$search%")
+                ->orwhere('Sangat_Day','LIKE',"%$search%")
+                ->orwhere('Dutydate','LIKE',"%$search%");
+            })
+            ->where('Satsang_Type',"=",'GS')->simplePaginate(1000);
         }else if($month != ""){
             $alldata = Duty::where('Dutydatedata','LIKE',"%$month%")->simplePaginate(1000);
         }else{
@@ -63,22 +64,23 @@ class DutyController extends Controller
         }
 
         if($search != ""){
-            $alldata = Duty::where('Dutydatedata','LIKE',"%$search%")
-            ->orwhere('SatsangID','LIKE',"%$search%")
-            ->orwhere('satsangname','LIKE',"%$search%")
-            ->orwhere('SatsangAddress','LIKE',"%$search%")
-            ->orwhere('SatsangTime','LIKE',"%$search%")
-            ->orwhere('satsangcontact','LIKE',"%$search%")
-            ->orwhere('PracharakID','LIKE',"%$search%")
-            ->orwhere('PracharakName','LIKE',"%$search%")
-            ->orwhere('PracharakContact','LIKE',"%$search%")
-            ->orwhere('SectorID','LIKE',"%$search%")
-            ->orwhere('BranchID','LIKE',"%$search%")
-            ->orwhere('Day','LIKE',"%$search%")
-            ->orwhere('Sangat_Day','LIKE',"%$search%")
-            ->orwhere('Dutydate','LIKE',"%$search%")
-            ->orwhere('Satsang_Type','LIKE',"%$search%")
-            ->simplePaginate(1000);
+            $alldata = Duty::where(function ($query) use ($search){
+                $query->orwhere('Dutydatedata','LIKE',"%$search%")
+                ->orwhere('SatsangID','LIKE',"%$search%")
+                ->orwhere('satsangname','LIKE',"%$search%")
+                ->orwhere('SatsangAddress','LIKE',"%$search%")
+                ->orwhere('SatsangTime','LIKE',"%$search%")
+                ->orwhere('satsangcontact','LIKE',"%$search%")
+                ->orwhere('PracharakID','LIKE',"%$search%")
+                ->orwhere('PracharakName','LIKE',"%$search%")
+                ->orwhere('PracharakContact','LIKE',"%$search%")
+                ->orwhere('SectorID','LIKE',"%$search%")
+                ->orwhere('BranchID','LIKE',"%$search%")
+                ->orwhere('Day','LIKE',"%$search%")
+                ->orwhere('Sangat_Day','LIKE',"%$search%")
+                ->orwhere('Dutydate','LIKE',"%$search%");
+            })
+            ->where('Satsang_Type',"=",'NS')->simplePaginate(1000);
         }else if($month != ""){
             $alldata = Duty::where('Dutydate','LIKE',"%$month%")->simplePaginate(1000);
         }else{

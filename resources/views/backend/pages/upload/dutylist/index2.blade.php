@@ -91,7 +91,6 @@ General Sangat Duty List
 
                             <div class="flex-grow-1">
                                 <table class="table">
-
                                     <div style="display:flex;align-items:center">
                                         <i class="ri-calendar-event-fill" style="font-size:25px; margin-right:10px"></i>
                                         <div>

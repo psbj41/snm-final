@@ -123,7 +123,7 @@ class UserController extends Controller
                 'area' => $request->area,
             ]);
         }
-        return redirect()->route('user.index')->with('success', $user->name." Successfully Edited");
+        return redirect()->route('dashboard')->with('success', $user->name."Successfully Edited");
     }
 
     /**
@@ -149,7 +149,7 @@ class UserController extends Controller
             'password' => 'required',
             'captcha' => 'required|captcha'
         ]);
-        
+
         $user = User::where('phone',$request->phone)->update([
             'password' => Hash::make($request->password),
             'reset' => 'done',

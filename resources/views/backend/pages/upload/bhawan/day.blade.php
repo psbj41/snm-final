@@ -28,7 +28,7 @@ Duty List Table
                 <form action="" class="d-flex" style="margin-bottom: 5px">
                     <div style="width:100%; border:1px solid rgb(206, 206, 206); background-color:rgb(255, 255, 255);outline:none; padding:8px; border-radius:5px; display:flex">
                         <i class="ri-search-eye-line"></i>
-                        <input type="search" value="{{$search}}"  placeholder="Search" name="search" style="border: none; outline:none; width:90%">
+                        <input type="search" value="{{$search}}"  placeholder="Search" name="search" style="border: none; outline:none;">
                     </div>
                     <div style="display: flex; justify-content:space-between; margin:0px 5px">
                         <button class="btn btn-success" type="submit">
@@ -129,7 +129,7 @@ Duty List Table
             @endforeach
         </div> <!-- end row -->
         <div class="row">
-            {{-- {{$alldata->links()}} --}}
+            {{$alldata->links()}}
         </div>
     </div> <!-- container-fluid -->
 </div>
