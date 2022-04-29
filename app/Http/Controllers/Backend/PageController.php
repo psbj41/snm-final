@@ -38,7 +38,7 @@ class PageController extends Controller
     public function uploadThoughtStore(Request $request)
     {
         Excel::import(new ThoughtImport, $request->file('file'));
-        return redirect()->route('thought.upload.page')->with('success', 'All good!');
+        return redirect()->route('thought.upload.page')->with('success', 'Thoughts Data Uploaded Successfully');
     }
 
     public function thoughtDataPage()
@@ -60,7 +60,7 @@ class PageController extends Controller
         $bhawan = Bhawan::all();
         $bhawan->each->delete();
         Excel::import(new BhawanImport, $request->file('file'));
-        return redirect()->route('bhawan.upload.page')->with('success', 'All good!');
+        return redirect()->route('bhawan.upload.page')->with('success', 'Bhawan Data Uploaded Successfully');
     }
 
     public function bhawanDataPage()
@@ -113,19 +113,22 @@ class PageController extends Controller
             $current_day = '7';
         }
         if($search != ""){
-            $alldata = Bhawan::where('area','LIKE',"%$search%")->orwhere('day','LIKE',"%$search%")
-            ->orwhere('time','LIKE',"%$search%")->orwhere('address','LIKE',"%$search%")
-            ->orwhere('sector_sanyojak_name','LIKE',"%$search%")->orwhere('sector_sanyojak_contact','LIKE',"%$search%")
-            ->orwhere('area_mukhi_1_name','LIKE',"%$search%")->orwhere('area_mukhi_1_contact','LIKE',"%$search%")
-            ->orwhere('area_mukhi_2_name','LIKE',"%$search%")->orwhere('area_mukhi_2_contact','LIKE',"%$search%")
-            ->orwhere('contact_person_1_name','LIKE',"%$search%")->orwhere('contact_person_1_contact','LIKE',"%$search%")
-            ->orwhere('contact_person_2_name','LIKE',"%$search%")->orwhere('contact_person_2_contact','LIKE',"%$search%")
-            ->orwhere('type_of_satsang','LIKE',"%$search%")->simplePaginate(1000);
+            $alldata = Bhawan::where('SatsangID','LIKE',"%$search%")
+            ->orwhere('SatsangName','LIKE',"%$search%")
+            ->orwhere('SatsangAddress','LIKE',"%$search%")
+            ->orwhere('SatsangContact','LIKE',"%$search%")
+            ->orwhere('SatsangName','LIKE',"%$search%")
+            ->orwhere('Day','LIKE',"%$search%")
+            ->orwhere('Time','LIKE',"%$search%")
+            ->orwhere('Area','LIKE',"%$search%")
+            ->orwhere('BranchID','LIKE',"%$search%")
+            ->orwhere('IsActive','LIKE',"%$search%")
+            ->orwhere('Satsang_Time_Type','LIKE',"%$search%")
+            ->orwhere('Satsang_Type','LIKE',"%$search%")->simplePaginate(1000);
         }else if($day != ""){
-            $alldata = Bhawan::where('day','LIKE',"%$day%")->simplePaginate(1000);
+            $alldata = Bhawan::where('Day','LIKE',"%$day%")->simplePaginate(1000);
         }
         else{
-            Log::info($current_day);
             $alldata = Bhawan::where('Day','=', $current_day)->simplePaginate(12);
         }
         return view('backend.pages.upload.bhawan.day',compact(['alldata','search','day','current_day','current_day_name']));
@@ -151,7 +154,7 @@ class PageController extends Controller
         $oldData = User::all()->except([1,2,3]);
         $oldData->each->delete();
         Excel::import(new UserImport, $request->file('file'));
-        return redirect()->route('admin.upload.page')->with('success', 'All good!');
+        return redirect()->route('admin.upload.page')->with('success', 'Admin Data Uploaded Successfully');
     }
 
     public function adminDataPage()
@@ -186,7 +189,7 @@ class PageController extends Controller
         $data = Duty::all();
         $data->each->delete();
         Excel::import(new DutyImport, $request->file('file'));
-        return redirect()->route('duty.upload.page')->with('success', 'All good!');
+        return redirect()->route('duty.upload.page')->with('success', 'Duty Data Uploaded Successfully');
     }
 
     public function dutyDataPage()
