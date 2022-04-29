@@ -57,100 +57,32 @@
     </div>
     <!-- END - Informations bar on top of the screen -->
 
-    <!-- Slider Wrapper -->
-    <div id="slider" class="sl-slider-wrapper">
-
-        <div class="sl-slider">
-
-            <!-- SLIDE 1 / Home -->
-            <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25"
-                data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-
-                <div class="sl-slide-inner">
-
-                    <div class="content-slide">
-
-                        <div class="container">
-                            <img src="{{ asset('frontend/img/logo.png') }}" alt="" class="brand-logo text-intro opacity-0" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END - SLIDE 1 / Home -->$
-
-        </div>
-        <!-- END - sl-slider -->
+    <style>
+        .thought{
+            background-color: #0193FF;
+            position: absolute;
+            float: left;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            padding: 15px;
+            width: 90%;
+            /* border-radius: 10px; */
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.952);
+        }
+        .para{
+            text-align: justify;
+            color: white;
+        }
+        </style>
+    <div class="thought" style="text-align: center">
+        <img width="150px" src="{{asset('backend/assets/images/logo.jpg')}}" alt="" srcset="">
+        <p class="para">
+            {{$thoughts}}
+        </p>
     </div>
-    <!-- END - Slider Wrapper -->
-
-    <!-- Newsletter Popup -->
-    <div id="somedialog" class="dialog">
-
-        <div class="dialog__overlay"></div>
-
-        <!-- dialog__content -->
-        <div class="dialog__content">
-
-            <div class="header-picture"></div>
-
-            <!-- dialog-inner -->
-            <div class="dialog-inner">
-
-                <h4>You like taking the lead of line?</h4>
-
-                <p>Being the first to know always feels great... Signing up to our newsletter gives you
-                    <strong>exclusive access to our fantastic Grand Opening on August 6th 2017</strong></p>
-
-                <!-- Newsletter Form -->
-                <div id="subscribe">
-
-                    <form action="php/notify-me.php" id="notifyMe" method="POST">
-
-                        <div class="form-group">
-
-                            <div class="controls">
-
-                                <!-- Field  -->
-                                <input type="text" id="mail-sub" name="email"
-                                    placeholder="Click here to write your email" onfocus="this.placeholder = ''"
-                                    onblur="this.placeholder = 'Click here to write your email'"
-                                    class="form-control email srequiredField" />
-
-                                <!-- Spinner top left during the submission -->
-                                <i class="fa fa-spinner opacity-0"></i>
-
-                                <!-- Button -->
-                                <button class="btn btn-lg submit">Get notified</button>
-
-                                <div class="clear"></div>
-
-                            </div>
-
-                        </div>
-
-                    </form>
-
-                    <!-- Answer for the newsletter form is displayed in the next div, do not remove it. -->
-                    <div class="block-message">
-
-                        <div class="message">
-
-                            <p class="notify-valid"></p>
-
-                        </div>
-
-                    </div>
-                    <!-- END - Answer for the newsletter form is displayed in the next div, do not remove it. -->
-
-                </div>
-                <!-- END - Newsletter Form -->
-            </div>
-            <!-- END - dialog-inner -->
-        </div>
-        <!-- END - dialog__content -->
-
-    </div>
-    <!-- END - Newsletter Popup -->
 
     <!-- //////////////////////\\\\\\\\\\\\\\\\\\\\\\ -->
     <!-- ********** List of jQuery Plugins ********** -->

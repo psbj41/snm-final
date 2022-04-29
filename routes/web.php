@@ -18,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $thoughts = Thought::all()->random(1);
+    foreach ($thoughts as $key => $value) {
+        $thoughts = $value->thought;
+    }
+    return view('welcome',compact('thoughts'));
 });
 
 
