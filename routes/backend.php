@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\Admin\RoleController;
 use App\Http\Controllers\Backend\Admin\UserController;
 use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\DutyController;
+use App\Http\Controllers\Backend\GuidelineController;
 use App\Http\Controllers\Backend\NotificationController;
 use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\SpecialController;
@@ -80,7 +81,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('uploads-page/duty/gs/data2', 'dutyDataPageGs')->name('duty.data.gs.page');
         Route::get('uploads-page/duty/ns/data2', 'dutyDataPageNs')->name('duty.data.ns.page');
 
-
+        //Pracharak
+        Route::get('pracharak-details','pracharakDetails')->name('pracharakDetails');
 
     });
 
@@ -107,6 +109,8 @@ Route::middleware(['auth'])->group(function () {
 
     //Special
     Route::resource('special', SpecialController::class);
+    Route::resource('guideline', GuidelineController::class);
+    Route::get('guideline/show', [GuidelineController::class,'show'])->name('guideline.show');
 
     //Department
     Route::resource('department', DepartmentController::class);

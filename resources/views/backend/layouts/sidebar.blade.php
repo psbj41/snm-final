@@ -30,6 +30,12 @@
                 </li>
                 @endif
                 @if (Auth::user()->role != 'normal')
+                <li>
+                    <a href="{{route('pracharakDetails')}}" class="waves-effect">
+                        <i class="ri-file-list-3-line"></i>
+                        <span>Pracharak Contact List</span>
+                    </a>
+                </li>
                 <li class="menu-title">Duty List</li>
                 <li>
                     <a href="{{route('all.duty')}}" class="waves-effect">
@@ -165,12 +171,12 @@
                         <span>Satsang Bhawan</span>
                     </a>
                 </li> --}}
-                {{-- <li>
-                    <a href="#" class="waves-effect">
+                <li>
+                    <a href="{{route('guideline.show')}}" class="waves-effect">
                         <i class="ri-list-check-2"></i>
                         <span>Guidelines</span>
                     </a>
-                </li> --}}
+                </li>
                 {{-- <li>
                     <a href="#" class="waves-effect">
                         <i class="ri-map-pin-time-line"></i>

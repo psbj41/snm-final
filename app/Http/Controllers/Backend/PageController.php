@@ -357,4 +357,31 @@ class PageController extends Controller
 
     //End Administrator
 
+    public function pracharakDetails(Request $request)
+    {
+        $search = $request['search'] ?? "";
+        $month = $request['month'] ?? "";
+        $month1 = $request['month'] ?? "";
+
+        if($month != ""){
+            $m = date('F', strtotime($request['month']));
+            $m = substr($m, 0, 3);
+            $y = Carbon::parse($request['month'])->year;
+            $month = $m." ".$y;
+        }
+
+        if($search != ""){
+            $alldata = Duty::where('Dutydate','LIKE',"%$search%")->orwhere('satsangname','LIKE',"%$search%")
+            ->orwhere('SatsangAddress','LIKE',"%$search%")->orwhere('SatsangTime','LIKE',"%$search%")
+            ->orwhere('satsangcontact','LIKE',"%$search%")->orwhere('PracharakName','LIKE',"%$search%")
+            ->orwhere('PracharakContact','LIKE',"%$search%")->orwhere('SectorID','LIKE',"%$search%")
+            ->orwhere('BranchID','LIKE',"%$search%")->orwhere('Day','LIKE',"%$search%")
+            ->orwhere('Sangat_Day','LIKE',"%$search%")->simplePaginate(1000);
+        }else if($month != ""){
+            $alldata = User::where('Dutydate','LIKE',"%$month%")->simplePaginate(1000);
+        }else{
+            $alldata = User::simplePaginate(12);
+        }
+        return view('backend.pages.upload.pracharakd',compact(['alldata','search','month1']));
+    }
 }

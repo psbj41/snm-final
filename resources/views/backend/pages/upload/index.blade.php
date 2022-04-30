@@ -137,6 +137,25 @@ Users Table
                     </div>
                 </div>
             </div>
+            <div class="col-xl-4 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 style="color: rgb(4, 4, 109);font-weight:900">Guideline PDF</h6>
+                        <p style="border: 1px dashed black; padding:5px">
+                            <i class="ri-file-paper-2-line"></i>
+                            PDF File Upload
+                        </p>
+                        <p style="font-size: 12px">Upload PDF File if you have latest info about "Guideline"</p>
+                        <div class="d-flex justify-around">
+                            <a class="btn btn-success m-1" href="{{route('guideline.create')}}" style="width:48%">
+                                <i class="ri-upload-2-line"></i> Upload
+                            </a>
+                            <a class="btn btn-info m-1" href="{{route('guideline.index')}}" style="width:48%;">
+                                <i class="ri-table-2"></i>Table</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <!-- end row -->
