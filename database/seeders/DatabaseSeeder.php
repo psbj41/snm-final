@@ -36,5 +36,9 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             'role' => 'superadmin',
         ]);
+
+        DB::table('thoughts')->insert([
+            'thought' => "“Extraordinary things are always hiding in places people never think to look.” —Jodi Picoul",
+        ]);
     }
 }
