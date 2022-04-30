@@ -126,6 +126,20 @@ General Sangat Duty List
                                             <p class="content-p">{{$item->satsangcontact}}</p>
                                         </div>
                                     </div>
+                                    <div style="display:flex;align-items:center">
+                                        <i class="ri-user-3-line" style="font-size:25px; margin-right:10px"></i>
+                                        <div>
+                                            <h6 class="header-p" style="color:rgb(2, 2, 83);font-weight:700">Pracharak Name</h6>
+                                            <p class="content-p">{{$item->PracharakName}}</p>
+                                        </div>
+                                    </div>
+                                    <div style="display:flex;align-items:center">
+                                        <i class="ri-phone-line" style="font-size:25px; margin-right:10px"></i>
+                                        <div>
+                                            <h6 class="header-p" style="color:rgb(2, 2, 83);font-weight:700">Pracharak Contact</h6>
+                                            <p class="content-p">{{$item->PracharakContact}}</p>
+                                        </div>
+                                    </div>
                                 </table>
                                 </tr>
                             </div>

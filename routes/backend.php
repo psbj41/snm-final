@@ -116,5 +116,9 @@ Route::middleware(['auth'])->group(function () {
         return view('backend.pages.contact_us');
     })->name('contact');
 
+    Route::get('/suppot-team', function () {
+        return view('backend.pages.support');
+    })->name('support');
+
 
 });

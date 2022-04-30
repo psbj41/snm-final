@@ -190,6 +190,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{route('support')}}" class="waves-effect">
+                        <i class="ri-phone-line"></i>
+                        <span>Support Team</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{route('user.profile')}}" class="waves-effect">
                         <i class="ri-user-line"></i>
                         <span>Profile</span>

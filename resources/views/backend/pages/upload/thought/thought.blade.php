@@ -28,6 +28,12 @@ Users Table
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                        @if (session('success'))
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            {{session('success')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        @endif
                         <div class="text-center">
                             <h6 style="color: rgb(4, 4, 109);font-weight:900">Thought of the Day</h6>
                             <p style="border: 1px dashed black; padding:5px">
