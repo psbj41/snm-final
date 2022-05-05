@@ -36,6 +36,12 @@
                         <span>Pracharak Contact List</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('administrationDetails')}}" class="waves-effect">
+                        <i class="ri-shield-user-line"></i>
+                        <span>Administration Contact</span>
+                    </a>
+                </li>
                 <li class="menu-title">Duty List</li>
                 <li>
                     <a href="{{route('all.duty')}}" class="waves-effect">
@@ -159,12 +165,7 @@
                         <span>Today’s Satsang Details</span>
                     </a>
                 </li>
-                {{-- <li>
-                    <a href="{{route('administration.page')}}" class="waves-effect">
-                        <i class="ri-shield-user-line"></i>
-                        <span>Administration Contact</span>
-                    </a>
-                </li> --}}
+
                 {{-- <li>
                     <a href="{{route('bhawan.data.page2')}}" class="waves-effect">
                         <i class="ri-layout-masonry-line"></i>

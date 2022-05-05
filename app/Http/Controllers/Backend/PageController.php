@@ -355,11 +355,43 @@ class PageController extends Controller
         return view('backend.pages.administration.department',compact('alldata'));
     }
 
+    public function administrationDetails(Request $request)
+    {
+        $search = $request['search'] ?? "";
+        $mukhi = $request['mukhi'] ?? "";
+        $sanyojak = $request['sanyojak'] ?? "";
+        $sewadal = $request['sewadal'] ?? "";
+        $kshetriya = $request['kshetriya'] ?? "";
+
+        if($search != ""){
+            $alldata = User::where(function ($query) use ($search){
+                $query->orwhere('PracharakID','LIKE',"%$search%")
+                ->orwhere('name','LIKE',"%$search%")
+                ->orwhere('Gyan_Pracharak','LIKE',"%$search%")
+                ->orwhere('Email_ID','LIKE',"%$search%")
+                ->orwhere('phone','LIKE',"%$search%")
+                ->orwhere('Gender','LIKE',"%$search%")
+                ->orwhere('Area','LIKE',"%$search%")
+                ->orwhere('BranchID','LIKE',"%$search%");
+            })
+            ->where('role','=','access')->simplePaginate(1000);
+        }else if($mukhi != ""){
+            $alldata = User::where('role','=','access')->where('Area_Mukhi_Branch_Incharge',"Y")->simplePaginate(12);
+        }else if($sanyojak != ""){
+            $alldata = User::where('role','=','access')->where('Sector_Sanyojak',"Y")->simplePaginate(12);
+        }else if($sewadal != ""){
+            $alldata = User::where('role','=','access')->where('Sewadal_Sanchalak', "Y")->simplePaginate(12);
+        }else if($kshetriya != ""){
+            $alldata = User::where('role','=','access')->where('K_Sanchalak', "Y")->simplePaginate(12);
+        }else{
+            $alldata = User::where('role','=','access')->orwhere('Area_Mukhi_Branch_Incharge', "Y")->orwhere('Sector_Sanyojak', "Y")->orwhere('Sewadal_Sanchalak', "Y")->orwhere('K_Sanchalak', "Y")->simplePaginate(12);
+        }
+        return view('backend.pages.upload.administratived',compact(['alldata','search']));
+    }
     //End Administrator
 
     public function pracharakDetails(Request $request)
     {
-        Log::info($request);
         $search = $request['search'] ?? "";
         $month = $request['month'] ?? "";
         $month1 = $request['month'] ?? "";

@@ -83,6 +83,8 @@ Route::middleware(['auth'])->group(function () {
 
         //Pracharak
         Route::get('pracharak-details','pracharakDetails')->name('pracharakDetails');
+        Route::get('administration-details','administrationDetails')->name('administrationDetails');
+
 
     });
 
