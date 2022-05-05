@@ -18,18 +18,6 @@ Pracharak Contact List
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between" style="padding-bottom:5px;">
                     <h5 class="mb-sm-0">Pracharak Contact List</h5>
-                    {{-- <div class="text-center" style="display: flex; justify-content: center; align-items: center;margin-bottom: 10px" >
-                        <form action="" >
-                            <a href="{{route('duty.data.page2')}}" class="btn btn-success" style="font-size: 12px">
-                                All Duty
-                            </a>
-                        </form>
-                        <form action="">
-                            <a href="{{route('duty.data.my.page')}}" class="btn btn-info" style="font-size: 12px">
-                                My Duty
-                            </a>
-                        </form>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -41,7 +29,7 @@ Pracharak Contact List
                     <form action="" class="d-flex" style="margin-bottom: 5px">
                         <div style="width:100%; border:1px solid rgb(206, 206, 206); background-color:rgb(255, 255, 255);outline:none; padding:8px; border-radius:5px; display:flex">
                             <i class="ri-search-eye-line"></i>
-                            <input type="search" value="{{$search}}"  placeholder="Search" name="search" style="border: none; outline:none; width:90%">
+                            <input type="search" value="{{$search}}"  placeholder="Search by Name" name="search" style="border: none; outline:none; width:90%">
                         </div>
                         <div style="display: flex; justify-content:space-between; margin:0px 5px">
                             <button class="btn btn-success" type="submit">
@@ -53,6 +41,31 @@ Pracharak Contact List
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="text-center" style="display: flex; justify-content: center; align-items: center;margin-bottom: 10px" >
+                <form action="">
+                    <a href="{{route('pracharakDetails')}}" class="btn btn-primary" style="font-size: 12px; margin:1px">
+                        All
+                    </a>
+                </form>
+                <form action="" >
+                    <input type="text" name="Pracharak" value="pracharak" hidden>
+                    <button class="btn btn-primary" style="font-size: 12px; margin:1px ">
+                        Pracharak
+                    </button>
+                </form>
+                <form action="" >
+                    <input type="text" name="Pracharika" value="Pracharika" hidden>
+                    <button class="btn btn-primary" style="font-size: 12px; margin:1px ">
+                        Pracharika
+                    </button>
+                </form>
+                <form action="" >
+                    <input type="text" name="GyanPracharak" value="GyanPracharak" hidden>
+                    <button class="btn btn-primary" style="font-size: 12px; margin:1px ">
+                        Gyan Pracharak
+                    </button>
+                </form>
             </div>
             <span style="margin-bottom: 10px"></span>
             <style>

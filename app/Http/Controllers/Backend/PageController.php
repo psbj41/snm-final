@@ -359,9 +359,13 @@ class PageController extends Controller
 
     public function pracharakDetails(Request $request)
     {
+        Log::info($request);
         $search = $request['search'] ?? "";
         $month = $request['month'] ?? "";
         $month1 = $request['month'] ?? "";
+        $pracharak = $request['Pracharak'] ?? "";
+        $pracharika = $request['Pracharika'] ?? "";
+        $gyanpracharak = $request['GyanPracharak'] ?? "";
 
         if($month != ""){
             $m = date('F', strtotime($request['month']));
@@ -384,6 +388,13 @@ class PageController extends Controller
             ->where('role','=','access')->simplePaginate(1000);
         }else if($month != ""){
             $alldata = User::where('Dutydate','LIKE',"%$month%")->simplePaginate(1000);
+        }else if($pracharak != ""){
+            Log::info("i aaa");
+            $alldata = User::where('role','=','access')->where('Gender',"M")->simplePaginate(12);
+        }else if($pracharika != ""){
+            $alldata = User::where('role','=','access')->where('Gender',"F")->simplePaginate(12);
+        }else if($gyanpracharak != ""){
+            $alldata = User::where('role','=','access')->where('Gyan_Pracharak',"!=", null)->simplePaginate(12);
         }else{
             $alldata = User::where('role','=','access')->simplePaginate(12);
         }
