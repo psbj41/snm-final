@@ -25,6 +25,45 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//download
+Route::get('download/{item}',function($item){
+    Log::info($item);
+    $special = Special::where('id',$item)->get();
+    Log::info($special);
+    foreach($special as $value)
+    {
+        $url = $value->specialpdf;
+        $name = $value->name;
+    }
+
+    $filename = $name.'.pdf';
+    $tempImage = tempnam(sys_get_temp_dir(), $filename);
+    copy($url, $tempImage);
+
+    return response()->download($tempImage, $filename);
+
+    // return route('sangat.notification');
+});
+
+Route::get('download/guideline/{item}',function($item){
+    Log::info($item);
+    $special = Guideline::where('id',$item)->get();
+    Log::info($special);
+    foreach($special as $value)
+    {
+        $url = $value->guidelinepdf;
+        $name = $value->name;
+    }
+
+    $filename = $name.'.pdf';
+    $tempImage = tempnam(sys_get_temp_dir(), $filename);
+    copy($url, $tempImage);
+
+    return response()->download($tempImage, $filename);
+
+    // return route('sangat.notification');
+});
+
 Route::get('password/change',[UserController::class,'pageReset'])->name('password.change');
 Route::post('password/change',[UserController::class,'pageResetStore'])->name('password.change.store');
 Route::get('/reload-captcha', [UserController::class, 'reloadCaptcha']);
@@ -87,45 +126,6 @@ Route::middleware(['auth'])->group(function () {
         //Pracharak
         Route::get('pracharak-details','pracharakDetails')->name('pracharakDetails');
         Route::get('administration-details','administrationDetails')->name('administrationDetails');
-
-        //download
-        Route::get('download/{item}',function($item){
-            Log::info($item);
-            $special = Special::where('id',$item)->get();
-            Log::info($special);
-            foreach($special as $value)
-            {
-                $url = $value->specialpdf;
-                $name = $value->name;
-            }
-
-            $filename = $name.'.pdf';
-            $tempImage = tempnam(sys_get_temp_dir(), $filename);
-            copy($url, $tempImage);
-
-            return response()->download($tempImage, $filename);
-
-            // return route('sangat.notification');
-        });
-
-        Route::get('download/guideline/{item}',function($item){
-            Log::info($item);
-            $special = Guideline::where('id',$item)->get();
-            Log::info($special);
-            foreach($special as $value)
-            {
-                $url = $value->guidelinepdf;
-                $name = $value->name;
-            }
-
-            $filename = $name.'.pdf';
-            $tempImage = tempnam(sys_get_temp_dir(), $filename);
-            copy($url, $tempImage);
-
-            return response()->download($tempImage, $filename);
-
-            // return route('sangat.notification');
-        });
 
     });
 
