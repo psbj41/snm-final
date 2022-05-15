@@ -43,11 +43,11 @@
 
         <div class="row">
 
-            <div class="col-xs-12 col-sm-6 col-lg-6 info-bar-left">
+            {{-- <div class="col-xs-12 col-sm-6 col-lg-6 info-bar-left">
 
                 <p>Grand Opening in <span id="countdown"></span></p>
 
-            </div>
+            </div> --}}
 
             <div class="col-xs-12 col-sm-6 col-lg-6 info-bar-right">
                 <a href="{{ route('login') }}" style="color: black; font-weight:900">Log-in | </a>

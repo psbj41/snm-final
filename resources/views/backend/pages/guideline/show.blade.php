@@ -51,11 +51,10 @@ Guideline
                     <div class="card-body text-center">
                         <div>
                             <h5>{{$item->name}}</h5>
-                            <button type="button" class="btn btn-success" data-toggle="modal"
-                                            data-target="#staticBackdrop" data-video="{{$item->guidelinepdf}}" download>View PDF</button>
-                                            <a href="{{$item->guidelinepdf}}" download="{{$item->name}}">
+                                                        {{-- <button type="button" class="btn btn-success" data-toggle="modal"
+                                            data-target="#staticBackdrop" data-video="{{$item->specialpdf}}" download>View PDF</button> --}}
+                                            <a href="{{url('download/guideline',[$item])}}">
                                                 <button class="btn btn-primary">Download</button>
-                                            </a>
                         </div>
                     </div>
                 </div>
