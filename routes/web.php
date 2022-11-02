@@ -25,6 +25,9 @@ Route::get('/', function () {
     return view('welcome',compact('thoughts'));
 });
 
+Route::get('privacy-policy', function () {
+    return view('privacy');
+});
 
 
 require __DIR__.'/auth.php';
